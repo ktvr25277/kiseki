@@ -4,359 +4,72 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>建築記録 | 一戸建てのキセキ</title>
+<meta name="description" content="神奈川県湘南エリアで工務店アコルデと建てた注文住宅。土地探し〜引き渡し〜入居後13年間の全記録。">
+<link rel="canonical" href="https://kiseki.bloomsfun.com/construction.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 <style>
-  :root {
-    --ink: #1a1714;
-    --ink-light: #5a524a;
-    --paper: #faf8f4;
-    --paper-dark: #f0ece4;
-    --accent: #b5631e;
-    --accent-light: #e8d5c0;
-    --rule: #d4c9b8;
-    --phase-teal:   #1d6e5a;
-    --phase-purple: #5a3e8a;
-    --phase-amber:  #a0620e;
-    --phase-coral:  #b03020;
-    --phase-blue:   #1a4e7a;
-    --phase-green:  #2d6e30;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.8;
-  }
-
-  /* ── ヘッダー ── */
-  header {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 48px 24px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 60px,
-      rgba(255,255,255,.03) 60px,
-      rgba(255,255,255,.03) 61px
-    );
-  }
-  .site-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 13px;
-    letter-spacing: .2em;
-    opacity: .6;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-  }
-  header h1 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(24px, 5vw, 38px);
-    font-weight: 700;
-    letter-spacing: .05em;
-    line-height: 1.3;
-  }
-  header p {
-    margin-top: 14px;
-    font-size: 14px;
-    opacity: .7;
-    letter-spacing: .05em;
-  }
-  .header-stats {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin-top: 28px;
-    flex-wrap: wrap;
-  }
-  .stat {
-    text-align: center;
-  }
-  .stat-num {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--accent-light);
-  }
-  .stat-label {
-    font-size: 11px;
-    opacity: .6;
-    letter-spacing: .1em;
-    margin-top: 2px;
-  }
-
-  /* ── コスト概要バナー ── */
-  .cost-banner {
-    background: var(--accent);
-    color: #fff;
-    padding: 20px 24px;
-    text-align: center;
-    font-size: 14px;
-    letter-spacing: .05em;
-  }
-  .cost-banner strong {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 18px;
-  }
-  .cost-items {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-    font-size: 13px;
-    opacity: .9;
-  }
-  .cost-items span::before {
-    content: '▸ ';
-    opacity: .7;
-  }
-
-  /* ── メインレイアウト ── */
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 20px 80px;
-  }
-
-  /* ── タイムライン ── */
-  .timeline {
-    position: relative;
-    padding: 60px 0 20px;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 28px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--rule) 60px, var(--rule) calc(100% - 60px), transparent);
-  }
-
-  /* ── フェーズブロック ── */
-  .phase {
-    position: relative;
-    margin-bottom: 56px;
-    padding-left: 72px;
-  }
-  .phase-dot {
-    position: absolute;
-    left: 12px;
-    top: 4px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    z-index: 1;
-    font-family: 'Noto Serif JP', serif;
-  }
-  .phase-header {
-    margin-bottom: 18px;
-  }
-  .phase-period {
-    font-size: 11px;
-    letter-spacing: .15em;
-    opacity: .55;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-  }
-  .phase-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 1.2;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .phase-icon {
-    font-size: 18px;
-  }
-  .phase-desc {
-    font-size: 13px;
-    color: var(--ink-light);
-    margin-top: 4px;
-    letter-spacing: .03em;
-  }
-  .phase-rule {
-    height: 2px;
-    border: none;
-    margin: 14px 0 18px;
-    opacity: .4;
-  }
-
-  /* ── 記事カードグリッド ── */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 14px;
-  }
-  .card {
-    background: #fff;
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 16px 18px;
-    transition: transform .15s, box-shadow .15s;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    position: relative;
-    overflow: hidden;
-  }
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-  }
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,.09);
-  }
-  .card-date {
-    font-size: 10px;
-    letter-spacing: .1em;
-    opacity: .45;
-    margin-bottom: 6px;
-  }
-  .card-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 8px;
-  }
-  .card-snippet {
-    font-size: 12px;
-    color: var(--ink-light);
-    line-height: 1.7;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .card-arrow {
-    font-size: 11px;
-    opacity: .4;
-    margin-top: 10px;
-    text-align: right;
-  }
-
-  /* ── フェーズ別カラー ── */
-  .phase--teal   .phase-dot  { background: var(--phase-teal); }
-  .phase--teal   .phase-title { color: var(--phase-teal); }
-  .phase--teal   .phase-rule  { background: var(--phase-teal); }
-  .phase--teal   .card::before { background: var(--phase-teal); }
-
-  .phase--purple .phase-dot  { background: var(--phase-purple); }
-  .phase--purple .phase-title { color: var(--phase-purple); }
-  .phase--purple .phase-rule  { background: var(--phase-purple); }
-  .phase--purple .card::before { background: var(--phase-purple); }
-
-  .phase--amber  .phase-dot  { background: var(--phase-amber); }
-  .phase--amber  .phase-title { color: var(--phase-amber); }
-  .phase--amber  .phase-rule  { background: var(--phase-amber); }
-  .phase--amber  .card::before { background: var(--phase-amber); }
-
-  .phase--coral  .phase-dot  { background: var(--phase-coral); }
-  .phase--coral  .phase-title { color: var(--phase-coral); }
-  .phase--coral  .phase-rule  { background: var(--phase-coral); }
-  .phase--coral  .card::before { background: var(--phase-coral); }
-
-  .phase--blue   .phase-dot  { background: var(--phase-blue); }
-  .phase--blue   .phase-title { color: var(--phase-blue); }
-  .phase--blue   .phase-rule  { background: var(--phase-blue); }
-  .phase--blue   .card::before { background: var(--phase-blue); }
-
-  .phase--green  .phase-dot  { background: var(--phase-green); }
-  .phase--green  .phase-title { color: var(--phase-green); }
-  .phase--green  .phase-rule  { background: var(--phase-green); }
-  .phase--green  .card::before { background: var(--phase-green); }
-
-  /* ── 経年レポート強調 ── */
-  .phase--green .card.card--featured {
-    background: #edf7ee;
-    border-color: var(--phase-green);
-  }
-  .badge-new {
-    display: inline-block;
-    background: var(--phase-green);
-    color: #fff;
-    font-size: 10px;
-    padding: 1px 7px;
-    border-radius: 20px;
-    margin-left: 8px;
-    vertical-align: middle;
-    letter-spacing: .05em;
-  }
-
-  /* ── フッター ── */
-  footer {
-    background: var(--ink);
-    color: rgba(255,255,255,.5);
-    text-align: center;
-    padding: 32px 20px;
-    font-size: 12px;
-    letter-spacing: .08em;
-  }
-  footer a {
-    color: var(--accent-light);
-    text-decoration: none;
-  }
-
-  @media (max-width: 600px) {
-    .timeline::before { left: 18px; }
-    .phase { padding-left: 52px; }
-    .phase-dot { left: 4px; width: 28px; height: 28px; font-size: 12px; }
-    .cards { grid-template-columns: 1fr; }
-    .cost-items { gap: 12px; }
-  }
+  :root{--ink:#1a1714;--ink-light:#5a524a;--paper:#faf8f4;--paper-dark:#f0ece4;--accent:#b5631e;--accent-light:#e8d5c0;--rule:#d4c9b8;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Noto Sans JP",sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;}
+  header{background:var(--ink);color:#fff;padding:48px 24px 40px;text-align:center;position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,.03) 60px,rgba(255,255,255,.03) 61px);}
+  .site-name-small{font-family:"Noto Serif JP",serif;font-size:13px;letter-spacing:.2em;opacity:.6;margin-bottom:12px;}
+  header h1{font-family:"Noto Serif JP",serif;font-size:clamp(24px,5vw,38px);font-weight:700;letter-spacing:.05em;line-height:1.3;}
+  header p{margin-top:14px;font-size:14px;opacity:.7;}
+  .header-stats{display:flex;justify-content:center;gap:32px;margin-top:28px;flex-wrap:wrap;}
+  .stat-num{font-family:"Noto Serif JP",serif;font-size:28px;font-weight:700;color:var(--accent-light);}
+  .stat-label{font-size:11px;opacity:.6;letter-spacing:.1em;margin-top:2px;text-align:center;}
+  .cost-banner{background:var(--accent);color:#fff;padding:20px 24px;text-align:center;font-size:14px;}
+  .cost-banner strong{font-family:"Noto Serif JP",serif;font-size:18px;}
+  .cost-items{display:flex;justify-content:center;gap:24px;margin-top:10px;flex-wrap:wrap;font-size:13px;opacity:.9;}
+  .cost-items span::before{content:'▸ ';opacity:.7;}
+  main{max-width:900px;margin:0 auto;padding:0 20px 80px;}
+  .timeline{position:relative;padding:60px 0 20px;}
+  .timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,var(--rule) 60px,var(--rule) calc(100% - 60px),transparent);}
+  .phase{position:relative;margin-bottom:56px;padding-left:72px;}
+  .phase-dot{position:absolute;left:12px;top:4px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;z-index:1;font-family:"Noto Serif JP",serif;}
+  .phase-period{font-size:11px;letter-spacing:.15em;opacity:.55;margin-bottom:4px;}
+  .phase-title{font-family:"Noto Serif JP",serif;font-size:22px;font-weight:700;line-height:1.2;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px;}
+  .phase-icon{font-size:18px;}
+  .phase-desc{font-size:13px;color:var(--ink-light);margin-top:4px;}
+  .phase-rule{height:2px;border:none;margin:14px 0 18px;opacity:.4;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;}
+  .card{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:14px 16px;transition:transform .15s,box-shadow .15s;text-decoration:none;color:inherit;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+  .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-color,#999);}
+  .card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.09);}
+  .card-date{font-size:10px;letter-spacing:.1em;opacity:.45;margin-bottom:5px;}
+  .card-title{font-family:"Noto Serif JP",serif;font-size:13px;font-weight:600;line-height:1.5;margin-bottom:7px;flex:1;}
+  .card-snippet{font-size:11px;color:var(--ink-light);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .card-arrow{font-size:10px;opacity:.35;margin-top:10px;text-align:right;}
+  .phase--teal .phase-dot{background:#1d6e5a;} .phase--teal .phase-title{color:#1d6e5a;} .phase--teal .phase-rule{background:#1d6e5a;}
+  .phase--purple .phase-dot{background:#5a3e8a;} .phase--purple .phase-title{color:#5a3e8a;} .phase--purple .phase-rule{background:#5a3e8a;}
+  .phase--amber .phase-dot{background:#a0620e;} .phase--amber .phase-title{color:#a0620e;} .phase--amber .phase-rule{background:#a0620e;}
+  .phase--coral .phase-dot{background:#b03020;} .phase--coral .phase-title{color:#b03020;} .phase--coral .phase-rule{background:#b03020;}
+  .phase--blue .phase-dot{background:#1a4e7a;} .phase--blue .phase-title{color:#1a4e7a;} .phase--blue .phase-rule{background:#1a4e7a;}
+  .phase--green .phase-dot{background:#2d6e30;} .phase--green .phase-title{color:#2d6e30;} .phase--green .phase-rule{background:#2d6e30;}
+  .badge-new{display:inline-block;background:#2d6e30;color:#fff;font-size:10px;padding:1px 7px;border-radius:20px;font-weight:400;letter-spacing:.05em;vertical-align:middle;}
+  .archive-link{text-align:center;padding:40px 0 20px;}
+  .archive-link a{display:inline-block;background:var(--accent);color:#fff;padding:14px 36px;border-radius:3px;text-decoration:none;font-size:15px;letter-spacing:.05em;}
+  .archive-link p{margin-top:12px;font-size:13px;color:var(--ink-light);}
+  .site-footer{background:var(--ink);color:rgba(255,255,255,.5);text-align:center;padding:32px 20px;font-size:12px;}
+  .site-footer a{color:var(--accent-light);text-decoration:none;}
+  @media(max-width:600px){.timeline::before{left:18px;}.phase{padding-left:52px;}.phase-dot{left:4px;width:28px;height:28px;font-size:11px;}.cards{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="site-name">一戸建てのキセキ Life to Hack</div>
+  <div class="site-name-small"><a href="index.html" style="color:inherit;text-decoration:none;">一戸建てのキセキ Life to Hack</a></div>
   <h1>建築記録</h1>
   <p>神奈川県湘南エリア／工務店アコルデ／注文住宅の全記録</p>
   <div class="header-stats">
-    <div class="stat">
-      <div class="stat-num">2013</div>
-      <div class="stat-label">着工年</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">8ヶ月</div>
-      <div class="stat-label">検討〜引き渡し</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">34坪</div>
-      <div class="stat-label">延床面積</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">11+年</div>
-      <div class="stat-label">入居後の記録</div>
-    </div>
+    <div><div class="stat-num">2013</div><div class="stat-label">着工年</div></div>
+    <div><div class="stat-num">8ヶ月</div><div class="stat-label">検討〜引き渡し</div></div>
+    <div><div class="stat-num">34坪</div><div class="stat-label">延床面積</div></div>
+    <div><div class="stat-num">11+年</div><div class="stat-label">入居後の記録</div></div>
   </div>
 </header>
-
 <div class="cost-banner">
   <strong>💰 総費用の実績：土地＋建物＋諸費用 合計 約4,600万円</strong>
   <div class="cost-items">
@@ -365,338 +78,1985 @@
     <span>諸費用・外構 約400万円</span>
   </div>
 </div>
-
 <main>
   <div class="timeline">
 
-    <!-- ① 検討〜契約 -->
     <div class="phase phase--teal">
       <div class="phase-dot">①</div>
       <div class="phase-header">
         <div class="phase-period">2013年3月〜5月</div>
-        <div class="phase-title"><span class="phase-icon">🔍</span>検討〜契約</div>
+        <div class="phase-title"><span class="phase-icon">🔍</span>検討〜契約 <span style="font-size:13px;font-weight:400;color:#1d6e5a;opacity:.7;">（35件）</span></div>
         <div class="phase-desc">土地探しから工務店選び、住宅ローン、建築請負契約まで</div>
       </div>
       <hr class="phase-rule">
       <div class="cards">
-        <a class="card" href="/2013/03/blog-post_5984.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/03/blog-post_5984.html" style="--card-color:#1d6e5a">
           <div class="card-date">2013-03-25</div>
           <div class="card-title">一戸建てを買う時が来た</div>
-          <div class="card-snippet">賃貸派だった私がなぜ家を買う決断をしたか。家族への保険と資産形成という二つの理由。</div>
+          <div class="card-snippet">今まで私は賃貸派でした。 なぜなら必要な住居のサイズと場所は自分の人生において時とともに変わっていくから。 しかしそんな私にもついに家を買う時が来ました。 家を買う理由は… ・家族への保険的意味合い </div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/04/blog-post_6185.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/03/blog-post_9869.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-03-27</div>
+          <div class="card-title">とりあえずホームタウンよこはまに行ってみた</div>
+          <div class="card-snippet">何もよくわからないまま、とにかくホームタウンよこはまに行ってみました。 対応してくれたのはFPの方と営業の方の二名。 人あたりはとても良くて、色々とお金の計算方法を教えてくれました。 家も色々見せてく</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/03/blog-post_8440.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-03-28</div>
+          <div class="card-title">大型分譲地の建売を見に行ってみた</div>
+          <div class="card-snippet">ちょっとワケあって具体的な名前を出せないのですが とある日土地さんの大型分譲建売を見に行ってきました。 なんでも40年かけて区画整理している土地らしく、古い家から新しい家まで新旧混合の綺麗な街でした。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/03/blog-post_2478.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-03-29</div>
+          <div class="card-title">色々と不動産紹介サイトに登録してみた</div>
+          <div class="card-snippet">誰もが通る道。やっぱり色々登録ですね。 横浜スタイル、Century21、U-spec、色々と登録してみました。 ネットで見れる物件はほんの氷山の一角だというので未掲載物件物件狙いです。 登録したとこ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/03/blog-post_1792.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-03-30</div>
+          <div class="card-title">田辺工務店に行ってみた</div>
+          <div class="card-snippet">建売でなかなか良いのがないので土地も探して見ることにしました。 しかし土地を探すには工務店と一緒に探すのが良いらしい。 ということで地元の工務店で田辺工務店に行ってみました。 お休みの日なのにわざわざ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/03/design-of-light_3610.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-03-31</div>
+          <div class="card-title">Design of lightに電話してみた</div>
+          <div class="card-snippet">地元の工務店のもう一つの候補としてDesign of lightに電話してみた。 ・・・電話に出ない。忙しいのかな？ しばらく空けてまた電話してみた。 ・・・また出ない。うーん。 しばらくしてもう一回</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/design-of-light_6747.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-01</div>
+          <div class="card-title">Design of lightにもう一回電話してみた</div>
+          <div class="card-snippet">今日、追加で聞きたいことがあってもう一回Design of lightに電話してみた。 今度は一発で出た。 DOL：「はい。Design of lightです」女の人 自分：「注文住宅を考えていて、ち</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/design-of-light_3250.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-02</div>
+          <div class="card-title">Design of lightから電話は来なかった</div>
+          <div class="card-snippet">昨日電話をくれとDesign of lightにお願いしたが電話は来なかった。 ちなみに言うと先日お願いした一般的な施工例の費用も来ない。 電話も出ない（事が多い）。これは一日だけだけど。 忙しいのか</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_7379.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-04</div>
+          <div class="card-title">毎日メールで不動産屋とやりとりをしている</div>
+          <div class="card-snippet">日中は仕事なので勿論不動産探しはできない。 そこで頼りになりそうな不動産屋を見つけてそこに頑張ってもらうしかない！ ってことで私は現在平塚のLVさんという不動産屋にお世話になってます。 ネットで色々な</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_6185.html" style="--card-color:#1d6e5a">
           <div class="card-date">2013-04-05</div>
           <div class="card-title">安いと思ったら市街化調整区域だった</div>
-          <div class="card-snippet">100坪3,000万円の激安土地に飛びつきそうになった話。土地探しの落とし穴を実体験で解説。</div>
+          <div class="card-snippet">神奈川県藤沢市は土地が高い・・・（横浜に比べればマシだけど） ある日ネットで100坪3000万円の土地を見つけて、オー！っと思って 場所が駅からかなり遠くて県道沿い（うるさいやら排気ガスやら）だから安</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/04/blog-post_3636.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/04/blog-post_3012.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-06</div>
+          <div class="card-title">安いと思ったら告知事項ありだったー！</div>
+          <div class="card-snippet">連続で安いと思ったら・・・の話。 先日藤沢市の湘南ライフタウン近くで60坪2780万円の土地が！めっちゃ安いやん。 北側道路で南にピッタリ建物が寄ってるから安いのかなーっ？て思ってた。 んでやっぱり日</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_6037.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-06</div>
+          <div class="card-title">【閑話休題】間取り設計フリーソフトって色々あるのね</div>
+          <div class="card-snippet">私は参考にしていたブログでマイホームデザイナーを使ってて 超便利なんですけど～って言ってたからこれだーって思って買ったけど、 間取り設計フリーソフトって色々あるのね・・・ まとめサイトはこちら↓ ht</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_1875.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-07</div>
+          <div class="card-title">急展開。よさそうな土地発見</div>
+          <div class="card-snippet">先日、LVさんからメールあり。 「こんなん出ました！」 見てみると・・・おぉ、希望のエリアどまんなかやん。 南側道路6mで、西側に私道4m。おお・・・日当たり良さそうやん・・・ 値段は３６坪で２４８０</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_6735.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-08</div>
+          <div class="card-title">アサカワホームの見積もり</div>
+          <div class="card-snippet">先日出てきた土地がなかなかよさそうなので アサカワホームさんに簡単な見積もりをお願いしました。 急にアサカワホームさんが出て来ましたが、まぁ経緯を簡単に言うと LVさんに紹介してもらった土地を一緒に見</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_9314.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-09</div>
+          <div class="card-title">擁壁とライフラインはクセモノ</div>
+          <div class="card-snippet">アサカワホームさんに土地を見てもらい、トータル見積もり概算を出してもらいました。 土地は2480万で36坪なんですが、せめて40坪ほしいと伝えておいたら LVさんの方で40坪で2600万いけたとして、</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_6716.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-10</div>
+          <div class="card-title">土地の価格で悩む</div>
+          <div class="card-snippet">まだ悩んでいます（困）。 ４０坪で２６００万でオファーするか否か。 坪単価６５万は決して安くはない。しかし南道路＆西道路で整形地。 これはなかなか出ないというのは、ネットで過去の成約済みの土地を見ても</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_9682.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-12</div>
+          <div class="card-title">しばらく待ってみることにした</div>
+          <div class="card-snippet">40坪2600万（本当は36坪2480万だけど交渉できたとして）の土地、 LVさんに相談しました。 「僕が建てたいこの32坪の家は建たないでしょうか」 間取り図も送ってみました。 回答は・・・・ 「予</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/5000_8483.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-13</div>
+          <div class="card-title">【閑話休題】5000万円で建てる家</div>
+          <div class="card-snippet">あー土地探しも工務店探しもネットネットネット ネットは情報がピンからキリまであって玉石混合で取捨選択しなければならんので疲労困憊。 ブログも細かく書いてあるのは読んでて疲れるし。 という愚痴ポストをし</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_3308.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-13</div>
+          <div class="card-title">飛び込み営業が来た</div>
+          <div class="card-snippet">妻から聞いたが平日の昼間に新築戸建ての飛び込み営業が来たらしい。 そこはオープンハウスという仲介不動産屋で、ウリは”値引き”らしい。 仲介手数料は３％だけど、それをも凌駕する値引きをするらしい。 （で</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_643.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-14</div>
+          <div class="card-title">西湘小田原住宅公園という展示場に行ってみた</div>
+          <div class="card-snippet">妻の強い要望（？）もあり、小田原にある住宅展示場に行ってきました。 藤沢からは30分かからずに行けます（渋滞に巻き込まれなければ） 見てきたのは一条工務店とパナホーム。 一条工務店はネットで名前はきい</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_5732.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-15</div>
+          <div class="card-title">新たな候補が出ました</div>
+          <div class="card-snippet">発見しました。毎日ネットで土地を見ていたら遠藤で50坪2680万が出ました。 東道路だけど、敷地広いし、大丈夫でしょう。 早速現地を見に行ってきました。 隣家のおばちゃんがちょうどいたので話を伺うと </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_3636.html" style="--card-color:#1d6e5a">
           <div class="card-date">2013-04-16</div>
           <div class="card-title">工務店比較</div>
-          <div class="card-snippet">複数の工務店に同じ条件で見積もり依頼。コストと仕様の関係をリアルに比較した記録。</div>
+          <div class="card-snippet">先日候補にあげた2680万の土地に家を立てるといくらになるか いくつかの工務店（Aホームとか）に依頼をしました。 述べ床は34坪、マイホームデザイナーで間取りを書いて こんな感じの家で、とお願いしまし</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/04/blog-post_1081.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/04/blog-post_3877.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-18</div>
+          <div class="card-title">神奈川の注文住宅という本を買ってみた</div>
+          <div class="card-snippet">タイトルの通りです。 いろんな工務店が乗ってるのはまぁ参考になるんだけど それ以上に世間の人達の家のこだわりがどこにあるのかまとまってるのはいいですね。 小上がりの和室とか、ストリップ階段とか、サイデ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/20_219.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-19</div>
+          <div class="card-title">【余談】家の価値は20年モノ</div>
+          <div class="card-snippet">家の価値は20年でゼロになるって言いますよね。 それは築20年だともう上モノに値段がつかないって意味だと理解しています。 まぁその点から見ると、2400万円の家建てたとしたら 月10万円ずつ減価償却し</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_4964.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-20</div>
+          <div class="card-title">不動産業界って‥‥</div>
+          <div class="card-snippet">先日の遠藤の土地は見送ることにしました。 理由は価格です。2680万だけど、古家解体が150万くらいかかりそうで、 さらには売主のSRが、自分たちを通さないと売りません、という態度なため 買うとなると</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_5208.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-21</div>
+          <div class="card-title">アサカワホームの概算見積りがきた</div>
+          <div class="card-snippet">先日見つけた土地はパスしたけど、工務店探しは続くため 見積もりは予定通り作っていただいています。 そして今日アサカワホームの概算見積りが来ました。 述べ床は34坪で、、、1500万ちょい。 安！！ ん</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_518.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-21</div>
+          <div class="card-title">【余談】役に立つ戸建ブログまとめ</div>
+          <div class="card-snippet">営業トークは話半分。 不動産屋は嘘半分。 知り合いは秘密半分。 ほんなら何を私たちは頼れば良いの？信じれば良いの？ 2chです（嘘） それは、ずばりブログでしょう（除ステマブログ）。 家を建てる経緯を</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_1081.html" style="--card-color:#1d6e5a">
           <div class="card-date">2013-04-23</div>
           <div class="card-title">最強の土地発見</div>
-          <div class="card-snippet">南西と北西道路の角地、住宅街の奥で車が来ない。理想の土地との出会いの瞬間。</div>
+          <div class="card-snippet">ついに見つかりました。最強の土地です。 土地の価格は40坪強で約2600万です。 南西と北西道路の角地（←この南が絡んだ角地というのが超重要） 道路は住宅街の奥まったところなので車は来ない。 最強っす</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/04/blog-post_3467.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/04/blog-post_2275.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-24</div>
+          <div class="card-title">不動産屋から連絡あり</div>
+          <div class="card-snippet">私の海外出張中に妻へ不動産屋から連絡がありました。 なんと！先日の土地の先約者が流れたとのことです！！ 理由はあてにしていた資金繰りがうまくいかなかったとのこと。 ついに、ついに、 理想の土地 が見つ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_3467.html" style="--card-color:#1d6e5a">
           <div class="card-date">2013-04-25</div>
           <div class="card-title">契約しました：建築条件付き</div>
-          <div class="card-snippet">ついに土地を契約。建築条件付きという縛りを受け入れる決断をするまでの経緯。</div>
+          <div class="card-snippet">ついに土地を契約しました。 ※早っ！と思われる人への御説明です。このブログは少し過去の話をまとめて書いています。なので実際はいろんな一悶着二悶着、三悶着もあったこともかなり圧縮して書いています。元々は</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/04/blog-post_6640.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/04/blog-post_6640.html" style="--card-color:#1d6e5a">
           <div class="card-date">2013-04-26</div>
           <div class="card-title">住宅ローンをどこで借りるか</div>
-          <div class="card-snippet">ネット銀行の安い金利に飛びつかない理由。つなぎ融資・手数料・繰上返済まで徹底比較。</div>
+          <div class="card-snippet">難しい問題です。巷の住宅ローン金利ランキングでは SBIネット証券などがすごい安い金利です。しかし実際は手数料やら保証料やら （自分で調べてないからよくわかんないんですが）かかるので実際は旨味がなかっ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/05/blog-post_9654.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-05-13</div>
-          <div class="card-title">奇跡の軌跡：建築請負契約</div>
-          <div class="card-snippet">アコルデとの建築請負契約締結。他工務店との比較を経て最終的にここに決めた理由。</div>
+        <a class="card" href="/2013/04/y_523.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-27</div>
+          <div class="card-title">建築士のY先生と打ち合わせ</div>
+          <div class="card-snippet">後日談になりますが、建築士のY先生と第一回目の打ち合わせをして参りました。 うちが購入する土地は建築条件付きで工務店指定ですが、不動産屋CSさんお墨付きの建築士YさんとMHSという工務店さんで建てる、</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/06/blog-post_2138.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-06-04</div>
-          <div class="card-title">地盤調査でスルーストン</div>
-          <div class="card-snippet">スウェーデン式サウンディング試験の結果。地盤補強が不要だったことへの安堵と理由。</div>
+        <a class="card" href="/2013/04/panasonic_3570.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-28</div>
+          <div class="card-title">Panasonicリビングショールーム横浜にいってみた</div>
+          <div class="card-snippet">いやー、午後4時に行ったから1時間しか見れませんでした（確信犯ですが） でも収穫は有り、キッチンはどうやらカウンターが一段上がったタイプが良いようですby妻。 行ったのは平日だったのでガラガラでした。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/yamaha_6032.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-29</div>
+          <div class="card-title">YAMAHAリビングショールームに行ってみた</div>
+          <div class="card-snippet">YAMAHAリビングのショールームに行ってきました。 藤沢にある、割りと小さめの所です。 行ったのは土曜日だったんですが、あまり混雑しておらず、丁寧にご説明頂けました。 Panasonicよりグレード</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/04/blog-post_6374.html" style="--card-color:#1d6e5a">
+          <div class="card-date">2013-04-30</div>
+          <div class="card-title">ニッチを使ったテレビ周辺の無配線化</div>
+          <div class="card-snippet">について悩んでいます。 こちらの戸建ブログさんで拝見したのですが↓ http://www.kodateblog.com/%E6%88%B8%E5%BB%BA%E3%81%A6%E6%97%A5%E8%</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
       </div>
     </div>
 
-    <!-- ② 仕様決め -->
     <div class="phase phase--purple">
       <div class="phase-dot">②</div>
       <div class="phase-header">
         <div class="phase-period">2013年5月〜7月</div>
-        <div class="phase-title"><span class="phase-icon">📐</span>仕様決め</div>
-        <div class="phase-desc">間取り・キッチン・トイレ・収納・耐震など設備の打ち合わせ全記録</div>
+        <div class="phase-title"><span class="phase-icon">📐</span>仕様決め <span style="font-size:13px;font-weight:400;color:#5a3e8a;opacity:.7;">（64件）</span></div>
+        <div class="phase-desc">間取り・キッチン・トイレ・収納・設備の打ち合わせ全記録</div>
       </div>
       <hr class="phase-rule">
       <div class="cards">
-        <a class="card" href="/2013/05/blog-post_4215.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/05/blog-post_1.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-01</div>
+          <div class="card-title">やっぱ住宅ローンは横浜銀行かな</div>
+          <div class="card-snippet">あれから改めて色々調べましたけど。 新生銀行は保証料０ですがアプラスのつなぎ融資の諸経費や金利と期間考えると結構かかるし、 SBIネットバンクは手数料がすごいかかるみたいだし 他にもみずほや湘南信金や</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_1270.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-02</div>
+          <div class="card-title">住宅ローン本審査申し込みました</div>
+          <div class="card-snippet">というわけで浜銀で申し込み用紙を提出しました。 浜銀は分割実行ができるのでGood、だと思っていましたが 住宅ローンセンターの方に色々伺ってみると、分割実行するならローンを二本立てにする方が得になる場</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_5432.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-02</div>
+          <div class="card-title">またパナソニックリビングショールーム横浜に行ってきました</div>
+          <div class="card-snippet">この前は平日の終了間際に行ったのでゆっくり見れなかったと妻。日曜日の朝イチに行ってきました（この記事は後日談ですのであしからずご了承くださいませ）。 ９：５５に現地に着いたのにもう駐車場は満車！ しか</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_4215.html" style="--card-color:#5a3e8a">
           <div class="card-date">2013-05-02</div>
           <div class="card-title">毎日建築士さんと間取りのやり取りをしています</div>
-          <div class="card-snippet">マイホームデザイナーで間取りを書いては送り、翌日に修正図面が返ってくる毎日。提案力ある建築士との協働。</div>
+          <div class="card-snippet">ホントほぼ毎日です。 私がマイホームデザイナーでこんな間取りがええねんと書いて、 妻がここがちゃうねんと注文をつけるのでそれを反映して 建築士のYさんへ送付。次の日にはYさんから修正図面が来ます。 こ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/05/blog-post_6884.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/05/blog-post_3145.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-04</div>
+          <div class="card-title">錆びた屋根はコロニアルクアッドなのか</div>
+          <div class="card-snippet">最近車でお出かけするといろんな家の外観が気になります。 あーあれは建売だねぇ～ あのサイディングは14mmだねぇ～（うちもだけど とかなんとか色々気になっちゃいます。 そんな中で妻が5分に一回くらいす</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_2288.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-04</div>
+          <div class="card-title">収納スペース診断</div>
+          <div class="card-snippet">連日の建築士Yさんとのやり取りのおかげで早くも間取りが収束しそうです。 妻の許可が降りなかったので間取りを公開はできないのですが（すみません）、延床は32坪くらいになりそうです。マイホームデザイナーで</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_7702.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-05</div>
+          <div class="card-title">オール電化を導入するべきか否か</div>
+          <div class="card-snippet">悩んでいます・・・ 導入費用のことはちょっと置いといても ガス給湯に比べて本当に安くなるのか？ ここの判断が難しいです。 判断を難しくしているのは ・日中は妻と子供たちが在宅。オール電化は夜間電力を安</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_2654.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-06</div>
+          <div class="card-title">玄関って高いのね・・・</div>
+          <div class="card-snippet">玄関ってただのドアとちゃうんかい・・・ 定価はどれも３０万越え！ これいいねーというやつは４５万とか・・・ 自分的には見た目はまぁ普通でいいんだけど、 機能的にやっぱスマートキーは欲しいなぁ。。。 あ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/ld_9310.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-07</div>
+          <div class="card-title">LDに柱はイラン！</div>
+          <div class="card-snippet">妻が叫んでおります。 LDKは現在約17畳あります（自分的には広すぎる）。 そのど真ん中付近に柱が要るかもしれないと建築士Yさん。 間取りの公開は妻に禁じられているのでLDだけ このどまんなかとは言わ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_6982.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-08</div>
+          <div class="card-title">衝撃（汗）建築条件付き工務店からの見積もり</div>
+          <div class="card-snippet">がついに来ました・・・ ちょっと後々のことがあるので、値段は公開できないですが・・・ 我々の予算を・・・・ 3割以上オーバー orz （終わった・・・） 3割って、結構すごいっす 1000万予算なら3</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_1856.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-09</div>
+          <div class="card-title">どうする？理想の土地と、予算オーバーなウワモノ</div>
+          <div class="card-snippet">妻と長時間の議論をしました。 ウワモノが予想をはるかに超える見積もり。 予算大オーバー やはりこれでは前に進めない・・・ 不動産屋のCSさんに相談するしかない・・・ でも相談してどうする？ ３割以上、</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_6437.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-10</div>
+          <div class="card-title">どんでん返せ②</div>
+          <div class="card-snippet">不動産屋さんに連絡をしました。 「これではとても買えません。ここまで来て申し訳ございません。でもやっぱり納得感を得られる工務店で建てるしか自分の中で消化できないみたいです」と。 そうすると不動産屋さん</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_4927.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-10</div>
+          <div class="card-title">どんでん返せ①</div>
+          <div class="card-snippet">※連続更新です。過去の日記を順番に公開していたのですが最近多くの方が見に来てくれていますし、引っ張っていると思われてもなんですので書いてある分を順番に公開していこうと思います。 ◆以下本編です かなり</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_5928.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-11</div>
+          <div class="card-title">遂に登場：アルデンテさんに行って来ました</div>
+          <div class="card-snippet">パスタではありません。 我らが師匠（勝手にすみません）のブログ↓をご覧になればわかると思います。 （師匠、勝手に仮称を拝借してしまい申し訳ございません） 奇跡のマイホーム建築記録 そうです。 我々は例</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_928.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-12</div>
+          <div class="card-title">突撃訪問アルデンテ</div>
+          <div class="card-snippet">アルデンテさんに初めて行った時のことです。対応していただいたのは 岡本社長と小川さんでした。（と言っても岡本社長は少し遅れていらっしゃったので最初は小川さんに断熱材の説明を色々と教えて頂いていたら岡本</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_9654.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-13</div>
+          <div class="card-title">奇跡の軌跡：建築請負契約</div>
+          <div class="card-snippet">ホントは契約まで色々と時間はかかったのですがもう一先ずまとめてしまおうと思いますｗ。（この後は更新がペースダウンしてしまいますが予め御了承ください） 初めてアルデンテさんに行ってから、他の工務店にも念</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/lixyl_4638.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-14</div>
+          <div class="card-title">LIXYLのショールームに行ってきた</div>
+          <div class="card-snippet">時の回顧録です。 家の近くにはいろいろショールームが集結しています。 TOTO、YAMAHA、LIXYL、タカラ （Panasonicが無い・・・） というわけでLIXYLのショールームに行って来まし</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_9467.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-15</div>
+          <div class="card-title">角地にすることでの適正な価格アップ分</div>
+          <div class="card-snippet">先日契約した土地を見に行ってたら近くで角地ではないけど整形地の土地をみかけました。もう気にしなきゃいいのにやはり知らぬが幸せよりも知って納得を選ぶ私は帰ってネットでその土地の情報を調べました。 そうす</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_9101.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-16</div>
+          <div class="card-title">注文住宅ってのは提案してもらうと嬉しいらしい</div>
+          <div class="card-snippet">家の間取りはもうすでに試行錯誤してこれだ！と思うものを決めてあったので、二回目の打ち合わせではそれに基づいて詳細見積もりを出してもらえることになっています。 楽しみです。そこで妻がこんなことを言ってま</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/toto_6298.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-17</div>
+          <div class="card-title">仕様と見積もりとTOTOのサザナ</div>
+          <div class="card-snippet">正式に限りなく近い見積もりを出してもらったので打ち合わせに行って来た時の回顧録です。 うちはアルデンテさんのローコストプラン的なもの（？）を標準仕様にして頂いています。今日はその細かい仕様の説明と、間</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_8771.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-18</div>
+          <div class="card-title">次世代省エネ仕様って</div>
+          <div class="card-snippet">うちはどっちかっていうとあまり特殊なこだわりがありません（ガラス張りの家がいいとか、オールひのきが良いとか）。 外壁はサイディングで全く問題なし、屋根もローコスト。 でも断熱だけはしっかりしたいなーっ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_6884.html" style="--card-color:#5a3e8a">
           <div class="card-date">2013-05-19</div>
           <div class="card-title">耐震等級３をとるか否か</div>
-          <div class="card-snippet">等級3取得にかかる費用と実際のメリットを比較。「取れる家」にするかどうかの判断プロセス。</div>
+          <div class="card-snippet">いきなりですがうちの間取りでは耐震等級３を取れるか 微妙 です。等級３を取るためには評価機関への届出が必要だったりなんだり色々費用がかかるらしく、うちは等級３を使って何かしようというプランにしていない</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/05/blog-post_6870.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/05/blog-post_8580.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-20</div>
+          <div class="card-title">長期優良住宅で建て替えから住み替えへ</div>
+          <div class="card-snippet">もうほぼリアルタイムな話がちょくちょく入ります（汗 お次は 長期優良を申請するか、 長期優良仕様にするか、 長期優良は申請もしないし仕様も参考程度に留めておく、か。 うちは元より長期優良住宅にはするつ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_3455.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-21</div>
+          <div class="card-title">玄関ドアの開き方</div>
+          <div class="card-snippet">を決めました。 最初は↓のように右開き（取っ手が左側）にしていました。しかし玄関採光の話になって玄関まわりは結構筋交いが入ることになるので片袖ドアにして採光を取ろうかという話になりました。 でも調べて</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_2522.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-22</div>
+          <div class="card-title">金消契約に必要な書類</div>
+          <div class="card-snippet">を集めるのが大変でした（自分では何一つやってないですがｗ） ・印鑑証明書 ・住民票 ・収入印紙 ・自己資金確認資料 ・売買契約書 ・重要事項説明書 ・建築請負契約書 ・源泉徴収票 ・土地謄本 ・課税証</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_6329.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-23</div>
+          <div class="card-title">土壇場で小屋裏収納</div>
+          <div class="card-snippet">以前マイホームデザイナーの 収納スペース診断の話 を書きましたが、 実はあのあと色々間取りを書き直している中で気づいたことがありました。 それは・・・ ワークスペース（2畳）の 属性 が クローゼット</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_6140.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-24</div>
+          <div class="card-title">クローゼットの奥行きはいくつがベスト？</div>
+          <div class="card-snippet">もう一つ見直しました。 ※この件で妻と朝まで生討論をしました（疲 現在子供部屋に二つあるクローゼットは奥行き910（実効は800弱？）ですが、そんなに奥行きがあっても使いにくいだけなので710位まで浅</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_3395.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-25</div>
+          <div class="card-title">ちょっと嬉しかったロール網戸</div>
+          <div class="card-snippet">アコルデさんにまた打ち合わせに行った時のお話。 内容は窓仕様の決定でした。 しかし窓仕様以外にもいくつかお願いしていたことも反映してもらいました。 ・玄関ドアの開き方 ・クローゼットの奥行き ・ 小屋</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_9074.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-26</div>
+          <div class="card-title">完成見学会って初めてカモ</div>
+          <div class="card-snippet">に行って参りました。（リアルタイム更新でございます） アコルデさんではちょくちょく完成見学会をやってるようで モデルルームよりも現時的なアイディアが多いな～って感じです。 拝見したお宅は こちら です</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/pana_8901.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-26</div>
+          <div class="card-title">Panaショールーム最終決戦でキッチンとカップボードとサイディング</div>
+          <div class="card-snippet">※クランベリーさん、拍手コメントありがとうございます。拍手コメントへの返信の仕方がわからないので（恥）本文にて。本ブログが少しでも参考になれば幸いです。また来てくださいねー さて話題はタイトルの詳細を</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_8023.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-27</div>
+          <div class="card-title">インテリアコーディネータ清水畑さんから風穴へ</div>
+          <div class="card-snippet">タイトルがなんか変ですね（謝 何回目かの打ち合わせで初めて清水畑さんにお会いしました。 ※清水畑さんはアコルデさんのスーパーインテリアコーディネーターです （スーパーというのは私が勝手につけただけなの</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_6870.html" style="--card-color:#5a3e8a">
           <div class="card-date">2013-05-28</div>
-          <div class="card-title">省令準耐火構造採用決定</div>
-          <div class="card-snippet">火災保険が大幅に下がる省令準耐火構造。採用の経緯とコストメリットを解説。</div>
+          <div class="card-title">打ち合わせ＠アコルデで省令準耐火構造採用決定</div>
+          <div class="card-snippet">に行った時のメモです。 大体打ち合わせは10時開始でお願いしているのですがまたしても色々と打ち合わせしてたらお昼を過ぎてしまいました。岡本社長と清水畑さんと小川さん、いつも長い時間有難うございますm(</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/06/blog-post_2648.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/05/blog-post_8797.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-29</div>
+          <div class="card-title">金消契約（土地分）完了です</div>
+          <div class="card-snippet">行って参りました、 幅銀 ｗ。 朝9：30のアポだったから9:15着で行きました。 着いたら当然ATMしか開いておらず、 あれ？これどっから入るんだっけ？ と思って 5分くらいウロウロ してしまいまし</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/05/blog-post_5124.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-30</div>
+          <div class="card-title">安息角ってなんだっけ</div>
+          <div class="card-snippet">ちょっと一回とびましたが先日の打ち合わせ＠アコルデさんで安息角の説明を小川さんにして頂きました。 どうやら安息角とは・・・ 土 （ 岩石 片や 砂 など）や 粉体 （石炭粉など）を積み上げたときに自発</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/vsvs_502.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-05-31</div>
+          <div class="card-title">ニトリVS島忠VSパナソニック</div>
+          <div class="card-snippet">カップボードのお話です。 我が家は パンパン な予算になんとか少しの余裕を持ちたくて、なんとか設備の中で費用削減できる所がないか探していました。白羽の矢がたったのは カップボード でした（妻よ、ｽﾏﾇ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_2.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-01</div>
+          <div class="card-title">イレブンの次はワン・ツーな外構ブロック</div>
+          <div class="card-snippet">※クランベリーさんいつも拍手コメありがとうございます～！いまだに拍手コメへの返信方法がわからないのでこちらでお礼まで^^ さて本題。 メガ・エディ ドリーム・イレブン アポロ マックス１６・アイ 何の</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_1276.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-02</div>
+          <div class="card-title">玄関ドアの採光で気分は最高・・・のはずが・・・</div>
+          <div class="card-snippet">というお話です。 玄関ドアはLIXILのフォラードだと思ってましたが、 実はジエスタという新シリーズが適用されるということが判明しました！ ※準防火地域だとまた違うようですがうちは違うのでジエスタらし</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_2138.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-04</div>
+          <div class="card-title">地盤調査でスルーストン</div>
+          <div class="card-snippet">つい先日地盤調査が行われました。 平日だったので私は仕事で行けず、 妻に見に行ってもらいました。 地盤調査会社の方はお二人来られていて 妻に調査方法を丁寧に御説明頂いたようです。 調査方式はかの有名な</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_6672.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-05</div>
+          <div class="card-title">速攻速報で地盤調査結果</div>
+          <div class="card-snippet">地盤調査をした翌日（？）だったかな、岡本社長より不在着信が。 なんだろうと思ってかけ直してみると 社長「地盤調査の速報連絡が来まして・・・」 お！もう来たのですネ・・・ 一体改良費は幾らくらいになるの</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_2911.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-06</div>
+          <div class="card-title">【閑話休題】温かい工務店アコルデ</div>
+          <div class="card-snippet">ちょっと住宅仕様の話から外れます・・・ 打ち合わせ＠アコルデにて印象に残ってしまったシーン2つを発表します。 【その１】 ※社長は子供たちの遊び相手をしてくれているのです 【その２】 ・・・ ・・・ </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_8871.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-07</div>
+          <div class="card-title">ピュ～と吹く地鎮祭</div>
+          <div class="card-snippet">地鎮祭は関東地方が梅雨入りした後に行われました・・・。 最近は晴れまくってましたが地鎮祭前はシトシトピッチャン雨が降っていました（←これをお忘れなく） が、地鎮祭当日は・・・ 晴れました！ ヤッタネ！</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_4159.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-08</div>
+          <div class="card-title">マイホームデザイナーで世界最大級の外構デザイン</div>
+          <div class="card-snippet">脱線すみません。 外構デザインも自分である程度考えようとしています。 マイホームデザイナーLS4では外構設備も色々ありまして 芝を引いたり、タイルを引いたりということが可能です。 そして色々な外構オブ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_3767.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-09</div>
+          <div class="card-title">私は知らない「周知の文化財包蔵地」</div>
+          <div class="card-snippet">周知徹底して下さいｗ。 我が家の土地は「周知の文化財包蔵地」にあるようです。よく判りませんが大昔に人が住んでたってこと？ 1．周知の埋蔵文化財包蔵地を土木工事等の目的（埋蔵文化財の調査の目的を除く）で</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_1918.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-10</div>
+          <div class="card-title">雪止めって、要らないのカナ？</div>
+          <div class="card-snippet">私の家は一応湘南エリアです。 雪はたまに降ります。でもスゴイ積もることはあまりありません。 でもそれでも何年かに一度はすごい積もったりします。 雪に慣れていない地域なので少し積もると 交通系があっさり</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_238.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-11</div>
+          <div class="card-title">電柱の支線ってなんだっけ</div>
+          <div class="card-snippet">※クランベリーさん返事遅れてゴメンナサイ。ブックマークありがとうございます。ブログ宜しければ教えてくださいね～ さて電柱のお話です。 土留め工事を進めるにあたり、一つ課題があります（先日の地鎮祭の時に</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_8328.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-12</div>
+          <div class="card-title">洗濯パンって今時置かないの？</div>
+          <div class="card-snippet">アパート暮らしを続けてきた身としてはえっ？そうなの？って感じでした。 前の前のアパートでは洗濯した後の排水時にゴポゴポゴポって排水口のところから泡がブクブクブクってでて来ていたので、もしパンがないとあ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_7327.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-13</div>
+          <div class="card-title">立水栓は贅沢なのか</div>
+          <div class="card-snippet">立水栓。 もともと存在するだけで有り難かった。 しかし今は蛇口が2個着いてると便利かな～なんて 贅沢なのでしょうか・・・ ネットで見るとDIY出来るような話が多いけど、 水回りだし、プロにやってもらっ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_2564.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-14</div>
+          <div class="card-title">磁石ドアストッパーはうれしいです</div>
+          <div class="card-snippet">ドアを開け放しておきたいときに使うあれです。 アコルデの室内開き戸は埋め込み型のこんな&quot;感じのもの&quot;が付いてるようです↓ ※参考画像なので実際のものとは違います。 画像勝手に借りて</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_4958.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-15</div>
+          <div class="card-title">フローリングの木目の方向</div>
+          <div class="card-snippet">を妻が気にしていました。 正直私はどっちでもええんちゃうんかいと思っていましたが、妻は絶対に長手方向の木目がええねんと主張していました。 妻の様な細かいところまでこだわりたい人は注文住宅にした甲斐あっ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_332.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-16</div>
+          <div class="card-title">トイレ階段下に収納をもっと</div>
+          <div class="card-snippet">欲しいそうです。収納を。 妻はネットからこんな写真をお借りしてイメージを伝えていました。 ※画像拝借スミマセン （この画像で言うタンク奥、壁際にも収納をつけてもらってるのですが、もっと欲しいそうです。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_8387.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-17</div>
+          <div class="card-title">四方巻きか三方巻きか零方巻きか恵方巻きか</div>
+          <div class="card-snippet">食べ物の話ではなく窓のクロスの話です。 ちょこっと前に仕様として窓枠をどうするか聞かれました。 基本的にクロス巻きにすると結露などの関係から経年劣化がひどくなるようです。しかし窓枠をつけないとクロスに</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_221.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-18</div>
+          <div class="card-title">引き戸と隙間が気になる妻</div>
+          <div class="card-snippet">がおりますです。 現在の我が家の間取りは洗面所の隣がキッチンでして その仕切は引き戸です。 ↓こんな感じ キッチン（左）側にあるのは冷蔵庫、 洗面所（右）側にあるのは収納です。 そして引き戸のスライド</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_9435.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-19</div>
+          <div class="card-title">トイレのドアは巨体対応</div>
+          <div class="card-snippet">我が家に巨体はおりません（今は）。 今のアパートのトイレのドアは幅57cm位で60ｃｍも無い感じです。 特に意識してなかったのですが、アコルデさんの仕様ではトイレのドア幅はも少し幅が広い（詳細な数字が</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_4024.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-20</div>
+          <div class="card-title">センサー照明ならばスイッチは不要？</div>
+          <div class="card-snippet">というわけにはいきません。 センサー式でもスイッチはつけなければいけないようです。 そこで悩むのがスイッチの場所。 センサー式にしようとしているところの手の届きやすい場所にスイッチがあると押してしまう</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_6489.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-21</div>
+          <div class="card-title">いでよハリー！&lt;--天井高さ</div>
+          <div class="card-snippet">の話です。 アコルデ仕様では1F天井高さ2500mmです。 妻は高い天井が良いらしく(うちは吹き抜けはありませんが)、以前の建築条件工務店が2400mmだったので2500mmだと聞いてたいそう喜んでい</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_4086.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-22</div>
+          <div class="card-title">折れ戸で引き違うマルチなドアを採用</div>
+          <div class="card-snippet">する予定です。 現在のアパートの収納は折れ戸が多いのですが 折れ戸はご存知の通り折りたたんだ戸によって発生するデッドスペースがデメリットの一つです。収納方法や収納するものによってはデメリットとならぬよ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_2648.html" style="--card-color:#5a3e8a">
           <div class="card-date">2013-06-23</div>
           <div class="card-title">やっとキッチンが最終決定</div>
-          <div class="card-snippet">LIXILのAmiy採用まで。ショールームを何度も回って悩み抜いたキッチン選びの結論。</div>
+          <div class="card-snippet">しました。 実は以前に色々と書きましたが http://blog.livedoor.jp/kodatenokiseki/archives/26596305.html http://blog.lived</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/07/rev_6.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-07-05</div>
-          <div class="card-title">【着工記念】住宅設備検討のまとめ</div>
-          <div class="card-snippet">着工を機に設備検討40項目を一挙振り返り。これから建てる方への完全まとめ記事。</div>
+        <a class="card" href="/2013/06/blog-post_7149.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-24</div>
+          <div class="card-title">カップボードも最終決定しますた</div>
+          <div class="card-snippet">という話です。 当然ながらキッチンと同じAmiyでございます。 ポイントは ・ハイカウンター ・ゴミ箱を見せないダストワゴン採用。すなわちダストワゴンの扉材を周辺扉材と統一（これは出来ない所があったり</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/07/blog-post_9961.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-07-24</div>
-          <div class="card-title">トイレの最終仕様を振り返ってみた</div>
-          <div class="card-snippet">1FはタンクレスのTOTO、2Fは標準仕様。二つのトイレに異なる選択をした理由と結果。</div>
+        <a class="card" href="/2013/06/blog-post_1565.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-25</div>
+          <div class="card-title">洗面化粧台も最終決定</div>
+          <div class="card-snippet">クランベリーさん、いつも拍手コメありがとうございますm(_ _)mいまだにどこで返信したらいいのかわからず・・・ 連続で住宅設備最終決定シリーズです。 一階洗面所も当初はパナソニックの自動水栓に惹かれ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/toto_6259.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-26</div>
+          <div class="card-title">TOTOサザナの現物を改めて見たのだ</div>
+          <div class="card-snippet">というお話です。 住宅設備が最終決定したよシリーズの一貫なのですが、先日清水畑さんと打ち合わせしてて常時換気の操作パネルの話になって、そういえばこのアコルデショールームのバスをTOTOのサザナに入れ変</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_4832.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-27</div>
+          <div class="card-title">棟換気は片流れでもつくらしい</div>
+          <div class="card-snippet">ということしかわかっておりません（汗 先日アコルデさんに打ち合わせに行ったらいつもの通り清水畑さんが出てこられたのですが、打ち合わせ場所（ショールーム）に入るとなんと我らが監督久保園さんと、初めてお会</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_4709.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-28</div>
+          <div class="card-title">電柱の支線が土地にぶっ刺さっている件</div>
+          <div class="card-snippet">が決着しました。 事の発端は http://blog.livedoor.jp/kodatenokiseki/archives/28734168.html に書きましたように電柱の支線がうちの土地の土留</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_9905.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-29</div>
+          <div class="card-title">クロス決めちゃってくれてますよ</div>
+          <div class="card-snippet">な話です。 アコルデ標準はサンゲツ、その他はシンコールから選びます。サンゲツのカタログは比較的薄く、選べる気になりますが、シンコールのカタログは超分厚い、無限の可能性に終わりのない旅を感じます。 しか</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_1366.html" style="--card-color:#5a3e8a">
+          <div class="card-date">2013-06-30</div>
+          <div class="card-title">ニチハの名古屋ショールームに行ったでよ</div>
+          <div class="card-snippet">なお話です。 何故 名古屋 なのか？ それは私の実家が名古屋だからです（終了。 外壁材はまさにコストダウンターゲットになっており、我が家は14mmまっしぐら。横浜のパナショールームに行ってKMEWのテ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
       </div>
     </div>
 
-    <!-- ③ 着工〜上棟 -->
     <div class="phase phase--amber">
       <div class="phase-dot">③</div>
       <div class="phase-header">
         <div class="phase-period">2013年7月〜9月</div>
-        <div class="phase-title"><span class="phase-icon">🏗️</span>着工〜上棟</div>
-        <div class="phase-desc">基礎・骨組み・上棟式。工程表通りに進む現場をリアルタイムで記録</div>
+        <div class="phase-title"><span class="phase-icon">🏗️</span>着工〜上棟 <span style="font-size:13px;font-weight:400;color:#a0620e;opacity:.7;">（74件）</span></div>
+        <div class="phase-desc">基礎から骨組み、現場見学の記録</div>
       </div>
       <hr class="phase-rule">
       <div class="cards">
-        <a class="card" href="/2013/07/blog-post_8919.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/07/d_311.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-01</div>
+          <div class="card-title">ツタワンDをつけると外壁の雨だれ汚れが</div>
+          <div class="card-snippet">減るという話だがや。 そうです、ニチハの名古屋ショールームで一つ得た情報がありました。ニチハのシライシさんはとても親切で、今まで仕事柄色々な外壁の経年劣化を見てきた話を教えてくれました。その中に一つ私</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/tv_8680.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-02</div>
+          <div class="card-title">地デジアンテナ設置するかケーブルTVですか</div>
+          <div class="card-snippet">問われた話です。 我が家の地域はケーブルにするとJCOMになります。実はまだちゃんと調べてなくて、とりあえずJCOMのサイトでプランとキャンペーンをザーッと見ただけなのですがう～んどうにもお値段がお高</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_6599.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-03</div>
+          <div class="card-title">床下コンセントの位置は絶妙に</div>
+          <div class="card-snippet">しなければ、な話です。 我が家はリビングのみ床暖房を入れております。そしてもちろんリビングにはソファを設置する予定です。これはかなり早い段階で決めていたのですが、ソファの下には床下コンセントを入れよう</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_7364.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-04</div>
+          <div class="card-title">本場アメリカで屋根材リッジウェイを発見した</div>
+          <div class="card-snippet">話です。 結構前ですが、所要でアメリカへ行った際に、アメリカの家はやっぱ作り方というかコンセプトが違うよな～とおもって見ていました。そしてふと屋根を見上げてみると・・・ あっ！これリッジウェイじゃん！</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/rev_6.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-05</div>
+          <div class="card-title">【着工記念】住宅設備検討のまとめ（Rev.１）</div>
+          <div class="card-snippet">今度こそ本当に、先日無事着工しました！ というわけで 土地探し編 、 工務店探し編 に続き 住宅設備検討編 も一区切りです。 というわけでkodatenokiseki版住宅設備検討記事フラッシュバック</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_8919.html" style="--card-color:#a0620e">
           <div class="card-date">2013-07-06</div>
           <div class="card-title">出ますた！工程表</div>
-          <div class="card-snippet">着工から引き渡しまでの工程表が届いた日。何週目に何の工事があるかがわかった感動。</div>
+          <div class="card-snippet">でございます。 リアルタイムブログゆえ、ちょっと生モノはアップできないのですが（スミマセン）、以前に我らがまっしん師匠の記事 http://kisekinomyhome.blog.fc2.com/bl</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/07/blog-post_9169.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/07/blog-post_5160.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-07</div>
+          <div class="card-title">ポーチタイルをサクッと決めたって</div>
+          <div class="card-snippet">話しなんですけど。 アコルデ標準のポーチタイルはINAX（LIXIL）のグレイスランドとかいうやつらしいですよ。サイズは300mm角でして、色を選びましょうという話になりました。 我が家は建具が濃い色</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_1325.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-08</div>
+          <div class="card-title">狭小書斎のクロスは自分で決めなさいよ</div>
+          <div class="card-snippet">と言われた話です。 クロスは以前書きましたとおり妻にほぼお任せモードだったのですが、 唯一 ワタクシのスペースである 狭小書斎 に関しては自分でお決めなんしゃいヨと言われたのでシンコールカタログに載っ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_4152.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-09</div>
+          <div class="card-title">玄関ドアストッパー要るんちゃうん</div>
+          <div class="card-snippet">と結論づけました。 我が家は玄関ドアの開き方を「壁の方に開く」ようにしています。 そしてその壁には窓がついています。（言葉のみの説明でスミマセン） そうすると何が問題か。 窓が開いている時に玄関ドアを</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_9726.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-10</div>
+          <div class="card-title">バルコニーにタイル敷いたほうがイイデスカ</div>
+          <div class="card-snippet">で悩みます。 我が家はバルコニーがちょっと広めにとってあります（２０㎡くらい？ちゃんと計算してないんですが（汗）。そして仕上げはFRP防水です。 さて、ネットで少し調べると、FRP防水の最大の欠点は「</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_7706.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-11</div>
+          <div class="card-title">梁が、ハリーが出よったで</div>
+          <div class="card-snippet">な報告です。 以前、リビングの梁を出したいわ～という話をしました。 ・ いでよハリー！ その結果でございます。↓ 出ました！梁は出せるそうです！アコルデの皆様、ありがとうございますm(_ _)m（計算</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/ld_13.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-12</div>
+          <div class="card-title">LDに柱はイラン！結果記録</div>
+          <div class="card-snippet">です。 以前書きましたリビングの柱ですが結果を書いていませんでしたので記録です（まっしん師匠の御指摘で思い出しました(^。^)ありがとうございます） 参考記事： LDに柱はイラン！ 経緯としては、LD</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_2843.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-13</div>
+          <div class="card-title">【閑話休題】ミライース（新車）を最強値引きで契約</div>
+          <div class="card-snippet">しましたな話です。 新築に伴い車を購入する方もいるだろうという無理矢理な論理から一応記事にさせて頂きますm(_ _)m 新築でもうノーマニーな状態でしたが、諸事情で軽自動車を買う必要に迫られていました</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_9169.html" style="--card-color:#a0620e">
           <div class="card-date">2013-07-14</div>
-          <div class="card-title">【着工２週目】基礎できて来ました</div>
-          <div class="card-snippet">妻が定点写真を撮り続けてくれた記録。コンクリートの基礎がどんどん形になっていく様子。</div>
+          <div class="card-title">【着工２週目の途中】基礎できて来ました</div>
+          <div class="card-snippet">のです。 平日は全く行ける時間がなくて妻が基礎屋さんに差し入れを入れつつ定点写真を撮ってくれています。なのでワタクシがゆっくり見れるのは基本的に週末でございます。 妻の厳しい検閲を通るために背景は全く</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/07/blog-post_2992.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/07/blog-post_2878.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-15</div>
+          <div class="card-title">リビングのドアは見栄はっちゃうのかよ</div>
+          <div class="card-snippet">なお話です。 ローコストに抑えようという当初の目論見は早々に崩れ去っております（涙 建具なんぞは標準でいくつもりだったのですがクローゼットは引き違い折れ戸にするなどして追加費用がフィーバーしております</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_6342.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-16</div>
+          <div class="card-title">土間収納のドアはツルツルアクリルで掃除が楽なのか</div>
+          <div class="card-snippet">という話なんですよ。 我が家は御多分にもれず玄関入ってすぐ土間収納がございます。そして今回取り上げますのはそのドアでございます。 まず、当初建築条件にて間取りを設計していた時はこの玄関にある土間収納に</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_3713.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-17</div>
+          <div class="card-title">最近のドアホンは録画するんですってよ</div>
+          <div class="card-snippet">スゴイザマスわね、な話です。 元々岡本社長に最近のドアホンってスゴイっすよねというお話を聞いていたので楽しみな機材の一つでした。 そしてご多分に漏れずこの部分にまでの私共夫婦のモリモリ追加でゴージャス</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_4405.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-18</div>
+          <div class="card-title">雨樋の形と色を確認したって</div>
+          <div class="card-snippet">話しなんだわね。 雨樋っちゅーか縦樋？って言うんですかね、 あの垂直の排水パイプみたいなやつです。あれをどのへん通しますか、何色にしまっか、って話でした。うちはサイディングを３色貼り分けしてますのです</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_3873.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-19</div>
+          <div class="card-title">センサー照明だらけやで</div>
+          <div class="card-snippet">なのです。 我が家は基本的に グータラ でありまして、センサー照明を多用する予定でありました。具体的には玄関、トイレ、WICはもちろんのこと階段、ホールもであります。基本的には 人が通り過ぎる だけ、</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_6291.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-20</div>
+          <div class="card-title">【着工３週目の途中】もうすぐ上棟らしいです</div>
+          <div class="card-snippet">のです。 現在はこんな感じ↓で何やら床板材（？）が貼られているではありませんか！そして全体にはビッシリと防水シート？が貼られておりますです。 現場を見に行ったらハテ？車が一台止まっていてふと気づくとア</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/led_22.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-21</div>
+          <div class="card-title">明かりセンサーLEDで外灯ラクチンちゃうんかい</div>
+          <div class="card-snippet">っちゅ～はなしですわよ。 照明がセンサーだらけという話を記しましたが、外灯も例外ではありません。 しかし外灯には人感センサーは必要なく、欲しいのは夕方暗くなってきたら点いて、朝明るくなってきたら消える</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_8640.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-22</div>
+          <div class="card-title">調光ロールスクリーンてシャレオツだなと思いました</div>
+          <div class="card-snippet">な話です。 の前にちょっと番外編です。 先日、すでに発注済みの住宅設備について私が勝手に勘違いしていた仕様がありました。アコルデ清水畑さんと岡本社長に直ぐに連絡して、メーカの方へ迅速にストップをかけて</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_3391.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-23</div>
+          <div class="card-title">照明のサイズって見落としがちって言うじゃないですか</div>
+          <div class="card-snippet">って話ですヨ。 ビバホームに行った時についでに照明もチラチラと見ました。そしたらまぁ選んだものそのままではないのですが近いやつなんかが置いてありました。例えば寝室に使う予定のこちら↓ ※楽天だと現時点</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_9961.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-24</div>
+          <div class="card-title">トイレの最終仕様を振り返ってみましたよ</div>
+          <div class="card-snippet">というわけです。 我が家は1Fのメイントイレ（？）をタンクレスに変えちゃっております。そして2Fのサブトイレ（？）はアコルデの標準トイレをつけたりなんかしちゃったりしています。2013年７月現在のモノ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_5560.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-25</div>
+          <div class="card-title">吸放湿石膏ボードを脱衣所に使っちゃうらしいですぜ</div>
+          <div class="card-snippet">な話です。 以前に機能クロス・リフクリーンの ことを少し書きましたが、妻は洗面脱衣所に関しては湿度に関する配慮がもっと必要だと考えたようです。そこで結論、採用した案は透湿クロス＋吸放湿石膏ボードの組み</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_5547.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-26</div>
+          <div class="card-title">玄関ドアの防犯って考えてるのかいよ</div>
+          <div class="card-snippet">ってな話なのです。 我が家は玄関ドアをLIXILはジエスタの割りとどでかいガラスが入ったタイプのものを採用する予定です。そこでネガティブ思考を爆発させると、もしそのガラスが割られたら・・・って考えちゃ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_2992.html" style="--card-color:#a0620e">
           <div class="card-date">2013-07-27</div>
           <div class="card-title">【着工４週目】上棟ってスゴイ！</div>
-          <div class="card-snippet">24時間前はただの基礎だったのに、夕方には「もう家になってるやん！」フレックスで間に合った上棟式の感動。</div>
+          <div class="card-snippet">って思ったですよ。 上棟の日は平日のため仕事がありましたが何とか調整できてフレックスで夕方の簡単な上棟式に間に合いましたでございます！ 夕方現場についてのインプレッションは・・・ もう家になってるやん</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/08/6_12.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/07/part2_29.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-28</div>
+          <div class="card-title">上棟ってやつぁPart2</div>
+          <div class="card-snippet">なのですよ。 さて大工さんたちも片づけが終わり皆さんが集まって頂き円陣を組みました。久保薗監督から大工の皆さんへ一言のあと、施主の私からも恐縮ながら一言申し上げる時間を頂けました。 そしてその後簡単に</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_1884.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-29</div>
+          <div class="card-title">木材利用ポイントって申請した方がいいんじゃあるまいの</div>
+          <div class="card-snippet">てなもんだすよ。 巷で噂の木材利用ポイント。新築なら30万ポイントもらえます。 しかし使用する木材に条件があるところがミソです。 我が家は集成材派だったのでこの木材利用ポイントを申請できるように材料変</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/07/blog-post_5920.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-30</div>
+          <div class="card-title">間違いじゃないのと言われる狭小書斎の壁</div>
+          <div class="card-snippet">なんです。 最終図面の確認を清水畑さんとしていた時に、私の唯一のオアシスｗ、狭小書斎で「これ間違いじゃないの？」って言われたんですよ～というのがこの部分。 そうなんです、たった1.8mの壁にコンセント</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_1.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-07-31</div>
+          <div class="card-title">室内物干し竿とエアコンの絶妙な位置関係</div>
+          <div class="card-snippet">ってもんがあるのかいよって話です。 我が家の住宅設備モリモリ追加しちゃったぜ記録シリーズもまもなく終了でございます。そしたらちょっと更新が途切れ途切れになると思いますが何卒ご了承下さい。 そこで追加項</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_2172.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-01</div>
+          <div class="card-title">寝室の頭の横にあるニッチ</div>
+          <div class="card-snippet">は何なんだっちゅう話ですよ。 これ↓（ウウ・・局所的すぎて解らない・・・スミマセンm(_ _)m） そうです、これは目覚ましか携帯かなんかそういうアラーム的なものを置く所でありまんす！使うかな～ 短い</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_7800.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-02</div>
+          <div class="card-title">最終決定仕様を振り返る：フローリングと建具の色のバランス</div>
+          <div class="card-snippet">今更ですが。 妻にフローリングの色の記録が見当たらないと突っ込まれまして・・・。最終的に決めたフローリング色と建具色はこちら↓ 左下が１Fフローリング、左上が１F建具、右下が２Fフローリング、右上が２</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_3707.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-03</div>
+          <div class="card-title">工務店垂れ幕（？）ついたであるよ！</div>
+          <div class="card-snippet">なのです。 暑い、暑いです。湿度が高くてゲリラ豪雨的な日もあったりで大工さんお疲れ様であります。 さて先週の話ではありますが待ちに待った工務店垂れ幕（？）がつきましたでございます。いや～んウレスィ。 </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_5473.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-04</div>
+          <div class="card-title">洗面脱衣所の照明もセンサーやねん</div>
+          <div class="card-snippet">ちょっと話が行ったり来たりしますが、洗面脱衣所の照明も決めたのであります。 DAIKO 大光電機 人感センサー付小型シーリングライト（LED22W・昼白色） DX-85991LED こいつは通常の引掛</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_7354.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-05</div>
+          <div class="card-title">レンジフードの高さによっちゃぁ頭をぶつけるでしょう</div>
+          <div class="card-snippet">という記録でございます。 我が家のキッチンのレンジフードの高さは最初1700mmでした。これはショールームに行った時に一度決めたのだと思われます。しかしながらワタクシの身長が1700mmよりも大きいた</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_716.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-06</div>
+          <div class="card-title">キッチンの人大ワークトップはアクリル系がいいんじゃない</div>
+          <div class="card-snippet">って教えてもらえたっちゅーことです。 我が家のキッチンは最終的にはLIXILのAmiyに落ち着いたのでございますが御存知の通りAmiyの人造大理石ワークトップは標準ではポリエステル系なのでございます。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_2125.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-07</div>
+          <div class="card-title">アメリカのホテルのベッド上ライトとシャレオツ洗面鏡</div>
+          <div class="card-snippet">であります。 あまり言うと周辺の方にバレてしまうのですが（汗）また少し遠出をしておりましてなかなか綺麗なホテルに泊まっておりますです。家を建てているとホテルの内装もまた違った目線で色々とみてしまうので</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_986.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-08</div>
+          <div class="card-title">施主支給用のガラスブロックって重いのね</div>
+          <div class="card-snippet">って思いましたですよ。 我が家も御多分にもれずいくつかガラスブロックを入れています。さてそのモノは色々デザインもあることですし施主支給することにしております。 その辺は妻のハンドリングなのでワタクシは</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_4658.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-09</div>
+          <div class="card-title">狭小書斎に格安デスクを置きたいな</div>
+          <div class="card-snippet">という新居に置きたいなシリーズです。 狭小書斎（2畳）は正方形なのでコーナーを上手く使いたいなと考えております。しかし予算は正直もうありません(T_T)。そこで楽天で色々見ていてこれがいいなーって思っ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_860.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-10</div>
+          <div class="card-title">テレビ周りの配線をすっきりさせる方法</div>
+          <div class="card-snippet">を考えていますです。 以前、 テレビ壁掛け＋ニッチで配線すっきり化 のことを書きましたが、機器の増減がちょっと大変そう、あとは配置替えなどの柔軟性に欠けるという点でアッサリさっぱり諦めたのでございます</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/6_12.html" style="--card-color:#a0620e">
           <div class="card-date">2013-08-11</div>
-          <div class="card-title">【着工６週目】窓サッシ・シロアリ薬剤</div>
-          <div class="card-snippet">気づいたら窓が付いていてシロアリ施工も完了。盆休みを挟んで現場が進んでいた。</div>
+          <div class="card-title">【着工6週目】窓サッシ・シロアリ薬剤</div>
+          <div class="card-snippet">やったそうです（汗）。 諸事情で時差ボケ満載ヘロヘロですorz。今週は私自身が全く現場に行けなかったので妻から話を聞きましたです。 なんと！窓がもう付いているではあ～りませんか。 そしてシロアリ 施工</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/08/blog-post_3215.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/08/blog-post_4608.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-12</div>
+          <div class="card-title">木材利用ポイント看板キター</div>
+          <div class="card-snippet">です。 先日窓がついた～的な写真を撮った時に一つ大事な写真がありました。それはこちら↓ おぉ～木材利用ポイント申請できるんでっせサインですね！ ここに見えるロゴは合法木材推進マークというものらしいです</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_3215.html" style="--card-color:#a0620e">
           <div class="card-date">2013-08-13</div>
           <div class="card-title">大工様への差し入れに悩む</div>
-          <div class="card-snippet">誰もが通る道、差し入れ問題。冷たいお茶・缶コーヒー・試行錯誤した実践ガイド。</div>
+          <div class="card-snippet">のです。 誰もが通る道（？）でしょう？ 我が家も試行錯誤をしています。 基本は冷たいお茶、缶コーヒーは無糖、微糖、100％果汁のジュースなど飲み物系をクーラーBOXに入れて毎日とは行きませんが妻がちょ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/09/blog-post_7283.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/08/blog-post_4838.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-14</div>
+          <div class="card-title">中間金支払いの実施だん</div>
+          <div class="card-snippet">です。 我が家ケースではアコルデへの支払いを３分割にしておりますです。着工時、上棟後、引渡し時でございます。そして上棟が無事終わりましたので横幅銀行ｗへ２回目の支払い手続きをして参りました。 今回も日</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_4950.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-15</div>
+          <div class="card-title">室内ラティスの色を変えるらしいす</div>
+          <div class="card-snippet">のです。 以前に話が出ました、LDの中央に柱を入れたくないから梁を横にとばせるように壁を少しせり出さしてそこにラティスを入れる件ですが（長）、当初はラティスの色をダークブラウン的に塗るという予定でした</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/6_4469.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-16</div>
+          <div class="card-title">【着工6週目の残り】釘ネジ風穴</div>
+          <div class="card-snippet">残りというのは残りの写真といういみでございます。 バルコニーには風穴がつけられていました。格子付きにすることで大きめのサイズにしただけあってなかなかの存在感です。 そしておまけの2枚をのっけておきます</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_3428.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-18</div>
+          <div class="card-title">アパート退去連絡と浜銀から火災保険のご連絡</div>
+          <div class="card-snippet">などが最近のUpdateです。 いや～すっかりお盆ボケしておりましてorz、皆様は如何お過ごしでしょうか。何度か告知しておりましたが毎朝の定期更新が出来なくなりまして（汗）しかしこれからもできるだけ記</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_5483.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-18</div>
+          <div class="card-title">家から見える外の風景、に求めるモノ</div>
+          <div class="card-snippet">です。 先日デジカメの写真を整理していたらふと一枚の写真が目につきました。 これは以前住んでいたアパートから見える外の風景写真です。 ※国が違うので悪しからずご了承下さい 実は現在新築している購入地の</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_3310.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-19</div>
+          <div class="card-title">実は今だに悩んでいること</div>
+          <div class="card-snippet">それは、電気自動車充電用の200Vプラグを用意しておくかってことです。 もう図面や電気配線も全て承認は終わっているのですが（汗） でもまだ工事前だから今ならまだ相談可能かも・・・とか思っていたり。 も</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_5283.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-20</div>
+          <div class="card-title">今日はお休みです</div>
+          <div class="card-snippet">なら書くなよと言われそうですが、なんとなく寂しいので筆をとってしまいましたｗ。 さて我が家は工程表上では今週は建材搬入となっております。建具がついにつくのかなぁドキドキとしながらも現場へ足を運べるのは</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_8551.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-21</div>
+          <div class="card-title">あれ～こんなんいつの間に貼ってありましたかいの</div>
+          <div class="card-snippet">というものが外壁に貼ってある、という写真を妻がゲットしてきてくれました。 そうその名も 「露しらず」 ←ものすごい関西の香りがしまんな～ ふぅ～ん、よく見るとデュポン・タイベックを使用していますと書い</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_2723.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-22</div>
+          <div class="card-title">屋根にリッジウェイがのっていたのダ！</div>
+          <div class="card-snippet">という写真をまたしても妻がゲットしてきてくれました（う～自分で見たい・・・） 大分前からリッジウェイくんがズーンと積んであったのでいつ貼るんだろ～と待ち焦がれていたものの一つです。 ズーン 屋根の形状</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_4660.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-25</div>
+          <div class="card-title">湘南モールにて太陽光パネルのセールスしていた</div>
+          <div class="card-snippet">のです。 土日と個人的に業務上大問題が発生し東奔西走しており心も体も疲弊しきっておりますorz。 本当に人生というのは何が起きるのか分からないってやつで、何か起きた時にどんなリアクションをするかが大切</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_1397.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-27</div>
+          <div class="card-title">芝生ってめっちゃ種類あるねんね</div>
+          <div class="card-snippet">と思いました。 さて世間は楽天スーパーセールが近づいていて何やらソワソワしているようです。我が家も11月へ向けて必要な物はスーパーセール中にそろえちゃおう的なオーラをバンバン妻から感じます（汗） そん</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_9784.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-28</div>
+          <div class="card-title">人工芝のサンプルも注文してみたのであります</div>
+          <div class="card-snippet">のですよ。 芝を検討を少ししてみたのですが色々なコメントを頂きありがとうございましたm(_ _)m そしてもう少し悩むことにしました。 元より手入れをサボりたい我々夫婦でございますのでもちろん人工芝も</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_6601.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-29</div>
+          <div class="card-title">【着工８週目】サイディングがドーンと積んでありましたよ</div>
+          <div class="card-snippet">なのです。 今日はちょっと事情があって現場を見に行けました。 厳密に言うと違いますがまぁ SHO みたいなもんです。 SHOがわからない方は こちら をどうぞ（さみぞーさん勝手にスミマセンｗ）。 さて</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_1.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-31</div>
+          <div class="card-title">早速人工芝のサンプルが来たので</div>
+          <div class="card-snippet">踏んでみましたですｗ 先日100円でポチっとしたリアル人工芝 のサンプルが来ました。 こんな感じで手のひらサイズが3つ、芝の長さが2cm,3cm,4cmの三種類です。 封筒に入っていたのでペッチャンコ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/08/blog-post_2218.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-08-31</div>
+          <div class="card-title">ウッドブラインドのカラーサンプルも無料で取り寄せられる</div>
+          <div class="card-snippet">ってことで私が人工芝のサンプルを注文している間に妻がウッドブラインドのカラーサンプルをポチッとしていたようです。 無料サンプルをゲットしたのはこちらのショップだそうです。 ウッドブラインド 木製ブライ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_2349.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-01</div>
+          <div class="card-title">我が家の外構大臣は</div>
+          <div class="card-snippet">妻ですｗ さて我が家も牛歩戦術ながら外構屋さんとの会話を進めております。 その中でも湘南庭生活（まっしん師匠、いつもすみませんm(_ _)m）さんとのアポが週末だったので財務大臣として会合に出席してま</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_9987.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-02</div>
+          <div class="card-title">５０％オフのままにワガママに、楽天セールは妻だけを傷つけない。でも財布は傷つく（汗）</div>
+          <div class="card-snippet">ということで妻が楽天セールに乗じてKEYUCAでスンゲェ買い物してくれちゃいましたようです（汗） KEYUCAは５０％オフをやってるらしく、妻曰くKEYUCAのクオリティでこの価格なら間違いなく”買い</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_3910.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-03</div>
+          <div class="card-title">洗濯機の下および周辺にたまる埃が気になる人達へ</div>
+          <div class="card-snippet">必要なアイテムらしいです。 楽天スーパーセールに乗じて次々と注文確認メールが飛び込んできます（汗） もう勘弁してオクレ～(T_T) そんな中にこんなのがありました。 キャスター付きでラクラク移動♪耐荷</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_3540.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-04</div>
+          <div class="card-title">狭小書斎に置きたいパソコンデスクでまだ悩んどろうよ</div>
+          <div class="card-snippet">というわけで楽天スーパーセールが終わったら今度は怒涛の注文確認メールやら振り込めメールやら在庫がね～だのいつ届ければいいのかだのこちらクロネコヤマトだのも～えーかげん お構いねぐ （NHK参照） さて</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_3225.html" style="--card-color:#a0620e">
           <div class="card-date">2013-09-07</div>
-          <div class="card-title">施主立会でコンセント位置を最終確認</div>
-          <div class="card-snippet">現場監督・コーディネーターと施主立会チェック。後悔しないためのコンセント確認のポイント。</div>
+          <div class="card-title">施主立会チェックでコンセント＆スイッチの位置を最終確認したのだよ</div>
+          <div class="card-snippet">です。 本日は久保薗監督と清水畑さんと現場で立会チェックでございました。 詳細は順次記録していくつもりなのですが一つ決めねばならんのに未だに決めてなかったことが再浮上したのでそちらを先に書いておくので</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_8078.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-07</div>
+          <div class="card-title">オリンピック＆パラリンピックは・・・</div>
+          <div class="card-snippet">ずばりTOKYOでしょう！！ 5:30追記： おめでとう！TOKYO！今から楽しみ～</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/vs_8.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-08</div>
+          <div class="card-title">テレビアンテナVSフレッツテレビの結果は</div>
+          <div class="card-snippet">テレビアンテナが第１勝目をとりました(^o^)、という言い方が正確かと思います。 結局フレッツテレビも初期工事費用がかかるためやはりコスト的な面でアンテナ設置が断然強いという結論になりました。 しかし</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_7283.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-13</div>
+          <div class="card-title">外構、アプローチに使う飛び石風の擬木って</div>
+          <div class="card-snippet">どないやね～ん。 というわけで最近はムギュムギュ～っと仕事が詰め込んである感じでなかなか死にそうな感じでございます～（汗） さて外構の方ですが見積もりを依頼していた２社から返事が来たものの、見積もりに</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_6140.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-15</div>
+          <div class="card-title">ギョクリュウではござらんよ</div>
+          <div class="card-snippet">タマリュウでござるよ。 さて、外構見積もりちゅうではございますがその中から一点ピックアップです。駐車場はとりあえず１台分コンクリをうってもらう予定なのですが我が家の外構大臣がその駐車場コンクリにスリッ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_6344.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-15</div>
+          <div class="card-title">バトン、オスモカラーと言えば？</div>
+          <div class="card-snippet">ずばりキシラデコールでしょう（意味不 本日はLDの化粧梁とラティスに使う塗料のリサーチに行って参りました。 場所はホームセンターのハンディといつものVIVAホームでござい。 まずハンディの方でキシラデ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_4295.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-21</div>
+          <div class="card-title">今さら台風前に現場を見に行った時の話をしてみると、そこにいたのは・・・</div>
+          <div class="card-snippet">森さんでした。※SMAPの森くんではありません（爆 最近忙殺に忙殺ボウサツでほんまブログが書けません。 継続は力なりと言いますが、大変だ～（汗）・ さて台風の直前だから確か2013/9/15だったと思</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_4262.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-22</div>
+          <div class="card-title">テレビのアンテナ設置位置を決めたまへ</div>
+          <div class="card-snippet">そして決めたはよ。 結局地デジは電波飛んでるのだからそれをゲッツすることにしましたが、さてアンテナはどこにつけるべきなのか？ 相談すべくアンテナ設置業者に電話相談しました。 そしたら設置場所は自分と工</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_4081.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-23</div>
+          <div class="card-title">ふと気づく、壁がパンパン　セルロース</div>
+          <div class="card-snippet">そらスンゲェ！ さて週末には家の中を少し見てきましたです。そしたらば！ セルロースはいっておりました～(・∀・) パンパンでございます(^o^)うれしか～ ちなみに写真ではLDの上がバルコニーの部分な</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_6013.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-28</div>
+          <div class="card-title">まだ外構　なかなか決まらぬ　なにもかも</div>
+          <div class="card-snippet">アチョー！ 我が家も外構を牛歩ながらも検討を進めておりますがなかなかファイナルアンサーが出せずにおります。しかしながら問題は業者ではなく我々にあります。 その問題はアプローチにあります。当初はアクシア</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/09/blog-post_9769.html" style="--card-color:#a0620e">
+          <div class="card-date">2013-09-29</div>
+          <div class="card-title">買えないよ　狭いのやだし　買えないよ</div>
+          <div class="card-snippet">無い袖は振れません。 さて家の方は着々と大工仕事の方が進んでおりますです。最近では次のような出来事がありました。 ・外壁コーキング剤の再選定（色をより自然なものに） ・石膏ボードが貼られました ・ユニ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
       </div>
     </div>
 
-    <!-- ④ 完成・内覧 -->
     <div class="phase phase--coral">
       <div class="phase-dot">④</div>
       <div class="phase-header">
         <div class="phase-period">2013年10月〜11月</div>
-        <div class="phase-title"><span class="phase-icon">📸</span>完成・WEB内覧会</div>
-        <div class="phase-desc">施主検査から引き渡し、各部屋の完成写真まで</div>
+        <div class="phase-title"><span class="phase-icon">📸</span>完成・WEB内覧 <span style="font-size:13px;font-weight:400;color:#b03020;opacity:.7;">（21件）</span></div>
+        <div class="phase-desc">完成写真・各部屋のWEB内覧会</div>
       </div>
       <hr class="phase-rule">
       <div class="cards">
-        <a class="card" href="/2013/11/blog-post_2.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/10/blog-post_4.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-04</div>
+          <div class="card-title">ｶﾁｶﾁｶﾁｶﾁｶﾁﾈｸｽﾃｨｶﾁｶﾁｶﾁｶﾁ</div>
+          <div class="card-snippet">カーテンレールでございます。 先日楽天が優勝した時にリビングからｶﾁｶﾁｶﾁｶﾁｶﾁｶﾁマウスのクリック音がひっきりなしに聞こえてきていたのは何だったろうと思ったらどうやら妻が楽天で色々買いまくってい</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/94_6.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-06</div>
+          <div class="card-title">【着工94日目位】階段などいつの間に</div>
+          <div class="card-snippet">ついていたのですね。 さて本日は（私自身は）久しぶりに現場をゆっくり見ることが出来ました。アップデートのうちいくつかを記録させて頂きます。尚、全体的な進み具合ですが本日時点で当初の工程よりも１～２週間</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/blog-post_916.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-12</div>
+          <div class="card-title">木工完施主チェックの続き（ニッチ編）</div>
+          <div class="card-snippet">であります。 階段手すりと窓の干渉具合 こちらは階段を２F側から写したものです。手すりと窓が絶妙に干渉しておりません。こちらは検討時には記事にこそしませんでしたが窓の高さ、窓の種類と手摺の付け方で色々</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/100_12.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-12</div>
+          <div class="card-title">【着工100日目位】木工完で施主検査でキッチン周りチェック編</div>
+          <div class="card-snippet">なのよぉ～＾＾ さてついに木工事（ほぼ＾＾）完で施主チェックでございました。またしても幾つか記録を残させて頂きますm(_ _)m。 キッチンサイドパネルの高さ 我らが久保薗監督がキッチンのサイドパネル</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/blog-post_8006.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-13</div>
+          <div class="card-title">新築で誰もが通る路：インターネット決めちゃってくれよ</div>
+          <div class="card-snippet">って話でございます。 どこのキャンペーンを使うか？ 以前にさわりだけ記事にしましたが引き渡しが見えてきたのでバッチリ申し込み手続きを致しました。いや、正確に言うと申し込みの段取りを組みました。世の中ネ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/noce_16.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-15</div>
+          <div class="card-title">ローコストソファーってやつぁどうなのよ？NOCEに行ってみた</div>
+          <div class="card-snippet">ですよ。 我が家はもう特別編成予算も使い尽くして全く余剰資金がございません（汗）。そんなくせに我が家のインテリア大臣がソファはどうしても導入するべきであるという持論を展開するもんですから先日少し紹介し</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/blog-post_9923.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-18</div>
+          <div class="card-title">我が家の引越し業者を決めるまで。ザ・ストーリーオブ値切り①</div>
+          <div class="card-snippet">でございます。 といっても今回はあっさり塩味系の値切りでしたので参考にはならないかもしれません。しかし引っ越しというのは時代が変われど極端なエボリューションが見られる分野でも無いと思うのでここに記録す</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/blog-post_9182.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-19</div>
+          <div class="card-title">我が家の引越し業者を決めるまで。ザ・ストーリーオブ値切り②</div>
+          <div class="card-snippet">というわけでマチャアキ見積もり後の続きです。 ヒデカズからのドラエモン 次に最安を提示してほしいヒデカズです。こちらは平日だったため妻が対応しました。以前あたった営業が最悪だったので妻はビビっていたよ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/time-to-count-down_26.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-26</div>
+          <div class="card-title">Time to count downと言うにはちょっと早い引き渡しへ向けて現状の我が家</div>
+          <div class="card-snippet">でございます。 さて最近はめっきり体調を崩しておりますｸﾞｫﾎｯｹﾞﾍｯﾎﾞﾊｯ 皆様も寒くなってきたのでどうぞご自愛下さいﾌﾞﾍｯｹﾞﾍｯﾊｰｸｼｮｲ 気を取り直して引き渡しまで多分1ヶ月を切った我</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/10/blog-post_281.html" style="--card-color:#b03020">
+          <div class="card-date">2013-10-27</div>
+          <div class="card-title">安いエアコン？、高いエアコン？選んでみたよ</div>
+          <div class="card-snippet">的なお話です。またもや字ばかり・・・すみません。 さて新居ではご多分にもれずエアコンの新設が必要でございます。我家の場合はLDK（約２０畳）用のパワフルなやつを１台導入せねばなりません。 エアコンに求</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/11/blog-post_2.html" style="--card-color:#b03020">
           <div class="card-date">2013-11-02</div>
-          <div class="card-title">施主検査だん、そして引き渡しへ</div>
-          <div class="card-snippet">引き渡しチェックリストをもとに全室確認。妻の「姑パワー全開」チェックで見つかった細かな点。</div>
+          <div class="card-title">施主検査だん、そして引き渡しへ・・・</div>
+          <div class="card-snippet">��ｬﾁｬｰﾝ！ さて本日バッツリ施主検査が完了いたしました。朝10時から久保薗監督と清水畑さんにご足労頂き、姑パワー全開の嫁（？）があちらこちらに不具合が無いかを確認いたしました。 引き渡し時のチェ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/11/blog-post_3345.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-11-23</div>
-          <div class="card-title">玄関の写真</div>
-          <div class="card-snippet">タッチキーシステムの玄関扉。シューズクローゼット・ポーチタイル・土間収納の全貌を公開。</div>
+        <a class="card" href="/2013/11/blog-post_8698.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-14</div>
+          <div class="card-title">引き渡し＆引っ越し完了。建築編終了が見えてきた</div>
+          <div class="card-snippet">のであります。 さて引き渡しから連続してアンテナやらエアコンやら外構やらインターネットやらガスやら挨拶回りやらしていて全くノータイムトゥールーズな感じでございましてご無沙汰しております。 少しずつフラ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/11/1f2f_29.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-11-28</div>
-          <div class="card-title">1F階段から2Fホールの写真</div>
-          <div class="card-snippet">玄関から階段を登ってホールへ。天井高・窓の採光・各部屋の配置が確認できる写真記録。</div>
+        <a class="card" href="/2013/11/20_15.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-15</div>
+          <div class="card-title">20畳用のエアコン購入＋取付費用で家計は火の車</div>
+          <div class="card-snippet">そのためってわけじゃないんですけどね（汗） さて順番にいきましょう。引き渡しの後はオルサンのウッドブラインドを付けたのですがこれはリビング写真記録でお披露目しましょう。次に来たのはエアコン取り付け工事</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/11/blog-post_3481.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/11/60000_16.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-16</div>
+          <div class="card-title">引き渡し翌日にアンテナ付けましたよ：60000円</div>
+          <div class="card-snippet">Conclusion firstでございましたｗ さて引き渡しの次の日にアンテナの方も付けて頂きました。アンテナの方も一応幾つか業者をあたってみたのですがやはりコスト的にトップな感じだったのはアサヒア</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/11/blog-post_5826.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-17</div>
+          <div class="card-title">オルサンの白いウッドブラインド自分で付けてみた</div>
+          <div class="card-snippet">件です。 さて 以前に記事に書きましたが ワガママ我が家はオルサンのウッドブラインドをネットで購入＆自分で取付というプランでございました。 取付前の公開済画像をもう一度。腰高窓２枚がウッドブラインド取</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/11/pc_20.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-20</div>
+          <div class="card-title">入居前のリビング追加写真（PCカウンターなど）</div>
+          <div class="card-snippet">はぁ～ん写真がまとまってからなんて言ってたらいつまでたっても記事に出来ないのでありものを幾つか記録させて頂きます。 さてこのいつもの４次元窓リビング写真からです。 まず奥（掃き出し窓）側から天井を見上</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/11/blog-post_3481.html" style="--card-color:#b03020">
           <div class="card-date">2013-11-22</div>
           <div class="card-title">キッチンの写真（入居前）</div>
-          <div class="card-snippet">LIXILのAmiyキッチン全貌。センサー水栓・カップボード・レンジフードの実際の様子。</div>
+          <div class="card-snippet">あえてWeb内覧会と言わないこのひねくれ根性ｗ。 さていつものこの写真から見てみると奥がキッチンでございます。 キッチンはLIXILのAmyでございます。水栓はセンサーにしたのですが、これが超絶便利で</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/12/blog-post_7600.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-12-14</div>
-          <div class="card-title">リビングの写真：家具有り</div>
-          <div class="card-snippet">家具を入れた状態の21畳LDK。コーナーテレビボードを入れたリビングの実際の使い心地。</div>
+        <a class="card" href="/2013/11/blog-post_3345.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-23</div>
+          <div class="card-title">玄関の写真</div>
+          <div class="card-snippet">でございます。 さてまず玄関に入る前から行きたいのですが外観NGのため玄関扉は鍵の部分のみ（汗）。 こちらはそうでございますあのタッチキーシステムでございます。 追加費用を少し出してこいつにしてもらい</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/12/blog-post_8618.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-12-01</div>
-          <div class="card-title">子供部屋の写真</div>
-          <div class="card-snippet">将来の間仕切りを見越してドア2つ・エアコン2台設置した12畳の子供部屋の設計思想。</div>
+        <a class="card" href="/2013/11/2f_29.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-28</div>
+          <div class="card-title">2Fの洗面台</div>
+          <div class="card-snippet">さてもうあまり見所はありませんが（汗）続いて行きまっしょー。 まず復習です。2Fの廊下を見たところ。 すこし前進して右の壁を見ると・・・・ ガラスブロックや～。妻は木枠をつけるべきか悩んでいたようです</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/12/2_5.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-12-04</div>
-          <div class="card-title">2畳の書斎</div>
-          <div class="card-snippet">「たった2畳だけど一応書斎」。小さいけれど死守したスペースが後に大活躍する伏線回収。</div>
+        <a class="card" href="/2013/11/1f2f_29.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-28</div>
+          <div class="card-title">1F階段から2Fホールの写真</div>
+          <div class="card-snippet">でございます。 多くの方々に見に来て頂けてこれ幸いです。せっかくお金をつぎ込んだので皆に見てほしいという気持ちと、家を建てるときに色んな方のWeb内覧会が非常に参考になったというFeed forwar</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_1.html" style="--card-color:#b03020">
+          <div class="card-date">2013-11-30</div>
+          <div class="card-title">寝室。何の変哲もない…</div>
+          <div class="card-snippet">寝室ですｗ。 さてこの写真の奥の方には主寝室がございます。 こんな感じでございます。窓が白飛びしていていい感じ（汗） アクセントクロスは寝室らしい感じです。ブラケット照明もシックな感じですね。高い位置</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
       </div>
     </div>
 
-    <!-- ⑤ 入居直後 -->
     <div class="phase phase--blue">
       <div class="phase-dot">⑤</div>
       <div class="phase-header">
         <div class="phase-period">2013年11月〜2014年</div>
-        <div class="phase-title"><span class="phase-icon">🏠</span>入居直後</div>
-        <div class="phase-desc">実際に住んでみてわかったこと。電気代・設備・後悔ポイント</div>
+        <div class="phase-title"><span class="phase-icon">🏠</span>入居直後 <span style="font-size:13px;font-weight:400;color:#1a4e7a;opacity:.7;">（85件）</span></div>
+        <div class="phase-desc">実際に住んでみてわかったこと</div>
       </div>
       <hr class="phase-rule">
       <div class="cards">
-        <a class="card" href="/2013/12/1_8.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/12/blog-post_8618.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-01</div>
+          <div class="card-title">子供部屋の写真</div>
+          <div class="card-snippet">でございます。 家を買うときに悩んだのは家族構成は時と共に変わるということです。今は家族全員川の字で寝ていてもそのうち皆個室を持ち、その先には夫婦二人での生活が（想像では）あるでしょう。 そんな前置き</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/2_5.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-04</div>
+          <div class="card-title">2畳の書斎</div>
+          <div class="card-snippet">です。 さてもうそろそろ写真紹介終わってしまいます（早）。終わったら建築編終了という区切りにさせてもらう所存でございますﾆﾝﾆﾝ。 さてこの２Fのこの写真の再登場からです。 はて左に見えるはトイレでご</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_2931.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-05</div>
+          <div class="card-title">掲載して頂きました：広島住宅総合館</div>
+          <div class="card-snippet">あら恥ずかしいｗ。 先日の1F階段から2Fホールの写真という記事をかの有名な広島住宅総合館さんの住まいブログコーナーに掲載して頂けました！ いや～ まっしん師匠のところで拝見していました ので存じ上げ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_8737.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-06</div>
+          <div class="card-title">【建築編終了】→【居住編の始まり】</div>
+          <div class="card-snippet">でございます。 さてWeb内覧会的にスポットだけお送りしてきましたが残りの細かいところは居住編で折にふれて紹介していきたいと思います。 家を具体的に探し始めてから約1年、早いほうだと思いますが長かった</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/1_8.html" style="--card-color:#1a4e7a">
           <div class="card-date">2013-12-07</div>
-          <div class="card-title">つけて良かった設備マイランキング ベスト5</div>
-          <div class="card-snippet">入居1ヶ月で実感した「これは正解だった」設備ランキング。センサー水栓・タッチキーほか。</div>
+          <div class="card-title">【入居後1ヶ月版】ついてて（つけて）良かった機能設備マイランキング</div>
+          <div class="card-snippet">でおじゃりまする。 さぁて早速住居編第1弾はランキングでございます。 その名も ついてて（つけて）良かった機能設備マイランキング、ベスト５でございます。 もちろん多分に主観なので状況、注力ポイント、価</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/12/blog-post_25.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/12/blog-post_2698.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-08</div>
+          <div class="card-title">最近の電波時計ってスゴイのね・・・</div>
+          <div class="card-snippet">ってなもんですよ。 新居で導入した家財道具で良かったものランキングを密かに目論んでおりますｗ。そしてその前フリ記事をコツコツと・・・ まぁそんなことは置いといて淡々と記録でございます。 我が家はアパー</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/30_13.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-13</div>
+          <div class="card-title">我が家の木材利用ポイント30万円分の使い道は・・・</div>
+          <div class="card-snippet">なんですたい！ さて我が家は 木材発注直前にポイント申請したいぜよ といっって滑り込みセーフな感じで木材を国産ヒノキなどに変更して頂きました。 そして先日無事木材利用ポイント取得の通知が来て早速商品交</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_7600.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-14</div>
+          <div class="card-title">リビングの写真：家具有り</div>
+          <div class="card-snippet">的な感じでございます。 ちょっと順番めちゃくちゃですが、付けれるもんなら付けたかった設備ランキングよりも先に最近のリビングの写真でございます。 入居前の写真をもう一回見てみましょう（４次元アゲインｗ）</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_6606.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-14</div>
+          <div class="card-title">木材利用ポイントで交換できるジェフグルメカード対応店舗を地図上で探せるサイトを作ってみた</div>
+          <div class="card-snippet">長いタイトル失礼をばｗ。 連続して木材利用ポイントのお話です。 我が家はJCBギフトカードの交換上限が15万円なので残りをジェフグルメカード15万円にしたと書きましたがこのジェフグルメカードの対応店舗</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_7903.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-15</div>
+          <div class="card-title">新居で導入したコーナーテレビボード</div>
+          <div class="card-snippet">の話であります。 先日ご紹介しましたリビングの写真をもう一度見てみると、 コーナーに鎮座しておるテレビ台の記録でございます。 我が家は床面積を出来るだけとろうということでこのこじんまりしたヤツを楽天で</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_5384.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-18</div>
+          <div class="card-title">新居で導入したウォールハンガーフック</div>
+          <div class="card-snippet">新居で導入したシリーズでございやす。 早速！それはこちら！ アンブラ umbra フック ウォールハンガー 壁掛けフック 壁掛けハンガー ウォールフック フリッ... 価格：3,080円（税込、送料別</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_7597.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-21</div>
+          <div class="card-title">【新居から行った】江ノ島水族館は学割がオトク</div>
+          <div class="card-snippet">というわけで早速自己ツッコミ、新居から行った、という戸建てブログ無理やり組み入れましたお話です、というか今日江ノ島水族館行ってきたわハァ～ンというだけのお話なのです。 湘南地区にお住まいの方々は知らぬ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_6413.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-22</div>
+          <div class="card-title">テレビのアンテナの向きは自分で調整してみると良いのかもしれない話</div>
+          <div class="card-snippet">であります。 さて我が家はローコスト攻めなので こちらの格安業者さん にアンテナ設置をして頂きました。ブースターを少し良い奴にすることで浴室の天井裏（つまり屋内）にアンテナを設置することが出来ましたの</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_23.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-22</div>
+          <div class="card-title">なぜブログを引っ越したのか</div>
+          <div class="card-snippet">謎でございますｗ。 ライブドアブログはより多くの人に見てもらうために国内は強いというのは分かるのですがどうにもファビコンが有料だのエクスポートが有料だの独自ドメイン使うのも有料だのどでかい広告が入るだ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_8650.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-23</div>
+          <div class="card-title">嗚呼つけれるもんなら付けたかった設備二つ（冬編）</div>
+          <div class="card-snippet">でございます。 ちゃんと住宅記事もアップして行きたいと思っております（汗）。 さて入居後１ヶ月でちょっと中途半端ですがあったらイイな設備２つという内容です。 付けれるもんなら、というのは予算の関係でつ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/led.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-23</div>
+          <div class="card-title">クローゼットの中に設置した小型LEDライト</div>
+          <div class="card-snippet">本日連続投稿でございますｗ。 ブログ引っ越してみましたが中々使い慣れず色々と格闘しております（汗） その一貫で緊急記録ですｗ。 さて急遽我が家では主寝室を遊び部屋に、そして子供部屋を家族全員の寝る部屋</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_25.html" style="--card-color:#1a4e7a">
           <div class="card-date">2013-12-25</div>
-          <div class="card-title">げに恐ろしきかな初月の電気代</div>
-          <div class="card-snippet">暖房ガンガン生活の結果、初月の電気代はいくらだったか。新築一戸建てのリアルなコスト。</div>
+          <div class="card-title">げに恐ろしきかな初月の電気代（汗）</div>
+          <div class="card-snippet">でございます。 さて我が家は入居して1ヶ月以上経ちました。 12月に入ってベリー寒くなりましたが我が家は 暖房ガンガン生活 が身に染み付いており（汗）新居においても暖房を朝から晩までつけっぱなしでござ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2014/01/blog-post_17.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/12/blog-post_28.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-28</div>
+          <div class="card-title">良心的なお値段のエアコンを良心的なお値段の取付業者でお安くつけましたというお話</div>
+          <div class="card-snippet">どすぇ。 さて我が家は住み始めて様子を見ながら必要な設備を追加導入していくという戦法をとっております。（単に予算が確保できなかったという見方もありますが（汗）） そして今回は２Fの主寝室（今は子供の遊</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/mm.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-30</div>
+          <div class="card-title">本年もお世話になりましたm(__)m</div>
+          <div class="card-snippet">ほんまに。 今年2013年は我が家にとって一大イベントでした。新築一戸建てを建てるなんて去年の時点では正直あまり考えていなかったような気がします（汗 実際に家を建てるってなったら自分の不勉強さをいやっ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/2014.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2013-12-31</div>
+          <div class="card-title">明けた2014年、今年の抱負</div>
+          <div class="card-snippet">あけおめことよろですｗ。 さて元日には抱負的なものを考えねばなりません。 とりあえず戸建ブログ的な立ち位置を思いっきり無視するとｗ ・大学を卒業する ・本を一冊書けるだけのコンテンツを貯める ・ハーフ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-03</div>
+          <div class="card-title">ネットで買うより店舗で買った方がお得なケース</div>
+          <div class="card-snippet">とはなんでありましょうか？ さてさて新年ムードも冷めやらぬ中、我が家では余っているビックカメラの株主優待券を使うべくコジマ電気へ車を走らせました。 必要だと思っていた電気製品はいくつかあったのですがど</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/2.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-06</div>
+          <div class="card-title">書斎（2畳だけど）は作って良かったと思う</div>
+          <div class="card-snippet">お話です。 我が家は１FはLDKしか無いし、２Fは主寝室と子供部屋があるだけのシンプル間取りです。基本は仕切らないようにして広く感じたいという思いがありましたからです。そんな中でもワタクシが死守したの</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/blog-post_8.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-08</div>
+          <div class="card-title">妻もうなづく便利なランドリールームとは</div>
+          <div class="card-snippet">なんでありましょう。 その前に 先日の2畳の書斎の記事が思いの外、御覧頂けたようでちょっと中身の無い記録にしてしまったことを反省しております（ショボーン。がっかりした方、すみませんでしたm(_ _)m</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/blog-post_9.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-09</div>
+          <div class="card-title">仮面ライダー外務、もとい鎧武（汗）</div>
+          <div class="card-snippet">をご存知でしょうか。 いつの時代も僕らのヒーロー 私の時代は宇宙刑事ギャバン、シャリバン、シャイダーというシリーズが世の男児のあこがれの的でした（とか言うと世代がバレそうですが（汗））。 なんかカッコ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/blog-post_11.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-11</div>
+          <div class="card-title">書斎の内覧会トラックバックコミュニティが無いではないか</div>
+          <div class="card-snippet">です。 というわけで作っておきました（汗）。こちらです↓ WEB内覧会＊書斎 書斎って本当に後回しにされるのですね、トラックバック最下位の未来が見える・・・（汗） というわけでこの記事をトラックバック</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/1.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-13</div>
+          <div class="card-title">家を建てる知人に捧げた1つのアドバイス</div>
+          <div class="card-snippet">最近の話です。時間などの関係で１つしか捧げることが出来なかったのですが（汗）。 前提 まずその知人は建売ではなく注文住宅です。大手HMで建てるということでした。土地は目星がついていて建築会社を探してい</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/blog-post_17.html" style="--card-color:#1a4e7a">
           <div class="card-date">2014-01-17</div>
           <div class="card-title">やっべ電気代２万超えた（汗）</div>
-          <div class="card-snippet">冬の電気代2万円超えの衝撃。戒めとして記録した新居初の光熱費リアルレポート。</div>
+          <div class="card-snippet">ﾊﾊﾊ・・・ やっちまいましたです・・・ 窓の冷気対策の記事を書いていたら電気代の連絡が来たので急遽記録です。（戒めのためにorz） 使用条件 我が家は共働きではございませんので24時間体制で電気を使</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2014/01/2.html" target="_blank" rel="noopener">
-          <div class="card-date">2014-01-06</div>
-          <div class="card-title">書斎（2畳だけど）は作って良かった</div>
-          <div class="card-snippet">仕事や趣味に活用している2畳の書斎。「あるだけマシ」が実は大正解だったと気づく話。</div>
-          <div class="card-arrow">続きを読む →</div>
-        </a>
-        <a class="card" href="/2014/01/blog-post_18.html" target="_blank" rel="noopener">
+        <a class="card" href="/2014/01/blog-post_18.html" style="--card-color:#1a4e7a">
           <div class="card-date">2014-01-18</div>
-          <div class="card-title">窓付近の冷気対策をプラダンでやってみた</div>
-          <div class="card-snippet">セルロース断熱の壁は万全でも、窓は別問題。プラダンで簡易二重窓を作った実践レポート。</div>
+          <div class="card-title">窓付近の冷気対策をプラダンでやってみたよ</div>
+          <div class="card-snippet">どうもこの記事が家の断熱性が悪いような誤解を与えているようで申し訳ございません。この記事はあくまでセルロースで断熱バッチリな壁に比べて窓は外気との温度差が比較的小さくなるためその窓の断熱性を後付で高め</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2013/11/60000_16.html" target="_blank" rel="noopener">
-          <div class="card-date">2013-11-16</div>
-          <div class="card-title">引き渡し翌日にアンテナ付けました：6万円</div>
-          <div class="card-snippet">アサヒアンテナで施工。複数業者の見積もり比較からコスパ最強の選択をした経緯。</div>
+        <a class="card" href="/2014/01/1000.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-20</div>
+          <div class="card-title">今ならサンドラッグで1000円分無料になるでよ</div>
+          <div class="card-snippet">という話です。 さて新築といえばドラッグストア（？）なのですが、サンドラッグが ネットショップを新規オープン でクーポン配りまくっております。 無条件1000円クーポンは停止中 今朝まで新規登録するだ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/blog-post_24.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-24</div>
+          <div class="card-title">アコルデブログに載せていただきました</div>
+          <div class="card-snippet">ありがとうございますm(_ _)m＞清水畑さん というわけで（？）アコルデのブログに施工例記事を載せて頂けました＾＾。 WEB内覧会的に紹介させて頂いた内容をナイスな感じでダイジェストにして頂きやはり</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/amazon.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-25</div>
+          <div class="card-title">木材利用ポイントをAmazonで使う方法</div>
+          <div class="card-snippet">この方法は 2014/2/16で使えなくなった ようです。お気をつけ下さい。 です。 木材利用ポイントってやつは なんだっけって方は以前の こちらの記事 を御覧ください。 木造住宅を建てる方はみなさま</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/01/blog-post_31.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-01-31</div>
+          <div class="card-title">自作プラダンパネルによる窓冷気断熱の効果</div>
+          <div class="card-snippet">さて 先日書きましたが寝室の4連縦すべり窓にプラダン＋フレームを使った簡易断熱パネル の効果を定量的に評価してみました。 本当に効果がありそうだと認められた場合は残りの掃き出しと腰高窓も何らかの対策を</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/02/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-02-01</div>
+          <div class="card-title">確定申告（住宅ローン控除）のやり直し</div>
+          <div class="card-snippet">毎日何らかの愚痴をこぼしている当家の妻ですが、ここのところ何度か市役所やら税務署へ行って頂いている（いや、家は夫婦のものですから行く義務は半分は妻にもあるわけですが）その後にまた愚痴をこぼしていたので</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/02/blog-post_15.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-02-15</div>
+          <div class="card-title">大雪→散々な一日</div>
+          <div class="card-snippet">さて我が家も同じく大雪で大変でした。玄関ドアが開かないほど雪が吹き込んでるし、なんせ我が家は隣はまだ基礎が終わっただけで建物がないし、向かいは建物が無い角地なので雪っさらし感が半端無かったです。 でも</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/02/blog-post_22.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-02-22</div>
+          <div class="card-title">今すごい欲しいモノ</div>
+          <div class="card-snippet">つい気を抜いて週刊記事になっておりますが皆様如何お過ごしでしょうか。 さて我が家では 木造利用ポイントでゲットしたJCBギフト券をAmazonポイントに交換 してガンガン使っているのですが、実はJCB</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/02/jcbamazon.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-02-23</div>
+          <div class="card-title">ショック！木造利用ポイント→JCBギフト券→Amazonギフト券が不可に！！</div>
+          <div class="card-snippet">速報でございます。 Amazonのギフトポイントが少なくなってきたのでまた木造利用ポイントで得たJCBギフト券を使って補充するかとサンクスに行ったらなんと・・・ ここ最近になってAmazonギフト券を</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/02/10km.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-02-23</div>
+          <div class="card-title">一緒に10km走りませんか→今年の抱負を振り返る</div>
+          <div class="card-snippet">閑話休題アゲインｗ。 今日42.195km走っている方も沢山いらっしゃるのではないでしょうか。私は残念ながらこれまでの人生で42kmもの距離を自分の足で駆け抜けたことはございません。 さて 今年の抱負</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/03/56.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-03-01</div>
+          <div class="card-title">たぶん56分</div>
+          <div class="card-snippet">56分もあれば何が出来ますかね。 本日はお台場で「東京はるかぜマラソン」に出てまいりました。 はるかぜ、とは言えない感じの寒い日になりましたが、なんとか雨には降られず。 10km走ったのですが、やっと</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/03/blog-post_7.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-03-07</div>
+          <div class="card-title">ブログの難しさを実感するトキ</div>
+          <div class="card-snippet">ここのところ更新頻度と共に順位が下がっていてまるで陸の孤島に住んでいるかのようですｗ。 さてそんな中でも着実にこんな拙ブログを見に来てくださる方が居らっしゃるのも事実です。そんな方々のログを拝見してた</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/03/blog-post_8.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-03-08</div>
+          <div class="card-title">久しぶりに現場監督来訪</div>
+          <div class="card-snippet">本日は久保薗現場監督に来て頂きました。電話でチョコチョコ相談していたのであまり久しぶりな感じはしませんでしたｗ。 内容はおおまかに言いますと、ちょっと追加で付けたい設備が出てきたのですがそれを当初は自</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/03/lan11ac.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-03-12</div>
+          <div class="card-title">無線LANを11acへグレードアップしたら問題勃発</div>
+          <div class="card-snippet">先日IOデータのアウトレットショップでこちらの製品（WN-AC1600DGR）↓が激安超特価でしたのでポチッと購入しました。 I-O DATA 【PS4 動作確認済み】 強力ハイパワーアンテナ内蔵 次</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/04/blog-post_30.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-04-30</div>
+          <div class="card-title">角地緩和を使わずにもったいないのか？</div>
+          <div class="card-snippet">さて気を取り直してこの１ヶ月を少し思い出してみます。 あまり詳しくは言えませんが我が家のまわりにも続々と新築の戸建てが建ちだしています。隣の家だとはいえ、建築のプロセスが毎日見れるのでかなり興味津々で</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/04/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-04-30</div>
+          <div class="card-title">暗黒の１ヶ月</div>
+          <div class="card-snippet">長い長～～い間 、といっても約１ヶ月ですが、ブログに全く出現しませんでした、お久しぶりでございますm(_ _)m。 ランキングは奈落の彼方へ落ちていってしまい(T_T)、記事を書きたいな・・・と思いつ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-01</div>
+          <div class="card-title">やっと決まったダイニング用シーリングライト</div>
+          <div class="card-snippet">いや～実は結構前に妻がもう決めていたのですがご紹介できずにいました。 決めたのはこちらです↓ 4灯 シーリングライト 天井照明 スポットライト ライト 照明 間接照明 ナイトライト ルームラン... </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/blog-post_2.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-02</div>
+          <div class="card-title">新築一戸建てといえばバーベキューでしょう（１）</div>
+          <div class="card-snippet">はたしてそうかな（汗） さて現在我が家愛用のバーベキューコンロはこちら↓でございます。 折りたたみ式で持ち運び便利！折りたたみバーベキューコンロ BBQコンロ 送料無料【送料無料】... 価格：3,9</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/blog-post_3.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-02</div>
+          <div class="card-title">新築一戸建てといえばバーベキューでしょう（２）</div>
+          <div class="card-snippet">さてバーベキュー用ガスグリルが欲しい話の続きです。 コールマンのロードトリップ・ライトグリルはLPガスでナイスな火力を提供してくれるガスグリルでございます。 炭かガスか、というより大きめのサイズにする</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/keiyamazaki.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-04</div>
+          <div class="card-title">keiyamazakiさん風本日の朝ごはん</div>
+          <div class="card-snippet">パクったわけではございますよ（汗） さて子供が体調を崩していたのでGWはずっと家でおとなしくしておりました。 そんな中、本日のBreakfastは小生がこしらえさせて頂きましたよ↓ この感じ、お気づき</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/podcast.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-05</div>
+          <div class="card-title">最近ハマっている英語の勉強になるPodcastでよく耳にする気になる単語</div>
+          <div class="card-snippet">タイトル長い（汗） まずPodcastですが、そういつはこいつです↓ Mamiという帰国子女じゃないのにめっさ発音がきれいな女子とマイケルという小さな声の男子が日本語と英語ごちゃまぜで時事問題に対して</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/blog-post_6.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-06</div>
+          <div class="card-title">ブログ記事を書捨てにしたくないから</div>
+          <div class="card-snippet">中身は書捨て日記かもしれませんが（汗） はじめはこんなに長い間書くとは思っていませんでした。でも色々と書き続けたからにはこれらの試行錯誤、紆余曲折が誰かのほんの少しでも参考になればと思い、過去記事も整</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/ipad-mini-retinasim.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-17</div>
+          <div class="card-title">家の仕様検討に便利なiPad mini retinaを買うならSIMフリー版の方がお得ではないか</div>
+          <div class="card-snippet">というお話です（タイトル若干無理やりすみませんm(_ _)m） さて我が家は建築仕様決めの時はアコルデに毎週毎週通ってこーでもねーあーでもねーやらせて頂いたわけですがその時に大活躍したのはiPadでご</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/ipad-mini-sim2500.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-24</div>
+          <div class="card-title">iPad mini SIMフリーの関税は2500円でした</div>
+          <div class="card-snippet">時間がたってしまったのでもうサクッと書きます。 ソフトバンクのiPadが2年契約満了するのでiPad mini retinaディスプレイを EXPANSYS で買いました。 土曜日の夜に注文して月曜に</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/blog-post_25.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-25</div>
+          <div class="card-title">最近のリビング・ダイニング写真に見るヘロヘロラグ(´・ω・｀)</div>
+          <div class="card-snippet">家の話題が少なくて（汗）。 我が家にはテリブル２へ着実へ向かいつつあるテリブル１．５位の子供がおります。 小さい子というのは新築の家にとってはなかなかの強敵でして・・・（汗） まず最近のリビング・ダイ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/blog-post_28.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-05-28</div>
+          <div class="card-title">「最近のダイニング写真」に見るヘロヘロラグ(´・ω・｀)の続き</div>
+          <div class="card-snippet">さてジョイントマットの検討の続きです。 その前にもう一度ダイニングの写真を別角度からパチリ。 IKEAのダイニングテーブルの下に敷いているのが問題のヘロヘロラグです。 我らがまっしん師匠と匿名さんから</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/06/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-06-01</div>
+          <div class="card-title">風邪でダウン(´・ω・`)</div>
+          <div class="card-snippet">しております（汗） 久しぶりに38℃超えを出してちょっとヘロヘロでございます。 さて先日、久しぶりに久保薗監督にまた来訪頂く機会がございました。その話はまた別途。 皆様、良い週末を～</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/06/blog-post_8.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-06-08</div>
+          <div class="card-title">お値打ち価格なハニカムシェードですな</div>
+          <div class="card-snippet">いや～風邪をひいたのはいいのですがその後も怒涛の激務で全く休まるヒマがございませんです（涙） とまぁ愚痴はさておき、この手の記事はまた変な誤解をうまぬことを願いながら書きます。 カーテンの代わりにハニ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/06/blog-post_14.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-06-14</div>
+          <div class="card-title">最近の窓サッシの問題</div>
+          <div class="card-snippet">またしても間があいてしまいましたが皆様ワールドカップ楽しんでいらっしゃいますでしょうか。 我が家は子供が何やらウィルス性の発熱に見舞われたりして中々気が休まらない感じでございます。 さて家の話ですが最</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/06/blog-post_25.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-06-25</div>
+          <div class="card-title">友人のハイクラスな住宅事情。土地高くナイデスカ？</div>
+          <div class="card-snippet">間が空いてこんばんは＾＾。 最近はブラックなんじゃないのかってくらい働いておりまして 気力も体力も奪われ気味ですorz。 さて先日大学からの友人たちと少し酒を飲む機会がありました。 まぁ歳も歳なのでや</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/06/blog-post_28.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-06-28</div>
+          <div class="card-title">これは認めましょう、ずばり私のミスでしょう</div>
+          <div class="card-snippet">負けず嫌いなのでなかなか自分の非は認めないのですが、これは認めましょう・・・（汗） コンクルージョンファーストで申し上げますと、 「PCカウンターに有線LANをひかなかった」 です。 ・・・ は！？ </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/07/lan_5.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-07-05</div>
+          <div class="card-title">施主のミス挽回編その２</div>
+          <div class="card-snippet">何故か 挽回編１ が住まいブログに届きませんでした（汗） さて気を取り直して 有線LANの後付けが出来ないか？ の件です。 週末に久保薗監督と電気屋さんが来てくれて、小屋裏から１Fへの空配管に電話線と</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/07/lan.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-07-05</div>
+          <div class="card-title">有線LANを後付けできるか。施主のミス挽回編１</div>
+          <div class="card-snippet">カイゼン編と言いつつ挽回編です（汗） さて PCカウンターに有線LANをひかなかった 件ですが 後付け なんてことが出来るのか？ 間取り非公開なので全て文字で書きますが想像をお願い致します（汗） 我が</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/07/jcb.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-07-12</div>
+          <div class="card-title">でら便利だがや！マキタのコードレスクリーナーを木材利用ポイントで得たJCB券でゲット</div>
+          <div class="card-snippet">お晩でございます皆様＾＾ さて以前にすんげー欲しいものとしてダイソンのコードレスクリーナーを挙げておりましたが、その後の幾つかのリサーチの結果、結局ダイソンは候補から外れてしまいました。 理由は色いろ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/07/blog-post_23.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-07-22</div>
+          <div class="card-title">ブログ村が不調</div>
+          <div class="card-snippet">最近更新が反映されない問題が続いております(~_~;) という短いつぶやきを始めてipad miniから投稿して見ました。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/07/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-07-22</div>
+          <div class="card-title">伸縮ダイニングテーブルで来客にも対応</div>
+          <div class="card-snippet">先日より立て続けに来客ラッシュが続いております（汗）。さて我が家では来客時にはIKEAのダイニングテーブルが活躍します↓ IKEA イケア ブラウンブラック 伸長リーフ2枚付き。必要に応じて、テーブル</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/07/blog-post_26.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-07-25</div>
+          <div class="card-title">来客時の第一声</div>
+          <div class="card-snippet">さてブログ村の不調はさておき、来客時の振り返りその２です。 来客と言ってもまぁ身内なんですが＾＾。 さていらっしゃったお客さんの第一声は もとい、 「何も無い！」 もちろん、 全身全霊で片付けておいた</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/07/blog-post_27.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-07-27</div>
+          <div class="card-title">金沢動物園はガラガラ穴場スポットであります</div>
+          <div class="card-snippet">暑いアツイ日々が続いておりますが如何お過ごしでしょうか。 さて私事ですが先日一大イベントが終了しまして少し気が緩んだ土日を過ごしたのであります。 そんな隙を見抜いた子供から動物園に行きたいとのリクエス</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/08/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-08-02</div>
+          <div class="card-title">リビングのエアコンの電気代</div>
+          <div class="card-snippet">あつがなつい(T_T) 皆様夏をエンジョイされておりますでしょうか。 さて最近我が家の付近は日中は日陰でも34℃とかいっちゃって死にそうです。 昔は30℃行くだけで猛暑って感じでしたが地球は暖かくなっ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/08/blog-post_4.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-08-04</div>
+          <div class="card-title">住宅のまとめサイト（住適空間）にアコルデ発見。評判は上々？</div>
+          <div class="card-snippet">さて私事ですがまたアメリカの方に来ておりましてそこからの時差ぼけ更新でございます。 先日いろいろとネットを徘徊していたらこんなサイトを見つけました。 「住適空間」 マンションの口コミサイトのようですが</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/08/blog-post_22.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-08-22</div>
+          <div class="card-title">やりたい事とやらなきゃいけない事のバランスのハナシ</div>
+          <div class="card-snippet">※某駅からipadで投稿 ブハァー(＞O＜;) 全く記事を更新できておりません^^; お盆からずっと&quot;やらなきゃいけない事&quot;に追われております。 家に関してはバッチリ快適に過ごして</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/08/10.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-08-28</div>
+          <div class="card-title">10マイルマラソンにエントリーしてやっただよ！</div>
+          <div class="card-snippet">もーぅ更新しねぇーのか～ いえ、そんなことはありません（汗 心を入れ替えて頑張ります(^^ゞ さて、湘南エリアの皆さんはもちろんのこと、関東の皆さん、江ノ島マラソンエントリー始まってますよ！ 湘南藤沢</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/08/blog-post_28.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-08-28</div>
+          <div class="card-title">超便利なんですケド！</div>
+          <div class="card-snippet">それはchromecastでございますです(^^) Google Chromecast ( クロームキャスト ) Wi-Fi経由 テレビ接続 ストリーミング / HDMI / 802.11b/g/n </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/09/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-09-07</div>
+          <div class="card-title">課長！雑草がスゲーんですヨ、抜きまくったってんですヨ</div>
+          <div class="card-snippet">そう、それは一戸建ての宿命ですヨ。 イメージ図 家の周辺は自治会的な集まりで定期的に清掃をするのですが、自分の家の敷地内はさすがに自分でやらねばなりません（当たり前）。 家のまわりはご多分にもれず砂利</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/09/ipad.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-09-12</div>
+          <div class="card-title">iPadを通販買取で売ったらいくらなのヨ</div>
+          <div class="card-snippet">こんばんは、田中裕二です(？)。 先日、2年使ったiPad第4世代(ソフトバンク)を解約し、 SIMフリーiPad miniを買いました 。 そこで不要になったiPad、少し悩みましたが中古屋に売るこ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/09/ipad2.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-09-14</div>
+          <div class="card-title">  iPadを通販買取で売ったらいくらなのヨ（その2）</div>
+          <div class="card-snippet">全く人気のない（汗）ipadを売りたい話の続きです。 ネットワーク利用制限が（ー） なのを確認したときに一つ思い当たることがありました。 それは、以前液晶を割ってしまったのでアップルケアを使って端末を</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/09/ipad2_15.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-09-14</div>
+          <div class="card-title">iPadを通販買取で売ったらいくらなのヨ（最後）</div>
+          <div class="card-snippet">全く人気のない（汗）iPadを売りたい話の最後です。 ネットワーク利用制限が（ー）だから買取不可 という連絡を受けてそんなはずはない！ともう一度過去のアップルからのメールで端末交換前後のIMEIを確認</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/09/blog-post_21.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-09-20</div>
+          <div class="card-title">初キャンプのために買ったテントと土間収納の微妙な関係</div>
+          <div class="card-snippet">先日初キャンプに行ってまいりました。 妻が自称インドア派なので説得に少々手こずりましたが、なんとか無事に行くことが出来ました。 お初に泊まることになったのは神奈川県は道志みち神之川キャンプ場でございま</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/09/blog-post_7.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-09-20</div>
+          <div class="card-title">週末の朝ラン</div>
+          <div class="card-snippet">先週は風邪をひいていたため今朝の朝ランは短めに。 走った後のアップル・グレープフルーツジュースは格別です。 iOS8になりましたネ。調子にのって新写真アプリを入れてしまいました。 味のある写真がとれる</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/09/blog-post_23.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-09-23</div>
+          <div class="card-title">妻が決めた子供部屋の壁かけ時計とは</div>
+          <div class="card-snippet">どないなやつでしょう？ それはこいつです。 木目調にポップカラーの数字が浮き出る電波時計！【10/29迄 ポイント10倍/送料無料/即納！】rim... 価格：4,320円（税込、送料込） 電波時計で</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/10/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-10-04</div>
+          <div class="card-title">一戸建てゆえの悩み</div>
+          <div class="card-snippet">2014年度も後半戦でございますネ。皆様如何お過ごしでしょうか。 私自身は人生で目標としていたタイトルを先日手に入れることができ、新たな目標を模索しているところであります。 さて全く意味不明なので（汗</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/11/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-11-01</div>
+          <div class="card-title">子どもと出かけるときに持って行って便利だったモノ</div>
+          <div class="card-snippet">あいやー 10月の更新が1個のみになってしまいました・・・猛省。 いつもの東の果ての大陸や、今回はプライベートで日本最南端の島などへ出かけており記事更新できず・・・というのが言い訳でございます（汗 さ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/11/blog-post_3.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-11-03</div>
+          <div class="card-title">初の住宅借入金等特別控除申告書と年末調整</div>
+          <div class="card-snippet">いやー超メンドくさい（汗 といってもまだ申請してないんですけどね（汗汗 企業で働いている方は会社のシステムに従って住宅借入金等特別控除申告書と年末残高証明書を提出すればよいと思われますが幾つか改めて認</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/11/blog-post_9.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-11-09</div>
+          <div class="card-title">引き渡しより一年が経ったようです（汗</div>
+          <div class="card-snippet">アニバーサリー！ 本日引き渡しから無事一年が経ちました！ ※まっしんはやぶささんにコメント頂いて気づいたのだったりして（汗 引 き 渡 し ＆引 っ 越 し 完了。建築編終了 が 見 えてきた もう一</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/11/blog-post_23.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-11-23</div>
+          <div class="card-title">今欲しいモノ</div>
+          <div class="card-snippet">みなさんお勤めご苦労様です！ さて最近子どもがハマっているのはこちら↓ カイザー(Kaiser) キックスケーター KW-451 posted with AZlink at 2014.11.23 カイ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/12/blog-post.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-12-14</div>
+          <div class="card-title">イエデン（固定電話）の悩み（１）</div>
+          <div class="card-snippet">すっかり更新が滞ってしまい・・・（汗 しかしそれなりの理由がありましてそれはまた後日・・・ ﾄﾎﾞﾄﾎﾞ さて今回はタイトルの通り固定電話についてです。 我が家は最近ありがちな固定電話を設置していない</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/12/blog-post_76.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-12-20</div>
+          <div class="card-title">工務店（アコルデ）から年末のご挨拶を頂いたお話</div>
+          <div class="card-snippet">連続投稿も辞さない覚悟です（？）＾＾ さて先日我らがアコルデに清水畑さんから年末のご挨拶に伺いますとご連絡を頂きました。 なんだか久しぶりにお会いするな～と思いながら楽しみに当日を迎えました。 そした</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/12/blog-post_20.html" style="--card-color:#1a4e7a">
+          <div class="card-date">2014-12-20</div>
+          <div class="card-title">イエデン（固定電話）の悩み（２）</div>
+          <div class="card-snippet">固定電話の話の続きです。 月1000円でも固定費を増やしたくないｹﾁｹﾁ根性もとい節約根性のもと、どうにかしてIP電話で良いから固定電話代わりになる方法を探しました。 そこで見つけたのがコレ↓ まぁよ</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
       </div>
     </div>
 
-    <!-- ⑥ 経年レポート -->
     <div class="phase phase--green">
       <div class="phase-dot">⑥</div>
       <div class="phase-header">
-        <div class="phase-period">2018年〜現在（毎年更新）</div>
-        <div class="phase-title">
-          <span class="phase-icon">📅</span>経年レポート
-          <span class="badge-new">毎年更新</span>
-        </div>
-        <div class="phase-desc">5年・8年・10年・11年目の正直な記録。修繕・リフォーム・設備交換の実体験</div>
+        <div class="phase-period">2018年〜現在</div>
+        <div class="phase-title"><span class="phase-icon">📅</span>経年レポート<span class="badge-new">毎年更新</span> <span style="font-size:13px;font-weight:400;color:#2d6e30;opacity:.7;">（37件）</span></div>
+        <div class="phase-desc">5年・10年・11年目の正直レポート（毎年更新）</div>
       </div>
       <hr class="phase-rule">
       <div class="cards">
-        <a class="card" href="/2018/12/blog-post.html" target="_blank" rel="noopener">
+        <a class="card" href="/2013/04/blog-post_5691.html" style="--card-color:#2d6e30">
+          <div class="card-date">2013-04-03</div>
+          <div class="card-title">住宅ローンをどうするか考えてみた</div>
+          <div class="card-snippet">色々と勉強しています。 住宅ローンは短期（10年とか）で返せる場合は変動金利でも良さそうですが 20年以上とか割りと時間がかかりそうな場合は固定金利とのミックスにしたほうが良さそうです。 今後は金利が</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/06/blog-post_3662.html" style="--card-color:#2d6e30">
+          <div class="card-date">2013-06-03</div>
+          <div class="card-title">あっという間の土地決済</div>
+          <div class="card-snippet">場所は横幅銀行。 平日。 アポの時間は朝9：30。 10分前に行くともう不動産屋様がいました。 この書類を先に書いちゃいましょうと渡されたのは払い戻し用紙。 土地の残金と固定資産税清算分と登記料関係費</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_24.html" style="--card-color:#2d6e30">
+          <div class="card-date">2013-12-24</div>
+          <div class="card-title">ハニカムシェードを後付けしてみるのはどうだろう？</div>
+          <div class="card-snippet">なんて考えております。 我が家では２Fの子供部屋（間仕切りしていないので11畳くらいかな？）で家族全員で寝ているわけですが、日中は全然使っていないので夜寝る前にエアコンで暖めて加湿器をかけてねるわけで</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2013/12/blog-post_27.html" style="--card-color:#2d6e30">
+          <div class="card-date">2013-12-26</div>
+          <div class="card-title">変動→固定にするか、変動のままで様子を見るか</div>
+          <div class="card-snippet">２択であります。 住宅ローンの話ですが、我が家は諸事情でローンを二つに分けており、一方は10年固定ですが他方は分割実行の関係で変動金利のままになっています。 ※借りる前はフラット35的なリスク回避との</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/02/blog-post_10.html" style="--card-color:#2d6e30">
+          <div class="card-date">2014-02-10</div>
+          <div class="card-title">雪止めが無い我が家</div>
+          <div class="card-snippet">ご無沙汰しております（汗）。また海外逃亡しておりましたら帰って来た日の前日に45年ぶりの大雪とか言っちゃったりなんかして成田に缶詰状態でございましたトホホ。 さて 以前に少し書きましたが雪止めのない我</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2014/05/blog-post_11.html" style="--card-color:#2d6e30">
+          <div class="card-date">2014-05-11</div>
+          <div class="card-title">固定資産税の課税標準額が都市計画税のそれと違う理由を考えながらフリースクープ</div>
+          <div class="card-snippet">スクープしたって～＾＾ 我らが まっしんはやぶささんのタレコミ ^^に乗じさせて頂き我が家もサーティワンのフリースクープに行って参りました。 当初、まっしんさんから教えてもらった通りモール内の店舗（テ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2015/07/15.html" style="--card-color:#2d6e30">
+          <div class="card-date">2015-07-19</div>
+          <div class="card-title">入居後1.5年。特に不具合は無いのですが久しぶりにアコルデ</div>
+          <div class="card-snippet">の清水畑さんとお会いしました話です。 アコルデは何か気になることがあれば連絡入れるとすぐに飛んできてくれるシステムですので、特に不具合の無い我が家は全くアコルデに連絡することがなかったのですが、 ある</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2016/01/orihica_24.html" style="--card-color:#2d6e30">
+          <div class="card-date">2016-01-24</div>
+          <div class="card-title">藤沢市民マラソンからORIHICAへ</div>
+          <div class="card-snippet">超久しぶりの投稿です（汗） さて本日は藤沢市民マラソンで10マイルを爆走して参りました。 爆走といっても相も変わらず6min/kmペースでございまして、結果は1時間45分というなんと2015年よりも遅</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2017/04/amazon.html" style="--card-color:#2d6e30">
+          <div class="card-date">2017-04-28</div>
+          <div class="card-title">簡易宅配ボックスを設置してAmazonお急ぎ便を最大限活用する</div>
+          <div class="card-snippet">宅配業務の過酷労働や再配達問題が最近騒がれていますね。 一方でAmazonプライムやヨドバシの翌日配送サービスはますます普及しています。 そこで我が家もご多分に漏れず 宅配ボックスを活用してみたら超絶</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2017/05/blog-post_2.html" style="--card-color:#2d6e30">
+          <div class="card-date">2017-05-01</div>
+          <div class="card-title">新築における壁紙クロスのひび割れ対処のハナシ</div>
+          <div class="card-snippet">新築と言ってももう 4年目 ですが（汗） ひび割れの原因 柱や梁に使われている木材の伸縮によって生じる 、ようです。 すなわち木造建築の宿命ですね。 程度は 無垢材や集成材によって異なる ようです。気</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2017/05/blog-post_13.html" style="--card-color:#2d6e30">
+          <div class="card-date">2017-05-12</div>
+          <div class="card-title">片手でスマホを持つ人のためのベストバイアイテム</div>
+          <div class="card-snippet">固定資産税の時期になって参りました（汗） そんな中、お金を節約したい方へのベストバイアイテムの御紹介でございます。 i-Ringとかバンカーリングって色々ありますが… こんなやつです↓ BUNKER </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2017/05/blog-post_14.html" style="--card-color:#2d6e30">
+          <div class="card-date">2017-05-13</div>
+          <div class="card-title">固定資産税、自動車税、軽自動車税を全てネットで支払い完了（手数料に注意）</div>
+          <div class="card-snippet">さて前フリは上々ですが、 税金という名のもとに出費がかさむ５月 です（汗） オー諭吉ばっさり出ていく時期よ 固定資産税はペイジーで払うと楽 ペイジーは、Pay Easyの略らしいのですが、まぁつまり </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2018/01/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2018-01-01</div>
+          <div class="card-title">新年の抱負</div>
+          <div class="card-snippet">あっという間に明けましておめでとうございます（汗） この混迷を極めたブログをどうしていくか悩みながらもとにかく記録として続けようとは思いますので本年もどうぞ宜しくお願い致します・・・ 2017年の振り</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2018/01/yahoo.html" style="--card-color:#2d6e30">
+          <div class="card-date">2018-01-06</div>
+          <div class="card-title">Yahoo!プレミアム読み放題（無料）がスゴくて課金ビジネスについて考えさせられる</div>
+          <div class="card-snippet">とりあえず何を書こうか正直まだ悩んでおりますが、こりゃスゴイと思ったので感じたことをそのまま記しておこうと思います。 Yahoo!プレミアム読み放題がスゴイ 2017年の12/25から始まったサービス</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2018/09/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2018-09-29</div>
+          <div class="card-title">ふるさと納税の使い途</div>
+          <div class="card-snippet">全く更新しないとブログが消滅するのではないかと思い投稿します嘘。 今回はタイトルの通り、ふるさと納税の使い途についてです。 節約したい一心の我が家はギフト券 一部では有名な話ですが、今年は ジェフグル</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2018/10/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2018-10-06</div>
+          <div class="card-title">ハードオフのオファー買い取りを使ってみたらスゴかった</div>
+          <div class="card-snippet">記録より記憶に残る記事 を書きましょう（汗）。 今回は最近流行り（？）のハードオフが展開する オファー買い取り型サービス を使ってみたら素晴らしかった話です。 一戸建てといっても断捨離必須 戸建ては収</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2018/12/blog-post.html" style="--card-color:#2d6e30">
           <div class="card-date">2018-12-15</div>
-          <div class="card-title">家を建てて５年が経過しました</div>
-          <div class="card-snippet">5年経過で外壁・設備・内装に何が起きたか。経年劣化の正直レポートと対処の記録。</div>
+          <div class="card-title">家を建てて５年が経過しました(汗)</div>
+          <div class="card-snippet">あっという間に5年です… ブログは瀕死の状態ですが(汗)一家は健在でございます。 建築記録は一生懸命書いていましたが築後録も大事ですよね、ということで簡単にですが2018年も終わりということで記してお</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2019/07/blog-post.html" target="_blank" rel="noopener">
+        <a class="card" href="/2018/12/paypay.html" style="--card-color:#2d6e30">
+          <div class="card-date">2018-12-27</div>
+          <div class="card-title">PayPayキャンペーンに学ぶ孫氏の戦略</div>
+          <div class="card-snippet">年末になると ちょっとした時間 がつくれます…汗 毎日の流れていくニュースの中で なるほどなー と思えることは沢山あるのですが いつも使う単語や考え方ではないので 時間が経つと忘れてしまう のです。 </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2019/01/blog-post_30.html" style="--card-color:#2d6e30">
+          <div class="card-date">2019-01-13</div>
+          <div class="card-title">ニンテンドースイッチの追加ドックをなるべく安く導入する</div>
+          <div class="card-snippet">頑張れ連続投稿（汗 ニンテンドースイッチのドックは一つじゃ足りない？ 我が家はご多分に漏れず子どもがニンテンドースイッチに夢中です。 ニンテンドースイッチは当時任天堂が新たなゲーム機としてニュースリリ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2019/01/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2019-01-13</div>
+          <div class="card-title">ドミノピザを使わなくなったワケ</div>
+          <div class="card-snippet">明けましておめでとうございます 。 今年こそはこのブログの方針をかっちり決めていきたいと思っております汗 まぁでも記事をちょこちょこ書くために、色々と周辺情報を調べるというのは自分にとって良い効果なの</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2019/02/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2019-02-03</div>
+          <div class="card-title">【節約】クレジットカードの還元率を上げる方法を実践してみた</div>
+          <div class="card-snippet">久しぶりにブログの設定をよく見たらAdSenseが機能しておらず、 ブログのテンプレートをまたまた変えてしまいました（汗） クレジットカードを使わない手はない？ 最近は クレジットカードを常用する文化</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2019/06/blog-post_30.html" style="--card-color:#2d6e30">
+          <div class="card-date">2019-06-30</div>
+          <div class="card-title">ニンテンドースイッチ２台で同じソフトを同時に遊べる件</div>
+          <div class="card-snippet">久しぶりの記録がまたスイッチネタです（汗 ニンテンドースイッチ２台目を購入したら ２台目のスイッチを購入した場合、 ユーザーの引っ越しやいつも遊ぶ本体の設定 など、その複雑なシステムを理解するのに少々</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2019/07/blog-post.html" style="--card-color:#2d6e30">
           <div class="card-date">2019-07-06</div>
-          <div class="card-title">築5年過ぎたらシロアリ防除処理をやるべきか</div>
-          <div class="card-snippet">5年の保証が切れたら自分でやるしかない。業者選び・費用・施工内容を詳しく解説。</div>
+          <div class="card-title">築５年を過ぎたらシロアリ防除処理をやらなければいけないの件</div>
+          <div class="card-snippet">もう築６年ですが汗 結局うだうだしていたのですが今回シロアリ防除処理を結局やりました、の件です。 新築５年経過位でシロアリなんて出ないんだろうと高を括っていた いや別に被害を受けた訳ではないですよ汗 </div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2021/06/1.html" target="_blank" rel="noopener">
+        <a class="card" href="/2020/07/2.html" style="--card-color:#2d6e30">
+          <div class="card-date">2020-07-12</div>
+          <div class="card-title">2畳の書斎が大活躍している件（結果論）</div>
+          <div class="card-snippet">またすっかり間が空いてしまいました。 家関係で、書斎が活躍しているからこそ思う事、件です。 コロナで世間が変わって、書斎が大活躍な件 家を建てた時はこんな未来は 全く想像していませんでした 。 コロナ</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2020/07/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2020-07-18</div>
+          <div class="card-title">一戸建てと冷蔵庫と底値購入の件</div>
+          <div class="card-snippet">張り切って連続記録です。 ついに 冷蔵庫を買い替えました 。正確に言うとまだモノは来ていませんが。 冷蔵庫は家族の成長と共にサイズが変わる 現在の冷蔵庫は １０年選手 。 もう調子も悪かったのです。 </div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2020/07/youttuber.html" style="--card-color:#2d6e30">
+          <div class="card-date">2020-07-25</div>
+          <div class="card-title">釣りYoutTuberって、大変そう</div>
+          <div class="card-snippet">私は堤防中心の エンジョイ釣り勢 なのですが、 最近Youtubeでよく見るのが ヨネスケという青年さんの動画 です。 釣りコンテンツはかなり増えてきている印象 釣りのような結果が不安定な自然系はYo</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2021/03/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2021-03-07</div>
+          <div class="card-title">そろそろ子供部屋の間仕切り壁を検討しようかなと思っている件</div>
+          <div class="card-snippet">さていつもの久しぶり投稿ですがタイトルの件を考え始めました。 元々部屋を区切れるように設計した子供部屋 子供部屋は12畳を二人で使っていますが、 ある程度の年齢になったら区切れるように出入り口のドアは</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2021/05/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2021-05-07</div>
+          <div class="card-title">固定資産税の支払いが超楽々になっていた件</div>
+          <div class="card-snippet">(間仕切り壁の件は進行中のため別途記録予定です) 毎年の 固定資産税 （や自動車税）のシーズンになりました。 クレジットカードで税金を支払っていた過去と決別 基本的になんでもオンラインで済ませられるも</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2021/05/blog-post_16.html" style="--card-color:#2d6e30">
+          <div class="card-date">2021-05-16</div>
+          <div class="card-title">またしてもエアコン購入と取り付け手配でコスパを追い求める</div>
+          <div class="card-snippet">間仕切り壁の話を進めているのですが、 並行して進めなければいけないのが エアコンの購入と取り付け です。 もともと一つの部屋なのでエアコンは１台だったのですが、 仕切るので１台新たに設置しなければなり</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2021/05/blog-post_28.html" style="--card-color:#2d6e30">
+          <div class="card-date">2021-05-28</div>
+          <div class="card-title">子供部屋の間仕切り壁設置をできるだけ安く実現したい我が家の見積もり騒動</div>
+          <div class="card-snippet">ついに間仕切り壁の話です汗 といっても先ずは見積もりの話ですが。 当初は妻に一任モード さて我が家では11畳くらいの部屋を子供部屋にしているのですが 子供の成長に合わせて個人部屋にできるようにライトや</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2021/06/1.html" style="--card-color:#2d6e30">
           <div class="card-date">2021-06-12</div>
-          <div class="card-title">子供部屋の間仕切り壁が1日で完了</div>
-          <div class="card-snippet">12畳を二部屋に仕切る工事を低コストで実現。業者選び・見積もり・施工の全プロセス。</div>
+          <div class="card-title">子供部屋の間仕切り壁の施行が1日で完了</div>
+          <div class="card-snippet">間仕切り壁を安く設置したい話 の施行後記録です。 低コストの秘密 見積もりの時や作業前に色々と説明を受けていたのですが、 平峰木工所さんは 基本的に1日で作業を終える というお話でした。 他に見積もり</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card" href="/2021/07/8.html" target="_blank" rel="noopener">
+        <a class="card" href="/2021/07/8.html" style="--card-color:#2d6e30">
           <div class="card-date">2021-07-03</div>
-          <div class="card-title">除湿乾燥機の実力を思い知った新築8年目</div>
-          <div class="card-snippet">浴室乾燥機だけでは足りない時に活躍する除湿乾燥機。8年目で実感したその実力。</div>
+          <div class="card-title">除湿乾燥機の実力をやっと思い知った新築8年目</div>
+          <div class="card-snippet">8年目はもはや新築ではない説（汗 浴室乾燥機と室内干しの関係 我が家では 雨の日や花粉の季節など室内干しが必要な時 は浴室にて 浴室乾燥機 を使って室内干しをするのですが、 洗濯物の量が多い場合 や、</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card card--featured" href="/2022/12/10.html" target="_blank" rel="noopener">
+        <a class="card" href="/2021/08/blog-post.html" style="--card-color:#2d6e30">
+          <div class="card-date">2021-08-10</div>
+          <div class="card-title">ふるさと納税の税金控除が地味に複雑で理解に時間がかかった件</div>
+          <div class="card-snippet">いまさら感 が満載ですが、 あらそうなね、という大まかな理解を書き留めておきたいと思います。 ふるさと納税は毎年大変お世話になっております ふるさと納税を活用されている方は多いと思います。 昨年202</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2022/03/g-suitegoogledomains.html" style="--card-color:#2d6e30">
+          <div class="card-date">2022-03-18</div>
+          <div class="card-title">無償版G Suiteの有料化に伴うGoogleDomainsへのドメイン移行で超面倒だったハナシ</div>
+          <div class="card-snippet">一部の方々の間ではショックが隠しきれなかった 無償版G suite有料化 問題ですが、 我が家ももれなく10年近く無料で利用の恩恵を受けていたので対応を余儀なくされました。 一部トラップがあったので一</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2022/12/10.html" style="--card-color:#2d6e30">
           <div class="card-date">2022-12-31</div>
           <div class="card-title">10年目に突入した我が家の注文住宅事情</div>
-          <div class="card-snippet">アコルデとの関係も10年目。トラブルはほぼゼロ。10年住んで思う工務店選びの正解。</div>
+          <div class="card-snippet">年齢を重ねてきて色々と時間の足りなさを実感しております。 家には何の問題もなく10年目に突入 全くブログを更新できておりません が、自分の場合は家にまつわるトラブルが全くないことも未更新に貢献しており</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
-        <a class="card card--featured" href="/2024/06/11.html" target="_blank" rel="noopener">
+        <a class="card" href="/2023/10/iphon13-mini-iphone1424.html" style="--card-color:#2d6e30">
+          <div class="card-date">2023-10-09</div>
+          <div class="card-title">iPhon13 mini からiPhone14へ実質24円で渡り歩いていく</div>
+          <div class="card-snippet">iPhoneを13 miniから14に変更しました。 色々と手続きも複雑だったので整理しておきます。 いつでもカエドキプログラムは素晴らしい 最近は一括案件は殆どなく、実質24円というものが増えてきて</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="/2024/06/11.html" style="--card-color:#2d6e30">
           <div class="card-date">2024-06-16</div>
           <div class="card-title">11年目のエアコン交換</div>
-          <div class="card-snippet">新築時の東芝製エアコンがついに限界。ダイキン製への交換費用・業者選び・取り付けの実録。</div>
+          <div class="card-snippet">新築と同時に取り付けたメインリビングの東芝製メインエアコンが遂にたまに止まってしまうという症状が出てきてしまい、ついに交換する事になりました。 エアコンは遂にダイキン製を洗濯 東芝製エアコンは数々の不</div>
           <div class="card-arrow">続きを読む →</div>
         </a>
       </div>
     </div>
-
-  </div><!-- /.timeline -->
-
-<div style="text-align:center; padding: 40px 0 20px;">
-  <a href="archive.html" style="display:inline-block; background:#b5631e; color:#fff; padding:14px 36px; border-radius:3px; text-decoration:none; font-size:15px; letter-spacing:.05em;">📋 全377記事の一覧を見る</a>
-  <p style="margin-top:12px; font-size:13px; color:#5a524a;">建築記録以外の記事（家電・節約・釣りなど）も含む全記事リスト</p>
-</div>
-
+  </div>
+  <div class="archive-link">
+    <a href="archive.html">📋 全377記事の一覧を見る</a>
+    <p>建築記録以外の記事（家電・節約・釣りなど）も含む全記事リスト</p>
+  </div>
 </main>
-
-<footer>
-  <p><a href="/2013/05/blog-post_6870.html">一戸建てのキセキ Life to Hack</a> &nbsp;|&nbsp; 神奈川県湘南エリア・工務店アコルデで建てた注文住宅の記録</p>
+<footer class="site-footer">
+  <p><a href="index.html">一戸建てのキセキ Life to Hack</a> | 神奈川県湘南エリア・工務店アコルデで建てた注文住宅の記録</p>
   <p style="margin-top:8px">© 2013–2026 kiseki.bloomsfun.com</p>
 </footer>
-
 </body>
 </html>
