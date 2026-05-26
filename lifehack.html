@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ライフハックシリーズ | 一戸建てのキセキ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1714;
+    --ink-light: #5a524a;
+    --paper: #faf8f4;
+    --rule: #d4c9b8;
+    --accent: #b5631e;
+    --accent-light: #e8d5c0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.8; }
+
+  /* ── ヘッダー ── */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,.03) 60px, rgba(255,255,255,.03) 61px);
+  }
+  .site-name { font-family: 'Noto Serif JP', serif; font-size: 13px; letter-spacing: .2em; opacity: .6; margin-bottom: 12px; }
+  header h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(22px, 5vw, 36px); font-weight: 700; letter-spacing: .05em; line-height: 1.3; }
+  header p { margin-top: 12px; font-size: 14px; opacity: .65; letter-spacing: .04em; }
+
+  /* ── ナビゲーション ── */
+  .section-nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(250,248,244,.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 20px;
+    display: flex; gap: 0; overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .section-nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    padding: 14px 20px;
+    font-size: 13px; font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500; letter-spacing: .04em;
+    border: none; background: none; cursor: pointer;
+    color: var(--ink-light);
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color .2s, border-color .2s;
+  }
+  .nav-btn:hover { color: var(--ink); }
+  .nav-btn.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* ── メイン ── */
+  main { max-width: 900px; margin: 0 auto; padding: 0 20px 80px; }
+
+  /* ── セクション ── */
+  .section { padding: 60px 0 48px; border-bottom: 1px solid var(--rule); }
+  .section:last-child { border-bottom: none; }
+  .section-header { margin-bottom: 28px; }
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; letter-spacing: .15em;
+    padding: 4px 12px; border-radius: 20px;
+    margin-bottom: 10px; font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700; line-height: 1.3;
+  }
+  .section-desc { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.8; }
+
+  /* ── カードグリッド ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 18px 20px;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    transition: transform .15s, box-shadow .15s;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.09); }
+  .card-date { font-size: 10px; letter-spacing: .1em; opacity: .4; margin-bottom: 6px; }
+  .card-title { font-family: 'Noto Serif JP', serif; font-size: 14px; font-weight: 600; line-height: 1.5; margin-bottom: 8px; flex: 1; }
+  .card-snippet { font-size: 12px; color: var(--ink-light); line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-arrow { font-size: 11px; opacity: .35; margin-top: 12px; text-align: right; }
+
+  footer {
+    background: var(--ink); color: rgba(255,255,255,.5);
+    text-align: center; padding: 32px 20px;
+    font-size: 12px; letter-spacing: .08em;
+  }
+  footer a { color: var(--accent-light); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    .nav-btn { padding: 12px 14px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-name">一戸建てのキセキ Life to Hack</div>
+  <h1>ライフハックシリーズ</h1>
+  <p>湘南エリアで一戸建てに暮らす理系会社員の、実体験に基づく生活術・節約・趣味の記録</p>
+</header>
+
+<nav class="section-nav" id="sectionNav">
+  <button class="nav-btn" data-target="kaden" onclick="scrollTo('kaden')">📱 家電・ガジェット</button>
+  <button class="nav-btn" data-target="setsuyaku" onclick="scrollTo('setsuyaku')">💰 節約・お金</button>
+  <button class="nav-btn" data-target="tsuri" onclick="scrollTo('tsuri')">🎣 釣り・湘南アウトドア</button>
+  <button class="nav-btn" data-target="life" onclick="scrollTo('life')">🏃 ライフスタイル</button>
+</nav>
+
+<main>
+
+  <section class="section" id="kaden">
+    <div class="section-header">
+      <div class="section-eyebrow" style="background:#e6f1fb;color:#1a4e7a;border:1px solid #85b7eb">
+        📱 家電・ガジェット
+      </div>
+      <h2 class="section-title" style="color:#1a4e7a">家電・ガジェット</h2>
+      <p class="section-desc">一戸建てで買って正解・失敗だった家電の実体験レビュー。コスパ重視で選び抜いたアイテムたち。</p>
+    </div>
+    <div class="cards">
+        <a class="card" href="https://kiseki.bloomsfun.com/2016/03/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2016-03-06</div>
+          <div class="card-title">マキタの掃除機のヘッドを取り換えてパワーアップ</div>
+          <div class="card-snippet">マキタのヘッド換装でパワーが劇的改善。コードレス掃除機を最大限に活かす改造術。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2014/07/jcb.html" target="_blank" rel="noopener">
+          <div class="card-date">2014-07-12</div>
+          <div class="card-title">でら便利だがや！マキタのコードレスクリーナーを</div>
+          <div class="card-snippet">木材利用ポイントで実質タダ同然で手に入れたマキタ。一戸建ての掃除を変えた一台。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2015/07/21ldk.html" target="_blank" rel="noopener">
+          <div class="card-date">2015-07-22</div>
+          <div class="card-title">21畳LDKエアコンの1日の電気代は</div>
+          <div class="card-snippet">広いLDKのエアコン電気代を実測。思ったより安かった？高かった？リアルな数字を公開。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2021/07/8.html" target="_blank" rel="noopener">
+          <div class="card-date">2021-07-03</div>
+          <div class="card-title">除湿乾燥機の実力をやっと思い知った新築8年目</div>
+          <div class="card-snippet">浴室乾燥機だけでは限界があった。8年目でようやく導入した除湿乾燥機の実力に驚いた話。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2024/06/11.html" target="_blank" rel="noopener">
+          <div class="card-date">2024-06-16</div>
+          <div class="card-title">11年目のエアコン交換</div>
+          <div class="card-snippet">東芝製リビングエアコンが10年超で限界。ダイキン製への交換費用と業者選びの実録。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2016/04/firetvabematv.html" target="_blank" rel="noopener">
+          <div class="card-date">2016-04-23</div>
+          <div class="card-title">超絶便利なFireTVでAbemaTV</div>
+          <div class="card-snippet">Fire TVを入れたらリビングのテレビ文化が変わった。AbemaTVとの組み合わせが想定外に良い。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2017/06/4k.html" target="_blank" rel="noopener">
+          <div class="card-date">2017-06-11</div>
+          <div class="card-title">4Kテレビの買い時って結局いつなのよ</div>
+          <div class="card-snippet">4K普及期の2017年に徹底分析。「まだ早い」か「今が買い時」か、データで判断した結論。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2020/07/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2020-07-18</div>
+          <div class="card-title">一戸建てと冷蔵庫と底値購入の件</div>
+          <div class="card-snippet">大型冷蔵庫の底値タイミングを徹底調査。一戸建てに合うサイズ選びの考え方も解説。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2020/07/2.html" target="_blank" rel="noopener">
+          <div class="card-date">2020-07-12</div>
+          <div class="card-title">2畳の書斎が大活躍している件（結果論）</div>
+          <div class="card-snippet">コロナで在宅勤務が始まり、当初「狭い」と思っていた2畳書斎が突然ヒーローに。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+    </div>
+  </section>
+
+  <section class="section" id="setsuyaku">
+    <div class="section-header">
+      <div class="section-eyebrow" style="background:#eaf3de;color:#2d6e30;border:1px solid #97c459">
+        💰 節約・お金
+      </div>
+      <h2 class="section-title" style="color:#2d6e30">節約・お金</h2>
+      <p class="section-desc">固定資産税・ふるさと納税・ポイント活用まで。住まいにまつわるお金を賢く扱うヒント集。</p>
+    </div>
+    <div class="cards">
+        <a class="card" href="https://kiseki.bloomsfun.com/2019/02/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2019-02-03</div>
+          <div class="card-title">【節約】クレジットカードの還元率を上げる</div>
+          <div class="card-snippet">ポイント還元率を最大化する実践レポート。理系会社員が仕組みを分析して実行した結果。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2021/08/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2021-08-10</div>
+          <div class="card-title">ふるさと納税の税金控除が地味に複雑で理解に時間がかかった件</div>
+          <div class="card-snippet">ワンストップ特例・確定申告・住民税控除の仕組みを図解。正しく理解して損をしない方法。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2021/05/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2021-05-07</div>
+          <div class="card-title">固定資産税の支払いが超楽々になっていた件</div>
+          <div class="card-snippet">いつの間にかスマホ払いに対応していた固定資産税。手数料なしで支払う最新の方法。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="#" target="_blank" rel="noopener">
+          <div class="card-date">2017-05-13</div>
+          <div class="card-title">固定資産税、自動車税、軽自動車税を全てネットで支払い完了（手数料に注意）</div>
+          <div class="card-snippet">税金3種をネット払いでまとめて完了。手数料が発生するケースの注意点も詳しく解説。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2018/10/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2018-10-06</div>
+          <div class="card-title">ハードオフのオファー買い取りを使ってみたらスゴかった</div>
+          <div class="card-snippet">不要家電の処分にハードオフのオファー買い取りを使ってみた。手軽さと査定額に驚いた話。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2018/12/paypay.html" target="_blank" rel="noopener">
+          <div class="card-date">2018-12-27</div>
+          <div class="card-title">PayPayキャンペーンに学ぶ孫氏の戦略</div>
+          <div class="card-snippet">PayPayの大型キャンペーンを経営戦略の観点で分析。ユーザーとしても美味しく乗った話。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2015/07/so-net.html" target="_blank" rel="noopener">
+          <div class="card-date">2015-07-16</div>
+          <div class="card-title">電話1本で20000円分のポイントをゲットできた話</div>
+          <div class="card-snippet">So-netユーザー限定の乗り換えキャンペーンで2万円ポイント獲得。電話一本の10分間の話。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2013/10/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2013-10-18</div>
+          <div class="card-title">引越し業者を決めるまで。ザ・ストーリーオブ値切り</div>
+          <div class="card-snippet">新居への引越しで徹底的に値切った実体験。複数社見積もりで最終的にいくら下げられたか。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+    </div>
+  </section>
+
+  <section class="section" id="tsuri">
+    <div class="section-header">
+      <div class="section-eyebrow" style="background:#e1f5ee;color:#1d6e5a;border:1px solid #5dcaa5">
+        🎣 釣り・湘南アウトドア
+      </div>
+      <h2 class="section-title" style="color:#1d6e5a">釣り・湘南アウトドア</h2>
+      <p class="section-desc">湘南エリアの釣り場レポートと、釣った魚の美味しい食べ方。地元在住ならではのリアル情報。</p>
+    </div>
+    <div class="cards">
+        <a class="card" href="https://kiseki.bloomsfun.com/2016/05/blog-post_7.html" target="_blank" rel="noopener">
+          <div class="card-date">2016-05-07</div>
+          <div class="card-title">【釣行記】三浦半島</div>
+          <div class="card-snippet">三浦半島の磯場を探索した釣行記。アクセス・ポイント・釣果を詳しくレポート。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2016/08/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2016-08-28</div>
+          <div class="card-title">大磯港はボラ祭り</div>
+          <div class="card-snippet">夏の大磯港はボラだらけ。ボラの引きを楽しみつつ他の魚を狙う釣行の記録。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2016/09/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2016-09-18</div>
+          <div class="card-title">平塚新港に調査釣行</div>
+          <div class="card-snippet">平塚新港の釣り場環境を調査。釣り座・水深・狙える魚種を実地確認したレポート。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2016/09/1.html" target="_blank" rel="noopener">
+          <div class="card-date">2016-09-04</div>
+          <div class="card-title">酒匂川河口で１時間の短期釣行</div>
+          <div class="card-snippet">仕事の合間に1時間だけ。酒匂川河口での短時間釣行でも釣れるものは釣れる話。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2017/07/40cm.html" target="_blank" rel="noopener">
+          <div class="card-date">2017-07-01</div>
+          <div class="card-title">平塚釣行で"頂いた"チヌ40cmがこちら</div>
+          <div class="card-snippet">平塚でまさかのチヌ40cm。釣り人からのプレゼントという形での釣果と、さばいた記録。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2017/02/blog-post_26.html" target="_blank" rel="noopener">
+          <div class="card-date">2017-02-26</div>
+          <div class="card-title">コノシロの美味しい食べ方は、骨切りして天ぷら</div>
+          <div class="card-snippet">骨が多くて敬遠されがちなコノシロ。骨切りして天ぷらにすれば絶品になる実践レシピ。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2017/06/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2017-06-17</div>
+          <div class="card-title">この季節（春～夏）のボラでも天ぷらなら美味いですよ</div>
+          <div class="card-snippet">「臭い魚」扱いのボラも、天ぷらにすれば美味しく食べられる。捌き方と調理法を公開。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2017/05/blog-post_27.html" target="_blank" rel="noopener">
+          <div class="card-date">2017-05-27</div>
+          <div class="card-title">カサゴは毒がありますが、食べると美味しいです</div>
+          <div class="card-snippet">ヒレに毒を持つカサゴを安全にさばく方法。煮付けにすると絶品な白身魚の調理記録。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2020/07/youttuber.html" target="_blank" rel="noopener">
+          <div class="card-date">2020-07-25</div>
+          <div class="card-title">釣りYoutTuberって、大変そう</div>
+          <div class="card-snippet">釣り系YouTuberの裏側を考察。釣り人目線から見た動画制作の苦労と魅力を語る。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+    </div>
+  </section>
+
+  <section class="section" id="life">
+    <div class="section-header">
+      <div class="section-eyebrow" style="background:#faeeda;color:#7a3a10;border:1px solid #ef9f27">
+        🏃 ライフスタイル
+      </div>
+      <h2 class="section-title" style="color:#7a3a10">ライフスタイル</h2>
+      <p class="section-desc">湘南での日々の暮らしを豊かにするアイデアとレポート。家族・アウトドア・便利グッズ。</p>
+    </div>
+    <div class="cards">
+        <a class="card" href="https://kiseki.bloomsfun.com/2016/08/blog-post_11.html" target="_blank" rel="noopener">
+          <div class="card-date">2016-08-11</div>
+          <div class="card-title">幕張ビーチ花火フェスタのまとめ</div>
+          <div class="card-snippet">幕張の大規模花火フェスタを徹底攻略。混雑を避ける観覧スポットと駐車場情報まとめ。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2017/02/blog-post_12.html" target="_blank" rel="noopener">
+          <div class="card-date">2017-02-12</div>
+          <div class="card-title">シャトレーゼスキーリゾート八ヶ岳スキー場のレビューとクーポン情報</div>
+          <div class="card-snippet">シャトレーゼ系のスキー場を家族で訪問。コストパフォーマンスとクーポン活用術を解説。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2014/05/blog-post_2.html" target="_blank" rel="noopener">
+          <div class="card-date">2014-05-02</div>
+          <div class="card-title">新築一戸建てといえばバーベキューでしょう（１）</div>
+          <div class="card-snippet">念願の庭でのバーベキュー初挑戦。一戸建てに住んだらやりたかったことの実現記録。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2017/04/amazon.html" target="_blank" rel="noopener">
+          <div class="card-date">2017-04-28</div>
+          <div class="card-title">簡易宅配ボックスを設置してAmazonお急ぎ便を最大限活用する</div>
+          <div class="card-snippet">玄関に簡易宅配ボックスを設置。不在時の再配達ゼロを目指した実践と使用感レポート。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2019/06/blog-post_30.html" target="_blank" rel="noopener">
+          <div class="card-date">2019-06-30</div>
+          <div class="card-title">ニンテンドースイッチ２台で同じソフトを同時に遊べる件</div>
+          <div class="card-snippet">子供と一緒にスイッチを楽しむためのソフト1本2台プレイ設定方法を丁寧に解説。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2016/05/blog-post_15.html" target="_blank" rel="noopener">
+          <div class="card-date">2016-05-15</div>
+          <div class="card-title">リビング＆ダイニングで選んで正解だった間取り！を殆ど採用していない件</div>
+          <div class="card-snippet">理想の間取りを計画したのに、実際の生活では使われ方が全然違った面白い話。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2015/02/blog-post.html" target="_blank" rel="noopener">
+          <div class="card-date">2015-02-18</div>
+          <div class="card-title">リクシルのタッチキーに潜む罠</div>
+          <div class="card-snippet">便利なはずのタッチキーが意外な落とし穴を持っていた。知っておきたい注意点を解説。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+        <a class="card" href="https://kiseki.bloomsfun.com/2015/01/blog-post_11.html" target="_blank" rel="noopener">
+          <div class="card-date">2015-01-11</div>
+          <div class="card-title">一戸建ての掃除にやっぱり必須だったアイテム</div>
+          <div class="card-snippet">マンションから一戸建てに移って実感した掃除の違い。本当に必要だったアイテムを紹介。</div>
+          <div class="card-arrow">続きを読む →</div>
+        </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><a href="https://kiseki.bloomsfun.com/">一戸建てのキセキ Life to Hack</a> &nbsp;|&nbsp; 神奈川県湘南エリア・注文住宅での暮らしの記録</p>
+  <p style="margin-top:8px">© 2013–2026 kiseki.bloomsfun.com</p>
+</footer>
+
+<style>
+  #kaden .card::before { background: #1a4e7a; }
+  #setsuyaku .card::before { background: #2d6e30; }
+  #tsuri .card::before { background: #1d6e5a; }
+  #life .card::before { background: #7a3a10; }
+</style>
+
+<script>
+function scrollTo(id) {
+  document.getElementById(id).scrollIntoView({behavior: 'smooth', block: 'start'});
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`[data-target="${id}"]`).classList.add('active');
+}
+
+// スクロール連動でナビをアクティブに
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      const btn = document.querySelector(`[data-target="${id}"]`);
+      if (btn) btn.classList.add('active');
+    }
+  });
+}, {threshold: 0.3});
+sections.forEach(s => observer.observe(s));
+
+// 初期アクティブ
+document.querySelector('.nav-btn').classList.add('active');
+</script>
+</body>
+</html>
