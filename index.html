@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一戸建てのキセキ Life to Hack | 湘南エリア注文住宅13年間の記録</title>
+<meta name="description" content="神奈川県湘南エリアで工務店アコルデと建てた注文住宅。2013年の土地探しから着工・完成・入居後13年間のリアルな記録。家電・節約・釣りのライフハックも。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1714;
+    --ink-light: #5a524a;
+    --paper: #faf8f4;
+    --paper-dark: #f0ece4;
+    --accent: #b5631e;
+    --accent-light: #e8d5c0;
+    --rule: #d4c9b8;
+    --teal:   #1d6e5a;
+    --purple: #5a3e8a;
+    --amber:  #a0620e;
+    --coral:  #b03020;
+    --blue:   #1a4e7a;
+    --green:  #2d6e30;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.8; }
+
+  /* ── ヒーロー ── */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,.025) 80px, rgba(255,255,255,.025) 81px),
+      repeating-linear-gradient(0deg,   transparent, transparent 80px, rgba(255,255,255,.025) 80px, rgba(255,255,255,.025) 81px);
+  }
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: .3em;
+    opacity: .5;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-label::before,
+  .hero-label::after {
+    content: '—';
+    margin: 0 10px;
+    opacity: .5;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(32px, 7vw, 62px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .04em;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(14px, 3vw, 20px);
+    opacity: .55;
+    letter-spacing: .1em;
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .hero-desc {
+    font-size: clamp(13px, 2vw, 15px);
+    opacity: .65;
+    max-width: 520px;
+    line-height: 1.9;
+    position: relative;
+    margin-bottom: 48px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 52px;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700;
+    color: var(--accent-light);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 11px;
+    letter-spacing: .12em;
+    opacity: .5;
+    margin-top: 4px;
+  }
+  .hero-cta {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    position: relative;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    transition: opacity .2s;
+  }
+  .btn-primary:hover { opacity: .85; }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,.3);
+    color: rgba(255,255,255,.8);
+    padding: 14px 32px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: .06em;
+    transition: border-color .2s, color .2s;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,.7); color: #fff; }
+  .scroll-hint {
+    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+    font-size: 11px; opacity: .35; letter-spacing: .15em;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px; height: 32px;
+    background: rgba(255,255,255,.4);
+    animation: dropline 1.6s ease-in-out infinite;
+  }
+  @keyframes dropline {
+    0%   { transform: scaleY(0); transform-origin: top; }
+    50%  { transform: scaleY(1); transform-origin: top; }
+    51%  { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ── このサイトについて ── */
+  .about {
+    background: var(--paper-dark);
+    padding: 72px 24px;
+  }
+  .about-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .about-text h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  .about-text p {
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.9;
+    margin-bottom: 12px;
+  }
+  .about-profile {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 28px;
+  }
+  .profile-label {
+    font-size: 10px;
+    letter-spacing: .2em;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+    opacity: .7;
+  }
+  .profile-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .profile-role {
+    font-size: 12px;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+  .profile-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .profile-tag {
+    font-size: 11px;
+    background: var(--paper-dark);
+    color: var(--ink-light);
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--rule);
+  }
+  @media (max-width: 640px) {
+    .about-inner { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* ── コンテンツナビ ── */
+  .nav-section {
+    padding: 72px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section-heading {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    letter-spacing: .2em;
+    opacity: .4;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .page-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .page-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 28px;
+    transition: transform .15s, box-shadow .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+  }
+  .page-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,.1);
+  }
+  .page-card-icon { font-size: 28px; margin-bottom: 14px; }
+  .page-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .page-card-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .page-card-meta {
+    font-size: 11px;
+    letter-spacing: .08em;
+    opacity: .45;
+  }
+  .page-card-arrow {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    font-size: 18px;
+    opacity: .2;
+    transition: opacity .2s, transform .2s;
+  }
+  .page-card:hover .page-card-arrow {
+    opacity: .5;
+    transform: translateX(4px);
+  }
+
+  /* カラー */
+  .page-card--purple::before { background: var(--purple); }
+  .page-card--purple .page-card-title { color: var(--purple); }
+  .page-card--blue::before   { background: var(--blue); }
+  .page-card--blue .page-card-title   { color: var(--blue); }
+  .page-card--amber::before  { background: var(--amber); }
+  .page-card--amber .page-card-title  { color: var(--amber); }
+
+  /* ── 経年タイムライン ── */
+  .timeline-section {
+    background: var(--paper-dark);
+    padding: 72px 24px;
+  }
+  .timeline-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .timeline-heading {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .timeline-sub {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-bottom: 36px;
+  }
+  .years {
+    position: relative;
+    padding-left: 40px;
+  }
+  .years::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: var(--rule);
+  }
+  .year-row {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .year-dot {
+    position: absolute;
+    left: -36px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--rule);
+    border: 2px solid var(--paper-dark);
+  }
+  .year-row.highlight .year-dot {
+    background: var(--accent);
+    width: 14px;
+    height: 14px;
+    left: -38px;
+    top: 4px;
+  }
+  .year-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 44px;
+    color: var(--ink-light);
+  }
+  .year-row.highlight .year-num { color: var(--accent); }
+  .year-events {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+  }
+  .year-row.highlight .year-events { color: var(--ink); }
+  .year-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 1px 7px;
+    border-radius: 20px;
+    background: var(--accent);
+    color: #fff;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: .04em;
+  }
+
+  /* ── 最新記事 ── */
+  .latest-section {
+    padding: 72px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .latest-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .latest-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform .15s, box-shadow .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .latest-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+  .latest-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.09); }
+  .latest-card-date { font-size: 10px; letter-spacing: .1em; opacity: .4; margin-bottom: 6px; }
+  .latest-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px; font-weight: 600; line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .latest-card-snippet {
+    font-size: 12px; color: var(--ink-light); line-height: 1.7;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* ── フッター ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.5);
+    padding: 48px 24px 32px;
+  }
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .footer-brand {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 6px;
+  }
+  .footer-brand-sub { font-size: 12px; opacity: .45; letter-spacing: .08em; }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,.55);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--accent-light); }
+  .footer-copy {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 11px;
+    letter-spacing: .08em;
+    opacity: .35;
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <p class="hero-label">SHONAN, KANAGAWA</p>
+  <h1>一戸建てのキセキ</h1>
+  <p class="hero-sub">Life to Hack</p>
+  <p class="hero-desc">
+    神奈川県湘南エリアで工務店アコルデと建てた注文住宅。<br>
+    2013年の土地探しから、着工・完成・入居後13年間の<br>
+    リアルな記録をすべて公開しています。
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">377</div>
+      <div class="hero-stat-label">ARTICLES</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">13</div>
+      <div class="hero-stat-label">YEARS LIVED</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">34</div>
+      <div class="hero-stat-label">坪 / 注文住宅</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">湘南</div>
+      <div class="hero-stat-label">SHONAN AREA</div>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <a href="construction.html" class="btn-primary">建築記録を読む</a>
+    <a href="lifehack.html" class="btn-ghost">ライフハックを読む</a>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- このサイトについて -->
+<section class="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>土地探しから<br>13年間、全部書いた。</h2>
+      <p>「家を買おう」と決意した2013年3月から、工務店比較・住宅ローン・仕様決め・着工・完成・入居後のリアルまで。</p>
+      <p>失敗談も含めて正直に記録したブログを、読みやすく整理し直したサイトです。これから家を建てる方の参考になれば。</p>
+      <p>家のことだけでなく、湘南での生活・節約・釣り・家電なども書いています。</p>
+    </div>
+    <div class="about-profile">
+      <div class="profile-label">AUTHOR</div>
+      <div class="profile-name">kodatenokiseki</div>
+      <div class="profile-role">神奈川県湘南エリア在住 / 理系会社員</div>
+      <div class="profile-tags">
+        <span class="profile-tag">注文住宅</span>
+        <span class="profile-tag">アコルデ</span>
+        <span class="profile-tag">湘南</span>
+        <span class="profile-tag">釣り</span>
+        <span class="profile-tag">家電好き</span>
+        <span class="profile-tag">節約</span>
+        <span class="profile-tag">2児の父</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- コンテンツナビ -->
+<section class="nav-section">
+  <div class="section-heading">CONTENTS</div>
+  <div class="page-cards">
+
+    <a href="construction.html" class="page-card page-card--purple">
+      <div class="page-card-icon">🏗️</div>
+      <div class="page-card-title">建築記録</div>
+      <div class="page-card-desc">
+        土地探し・工務店選び・仕様決め・着工・完成・WEB内覧会。2013年の全8ヶ月を6フェーズで整理。
+      </div>
+      <div class="page-card-meta">50記事厳選 ／ 総費用も公開</div>
+      <div class="page-card-arrow">→</div>
+    </a>
+
+    <a href="#" class="page-card page-card--amber" id="simulator-card">
+      <div class="page-card-icon">🧮</div>
+      <div class="page-card-title">住宅コストシミュレーター</div>
+      <div class="page-card-desc">
+        土地・建物・諸費用・ローン返済まで。我が家の実績値をベースにした注文住宅コストの試算ツール。
+      </div>
+      <div class="page-card-meta">実績データ搭載 ／ 無料</div>
+      <div class="page-card-arrow">→</div>
+    </a>
+
+    <a href="lifehack.html" class="page-card page-card--blue">
+      <div class="page-card-icon">💡</div>
+      <div class="page-card-title">ライフハックシリーズ</div>
+      <div class="page-card-desc">
+        家電・節約・釣り・ライフスタイル。湘南での暮らしを楽しくする実体験ベースのヒント集。
+      </div>
+      <div class="page-card-meta">4カテゴリ・34記事</div>
+      <div class="page-card-arrow">→</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- 経年タイムライン -->
+<section class="timeline-section">
+  <div class="timeline-inner">
+    <h2 class="timeline-heading">入居してから、今も続いている。</h2>
+    <p class="timeline-sub">家を建てて終わりじゃない。13年分の経年変化を記録しています。</p>
+    <div class="years">
+      <div class="year-row highlight">
+        <div class="year-dot"></div>
+        <div class="year-num">2013</div>
+        <div class="year-events">土地契約・着工・上棟・引き渡し・入居 ／ <strong>218記事</strong>で徹底記録</div>
+      </div>
+      <div class="year-row">
+        <div class="year-dot"></div>
+        <div class="year-num">2014</div>
+        <div class="year-events">入居後の生活・電気代・設備の使い心地・初めての固定資産税</div>
+      </div>
+      <div class="year-row">
+        <div class="year-dot"></div>
+        <div class="year-num">2015–17</div>
+        <div class="year-events">家電・節約・釣り・マラソンなど暮らしを楽しむ記録</div>
+      </div>
+      <div class="year-row highlight">
+        <div class="year-dot"></div>
+        <div class="year-num">2018</div>
+        <div class="year-events">家を建てて5年が経過 ／ 経年劣化の正直レポート</div>
+      </div>
+      <div class="year-row">
+        <div class="year-dot"></div>
+        <div class="year-num">2019</div>
+        <div class="year-events">シロアリ防除処理（築5年超） ／ クレジットカード節約術</div>
+      </div>
+      <div class="year-row">
+        <div class="year-dot"></div>
+        <div class="year-num">2020–21</div>
+        <div class="year-events">コロナで書斎が大活躍 ／ 子供部屋の間仕切り壁工事 ／ エアコン追加</div>
+      </div>
+      <div class="year-row highlight">
+        <div class="year-dot"></div>
+        <div class="year-num">2022</div>
+        <div class="year-events">10年目突入 ／ アコルデとの関係も10年。トラブルはほぼゼロ</div>
+      </div>
+      <div class="year-row highlight">
+        <div class="year-dot"></div>
+        <div class="year-num">2024</div>
+        <div class="year-events">11年目のエアコン交換 ／ 東芝→ダイキン <span class="year-badge">最新記事</span></div>
+      </div>
+      <div class="year-row highlight">
+        <div class="year-dot"></div>
+        <div class="year-num">2026</div>
+        <div class="year-events">13年目レポート <span class="year-badge">今年更新予定</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最新記事 -->
+<section class="latest-section">
+  <div class="section-heading">RECENT POSTS</div>
+  <div class="latest-cards">
+
+    <a class="latest-card" href="https://kiseki.bloomsfun.com/2024/06/11.html" target="_blank" rel="noopener">
+      <div class="latest-card-date">2024-06-16</div>
+      <div class="latest-card-title">11年目のエアコン交換</div>
+      <div class="latest-card-snippet">新築時の東芝製エアコンがついに限界。10年間よく動いてくれた東芝からダイキン製への交換費用と業者選びの実録。</div>
+    </a>
+
+    <a class="latest-card" href="https://kiseki.bloomsfun.com/2022/12/10.html" target="_blank" rel="noopener">
+      <div class="latest-card-date">2022-12-31</div>
+      <div class="latest-card-title">10年目に突入した我が家の注文住宅事情</div>
+      <div class="latest-card-snippet">家には問題なく10年目に突入。アコルデとの関係も10年。10年住んで思う工務店選びの正解。</div>
+    </a>
+
+    <a class="latest-card" href="https://kiseki.bloomsfun.com/2021/07/8.html" target="_blank" rel="noopener">
+      <div class="latest-card-date">2021-07-03</div>
+      <div class="latest-card-title">除湿乾燥機の実力を思い知った新築8年目</div>
+      <div class="latest-card-snippet">浴室乾燥機だけでは足りない時に活躍する除湿乾燥機。8年目でようやく導入してその実力に驚いた話。</div>
+    </a>
+
+    <a class="latest-card" href="https://kiseki.bloomsfun.com/2021/06/1.html" target="_blank" rel="noopener">
+      <div class="latest-card-date">2021-06-12</div>
+      <div class="latest-card-title">子供部屋の間仕切り壁が1日で完了</div>
+      <div class="latest-card-snippet">12畳を二部屋に仕切る工事を低コストで実現。業者選び・見積もり・施工の全プロセスを公開。</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">一戸建てのキセキ</div>
+      <div class="footer-brand-sub">Life to Hack ／ kiseki.bloomsfun.com</div>
+    </div>
+    <div class="footer-links">
+      <a href="construction.html">建築記録</a>
+      <a href="#">住宅コストシミュレーター</a>
+      <a href="lifehack.html">ライフハック</a>
+      <a href="https://kiseki.bloomsfun.com/" target="_blank" rel="noopener">旧ブログ</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2013–2026 一戸建てのキセキ Life to Hack. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
