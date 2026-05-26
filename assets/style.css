@@ -1,0 +1,36 @@
+
+:root {
+  --ink: #1a1714;
+  --ink-light: #5a524a;
+  --paper: #faf8f4;
+  --paper-dark: #f0ece4;
+  --accent: #b5631e;
+  --rule: #d4c9b8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Noto Sans JP", "Hiragino Sans", sans-serif; background: var(--paper); color: var(--ink); line-height: 1.8; font-size: 15px; }
+
+.site-header { background: var(--ink); color: #fff; padding: 14px 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.site-header .site-name { color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; letter-spacing: .05em; }
+.site-header nav { display: flex; gap: 16px; margin-left: auto; }
+.site-header nav a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 13px; }
+.site-header nav a:hover { color: #fff; }
+
+.post-container { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+.post-header { margin-bottom: 28px; border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+.post-date { font-size: 12px; color: var(--ink-light); letter-spacing: .1em; display: block; margin-bottom: 8px; }
+.post-title { font-family: "Noto Serif JP", serif; font-size: clamp(20px, 4vw, 28px); font-weight: 700; line-height: 1.4; color: var(--ink); }
+
+.post-body { line-height: 1.9; }
+.post-body img { max-width: 100%; height: auto; border-radius: 4px; margin: 16px 0; display: block; }
+.post-body a { color: var(--accent); }
+.post-body h2, .post-body h3 { font-family: "Noto Serif JP", serif; margin: 24px 0 12px; }
+.post-body p { margin-bottom: 16px; }
+.post-body ul, .post-body ol { margin: 0 0 16px 24px; }
+
+.post-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.post-footer a { color: var(--accent); text-decoration: none; font-size: 14px; }
+
+.site-footer { background: var(--ink); color: rgba(255,255,255,.5); text-align: center; padding: 24px; font-size: 12px; margin-top: 40px; }
+
+@media (max-width: 600px) { .post-container { padding: 24px 16px 60px; } }
