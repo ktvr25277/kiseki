@@ -26,7 +26,7 @@
       <h1 class="post-title">確定申告（住宅ローン控除）のやり直し</h1>
     </header>
     <div class="post-body"><div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-582WzX2s_E0/UuzvA3wqXUI/AAAAAAAAAHI/GX2j008uT8k/s1600/2014-02-01_215613.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-582WzX2s_E0/UuzvA3wqXUI/AAAAAAAAAHI/GX2j008uT8k/s1600/2014-02-01_215613.png" height="263" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-582WzX2s_E0/UuzvA3wqXUI/AAAAAAAAAHI/GX2j008uT8k/s1600/2014-02-01_215613.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-582WzX2s_E0/UuzvA3wqXUI/AAAAAAAAAHI/GX2j008uT8k/s1600/2014-02-01_215613.png" height="263" width="320" /></a></div>
 <br />
 毎日何らかの愚痴をこぼしている当家の妻ですが、ここのところ何度か市役所やら税務署へ行って頂いている（いや、家は夫婦のものですから行く義務は半分は妻にもあるわけですが）その後にまた愚痴をこぼしていたのでここに詳らかにさせて頂こうかと思います。<br />
 <br />
@@ -107,4 +107,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
