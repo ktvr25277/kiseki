@@ -35,7 +35,7 @@
 <br />
 １つ目は！<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-sCO4m8Cx8_A/UreKtK2ncGI/AAAAAAAAABs/tHL3qhgVUhc/s1600/2013-12-23_095800.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="137" src="http://1.bp.blogspot.com/-sCO4m8Cx8_A/UreKtK2ncGI/AAAAAAAAABs/tHL3qhgVUhc/s400/2013-12-23_095800.png" width="400" /></a></div>
+<a href="http://1.bp.blogspot.com/-sCO4m8Cx8_A/UreKtK2ncGI/AAAAAAAAABs/tHL3qhgVUhc/s1600/2013-12-23_095800.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="137" src="http://1.bp.blogspot.com/-sCO4m8Cx8_A/UreKtK2ncGI/AAAAAAAAABs/tHL3qhgVUhc/s400/2013-12-23_095800.png" width="400" /></a></div>
 <span style="font-size: x-large;">全館床暖房、</span>です。<br />
 ※この画像は全館床暖房で有名なあの工務店さんから拝借しました（汗）<br />
 <br />
@@ -49,7 +49,7 @@
 <br />
 続いて２つ目は！<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://3.bp.blogspot.com/-olfOOUNrvB8/UreMcPjhpQI/AAAAAAAAAB4/4NK6dA-ah1c/s1600/2013-12-23_100542.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="246" src="http://3.bp.blogspot.com/-olfOOUNrvB8/UreMcPjhpQI/AAAAAAAAAB4/4NK6dA-ah1c/s320/2013-12-23_100542.png" width="320" /></a></div>
+<a href="http://3.bp.blogspot.com/-olfOOUNrvB8/UreMcPjhpQI/AAAAAAAAAB4/4NK6dA-ah1c/s1600/2013-12-23_100542.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="246" src="http://3.bp.blogspot.com/-olfOOUNrvB8/UreMcPjhpQI/AAAAAAAAAB4/4NK6dA-ah1c/s320/2013-12-23_100542.png" width="320" /></a></div>
 <div style="text-align: center;">
 <span style="font-size: x-small;">写真お借りしていますm(_ _)m</span></div>
 <span style="font-size: x-large;"><br /></span>
@@ -71,4 +71,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
