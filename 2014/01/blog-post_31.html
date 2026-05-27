@@ -50,7 +50,7 @@
 <div class="separator" style="clear: both; text-align: center;">
 </div>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-ZxdEs4d4stY/Uuuix4fKs1I/AAAAAAAAAG4/80q74m7AUxo/s1600/2014-01-31_221836.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-ZxdEs4d4stY/Uuuix4fKs1I/AAAAAAAAAG4/80q74m7AUxo/s1600/2014-01-31_221836.jpg" height="320" width="284" /></a></div>
+<a href="http://1.bp.blogspot.com/-ZxdEs4d4stY/Uuuix4fKs1I/AAAAAAAAAG4/80q74m7AUxo/s1600/2014-01-31_221836.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-ZxdEs4d4stY/Uuuix4fKs1I/AAAAAAAAAG4/80q74m7AUxo/s1600/2014-01-31_221836.jpg" height="320" width="284" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <br /></div>
 向かって右側が外、左側が部屋です。外気温は家に設置している別の温度計です。<br />
@@ -83,4 +83,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
