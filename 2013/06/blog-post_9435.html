@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-06-19">2013-06-19</time>
       <h1 class="post-title">トイレのドアは巨体対応</h1>
     </header>
-    <div class="post-body">我が家に巨体はおりません（今は）。<br /><br />今のアパートのトイレのドアは幅57cm位で60ｃｍも無い感じです。<br /><br />特に意識してなかったのですが、アコルデさんの仕様ではトイレのドア幅はも少し幅が広い（詳細な数字が今出てこないんですが図面から見ると70cm位）ようです。まぁ幅が狭いより広い方が良いかな～と思うのでヨシヨシって感じです。<br /><br />一応調べてみるとやはり気にしてる方々がいらっしゃる。<br />この辺りを拝見すると<br /><a href="http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1337055678">http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1337055678<br /></a><a href="http://oshiete.goo.ne.jp/plus/q/67185">http://oshiete.goo.ne.jp/plus/q/67185<br /></a><br />・成人男性の平均肩幅40cm、肩の両側に10cmの余裕をとって60cm<br />・万が一車椅子になった時に60cmじゃ狭い（68cmでギリギリ進入可能らしいです）<br />らしいです。<br /><br />まぁ70ｃｍ位あればちょっと平均より体が大きい人が来ても大丈夫！<br /><div align="center"><a href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/c/a/ca6cfd64.jpg" title="20120204115905" target="_blank"><img onerror="this.style.display='none'" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/c/a/ca6cfd64-s.jpg" width="480" height="566" border="0" alt="20120204115905" hspace="5" class="pict"></a></div><br /><br />ですね！<br /><br /><div align="center"><img onerror="this.style.display='none'" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/7/170d0a88.jpg" width="183" height="202" border="0" alt="20070824181328" hspace="5" class="pict"><br /><br /><br /><div style="text-align: left;"><br /><br /></div></div><br /><br /><br /><br/></div>
+    <div class="post-body">我が家に巨体はおりません（今は）。<br /><br />今のアパートのトイレのドアは幅57cm位で60ｃｍも無い感じです。<br /><br />特に意識してなかったのですが、アコルデさんの仕様ではトイレのドア幅はも少し幅が広い（詳細な数字が今出てこないんですが図面から見ると70cm位）ようです。まぁ幅が狭いより広い方が良いかな～と思うのでヨシヨシって感じです。<br /><br />一応調べてみるとやはり気にしてる方々がいらっしゃる。<br />この辺りを拝見すると<br /><a href="http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1337055678">http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1337055678<br /></a><a href="http://oshiete.goo.ne.jp/plus/q/67185">http://oshiete.goo.ne.jp/plus/q/67185<br /></a><br />・成人男性の平均肩幅40cm、肩の両側に10cmの余裕をとって60cm<br />・万が一車椅子になった時に60cmじゃ狭い（68cmでギリギリ進入可能らしいです）<br />らしいです。<br /><br />まぁ70ｃｍ位あればちょっと平均より体が大きい人が来ても大丈夫！<br /><div align="center"><a href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/c/a/ca6cfd64.jpg" title="20120204115905" target="_blank"><img src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/c/a/ca6cfd64-s.jpg" width="480" height="566" border="0" alt="20120204115905" hspace="5" class="pict"></a></div><br /><br />ですね！<br /><br /><div align="center"><img src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/7/170d0a88.jpg" width="183" height="202" border="0" alt="20070824181328" hspace="5" class="pict"><br /><br /><br /><div style="text-align: left;"><br /><br /></div></div><br /><br /><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/06/blog-post_221.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">引き戸と隙間が気になる妻</span></a><a href="../../2013/06/blog-post_4024.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">センサー照明ならばスイッチは不要？</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
