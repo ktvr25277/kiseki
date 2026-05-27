@@ -26,7 +26,7 @@
       <h1 class="post-title">ドミノピザを使わなくなったワケ</h1>
     </header>
     <div class="post-body"><div class="separator" style="clear: both; text-align: center;">
-<a href="https://3.bp.blogspot.com/-tJ0GNLwbwuI/XDrAakiuN1I/AAAAAAAABEI/yZ_WQJoETuIOYV89kPRRZv9WUsDsBTSMgCLcBGAs/s1600/bd1d318d8f8a0bd6ee4975f5aa96a2d3_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" data-original-height="427" data-original-width="640" height="213" src="https://3.bp.blogspot.com/-tJ0GNLwbwuI/XDrAakiuN1I/AAAAAAAABEI/yZ_WQJoETuIOYV89kPRRZv9WUsDsBTSMgCLcBGAs/s320/bd1d318d8f8a0bd6ee4975f5aa96a2d3_s.jpg" width="320" /></a></div>
+<a href="https://3.bp.blogspot.com/-tJ0GNLwbwuI/XDrAakiuN1I/AAAAAAAABEI/yZ_WQJoETuIOYV89kPRRZv9WUsDsBTSMgCLcBGAs/s1600/bd1d318d8f8a0bd6ee4975f5aa96a2d3_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="427" data-original-width="640" height="213" src="https://3.bp.blogspot.com/-tJ0GNLwbwuI/XDrAakiuN1I/AAAAAAAABEI/yZ_WQJoETuIOYV89kPRRZv9WUsDsBTSMgCLcBGAs/s320/bd1d318d8f8a0bd6ee4975f5aa96a2d3_s.jpg" width="320" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <br /></div>
 <div style="text-align: left;">
@@ -92,4 +92,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
