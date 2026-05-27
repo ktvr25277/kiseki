@@ -207,25 +207,4 @@ So-net使ってる人は是非解約を検討してみて下さい（？）。</
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
-
-<script>
-(function(){
-  function hideBroken(){
-    document.querySelectorAll('.post-body img').forEach(function(img){
-      if(!img.complete || img.naturalWidth === 0){
-        img.style.display = 'none';
-      }
-      img.addEventListener('error', function(){ this.style.display = 'none'; });
-    });
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', hideBroken);
-  } else {
-    hideBroken();
-  }
-  // 念のため遅延実行も
-  setTimeout(hideBroken, 1500);
-})();
-</script>
-
 </body></html>
