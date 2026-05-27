@@ -32,7 +32,7 @@
 <br />
 そしてGoogle大好きチャンなワタクシはBloggerを選んだということでございます。記事が増えると移行も大変ですし、今後長く続けるためにご迷惑をおかけいたします。<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-T_L0a6WKpu4/UrduaHB4wuI/AAAAAAAAAAk/wOMthRq0m30/s1600/476bb1bdfc76e5d8e3effa3627d6473e.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="136" src="http://1.bp.blogspot.com/-T_L0a6WKpu4/UrduaHB4wuI/AAAAAAAAAAk/wOMthRq0m30/s320/476bb1bdfc76e5d8e3effa3627d6473e.jpg" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-T_L0a6WKpu4/UrduaHB4wuI/AAAAAAAAAAk/wOMthRq0m30/s1600/476bb1bdfc76e5d8e3effa3627d6473e.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="136" src="http://1.bp.blogspot.com/-T_L0a6WKpu4/UrduaHB4wuI/AAAAAAAAAAk/wOMthRq0m30/s320/476bb1bdfc76e5d8e3effa3627d6473e.jpg" width="320" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <span style="font-size: xx-small;">ｶｯｺﾂｹﾁｬｯﾃ</span></div>
 <br />
@@ -48,4 +48,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
