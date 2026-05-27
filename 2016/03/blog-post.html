@@ -142,25 +142,4 @@ posted with <a href="http://sakuratan.biz/azlink/dp/%E3%82%A2%E3%83%AC%E3%83%AB%
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
-
-<script>
-(function(){
-  function hideBroken(){
-    document.querySelectorAll('.post-body img').forEach(function(img){
-      if(!img.complete || img.naturalWidth === 0){
-        img.style.display = 'none';
-      }
-      img.addEventListener('error', function(){ this.style.display = 'none'; });
-    });
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', hideBroken);
-  } else {
-    hideBroken();
-  }
-  // 念のため遅延実行も
-  setTimeout(hideBroken, 1500);
-})();
-</script>
-
 </body></html>
