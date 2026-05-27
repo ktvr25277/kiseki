@@ -29,7 +29,7 @@
 <br />
 <table border="0" cellpadding="5" style="border-collapse: separate; border-spacing: 5px; border: none 0;"><tbody>
 <tr><td align="left" colspan="2" style="text-align: left; vertical-align: top;" valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00KGVN140/emccom-22/ref=nosim/" target="_blank">Google Chromecast ( クロームキャスト )  Wi-Fi経由 テレビ接続 ストリーミング / HDMI / 802.11b/g/n / 1080p ) GA3A00035A16</a></td></tr>
-<tr><td align="left" style="text-align: left; vertical-align: top;" valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00KGVN140/emccom-22/ref=nosim/" target="_blank"><img onerror="this.style.display='none'" alt="Google Chromecast ( クロームキャスト )  Wi-Fi経由 テレビ接続 ストリーミング / HDMI / 802.11b/g/n / 1080p ) GA3A00035A16" src="http://ecx.images-amazon.com/images/I/412oqckVD4L.jpg" height="241" width="320" /></a></td><td align="left" style="text-align: left; vertical-align: top;" valign="top"><br />
+<tr><td align="left" style="text-align: left; vertical-align: top;" valign="top"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00KGVN140/emccom-22/ref=nosim/" target="_blank"><img alt="Google Chromecast ( クロームキャスト )  Wi-Fi経由 テレビ接続 ストリーミング / HDMI / 802.11b/g/n / 1080p ) GA3A00035A16" src="http://ecx.images-amazon.com/images/I/412oqckVD4L.jpg" height="241" width="320" /></a></td><td align="left" style="text-align: left; vertical-align: top;" valign="top"><br />
 <br />
 <a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00KGVN140/emccom-22/ref=nosim/" target="_blank">Amazonで詳しく見る</a></td></tr>
 </tbody></table>
@@ -58,4 +58,25 @@ Google changes the worldって感じです。<br />
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
