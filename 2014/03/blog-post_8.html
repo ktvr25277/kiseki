@@ -28,7 +28,7 @@
     <div class="post-body">本日は久保薗現場監督に来て頂きました。電話でチョコチョコ相談していたのであまり久しぶりな感じはしませんでしたｗ。<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-xbfe8FojKaA/UxsjJUwp52I/AAAAAAAAAJQ/ZbZcL7dkRMA/s1600/e45d55088366d6a5ba97f7ddfccca969_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-xbfe8FojKaA/UxsjJUwp52I/AAAAAAAAAJQ/ZbZcL7dkRMA/s1600/e45d55088366d6a5ba97f7ddfccca969_s.jpg" height="213" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-xbfe8FojKaA/UxsjJUwp52I/AAAAAAAAAJQ/ZbZcL7dkRMA/s1600/e45d55088366d6a5ba97f7ddfccca969_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-xbfe8FojKaA/UxsjJUwp52I/AAAAAAAAAJQ/ZbZcL7dkRMA/s1600/e45d55088366d6a5ba97f7ddfccca969_s.jpg" height="213" width="320" /></a></div>
 <br />
 <br />
 内容はおおまかに言いますと、ちょっと追加で付けたい設備が出てきたのですがそれを当初は自分でつけようとしたのですが梁の位置やら木材の下地の位置やら少し調べるのが自信ないな～と思い一応岡本社長に相談したら<br />
@@ -58,4 +58,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
