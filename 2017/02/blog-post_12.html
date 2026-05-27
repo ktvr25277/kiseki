@@ -27,7 +27,7 @@
     </header>
     <div class="post-body"><div style="text-align: center;">
 <br />
-<a href="http://4.bp.blogspot.com/-cVKJ1-3QYWk/WJ_TKSyp1sI/AAAAAAAAAyw/Cq9zu4k0gcEWuUZnjC3qLKnGnyUO3sDVgCK4B/s1600/2017-02-12_121349.jpg" imageanchor="1"><img onerror="this.style.display='none'" border="0" height="267" src="https://4.bp.blogspot.com/-cVKJ1-3QYWk/WJ_TKSyp1sI/AAAAAAAAAyw/Cq9zu4k0gcEWuUZnjC3qLKnGnyUO3sDVgCK4B/s640/2017-02-12_121349.jpg" width="640" /></a></div>
+<a href="http://4.bp.blogspot.com/-cVKJ1-3QYWk/WJ_TKSyp1sI/AAAAAAAAAyw/Cq9zu4k0gcEWuUZnjC3qLKnGnyUO3sDVgCK4B/s1600/2017-02-12_121349.jpg" imageanchor="1"><img border="0" height="267" src="https://4.bp.blogspot.com/-cVKJ1-3QYWk/WJ_TKSyp1sI/AAAAAAAAAyw/Cq9zu4k0gcEWuUZnjC3qLKnGnyUO3sDVgCK4B/s640/2017-02-12_121349.jpg" width="640" /></a></div>
 <br />
 <br />
 さて行ってまいりましたワンシーズンに1回か2回しか行かないスキー（汗）<br />
@@ -38,7 +38,7 @@
 <br />
 <ul>
 <li><b><u>何と言っても関東から近い</u></b><br />これは異論は出ませんでしょう。ホームページにも書いてありますが<b>都心から2時間半程度</b>で行けます。と言っても中央道や東名は週末にひっかけるとしこたま混むので平日の道が空いている前提ですが。<b>湘南エリアからは今は圏央道がつながっていますのでやはり3時間未満</b>で行けるという日帰りも可能なアクセスの良さが人気の理由でしょう。<br /><br /><div style="text-align: center;">
-　　<a href="http://4.bp.blogspot.com/-ODT1UlWHl0I/WJ_U8ABy5mI/AAAAAAAAAy8/w9gpZjBdNGcAdCv4MLGIK__e7ck7KGjBwCK4B/s1600/2017-02-12_121400.jpg" imageanchor="1" style="text-align: center;"><img onerror="this.style.display='none'" border="0" height="166" src="https://4.bp.blogspot.com/-ODT1UlWHl0I/WJ_U8ABy5mI/AAAAAAAAAy8/w9gpZjBdNGcAdCv4MLGIK__e7ck7KGjBwCK4B/s400/2017-02-12_121400.jpg" width="400" /></a></div>
+　　<a href="http://4.bp.blogspot.com/-ODT1UlWHl0I/WJ_U8ABy5mI/AAAAAAAAAy8/w9gpZjBdNGcAdCv4MLGIK__e7ck7KGjBwCK4B/s1600/2017-02-12_121400.jpg" imageanchor="1" style="text-align: center;"><img border="0" height="166" src="https://4.bp.blogspot.com/-ODT1UlWHl0I/WJ_U8ABy5mI/AAAAAAAAAy8/w9gpZjBdNGcAdCv4MLGIK__e7ck7KGjBwCK4B/s400/2017-02-12_121400.jpg" width="400" /></a></div>
 </li>
 </ul>
 <ul>
@@ -56,7 +56,7 @@
 <ul>
 <li><b><u>何と言っても混む！</u></b><br />これはある意味仕方ないでしょう。関東からアクセスの良いスキー場で、ファミリー向けの設備がしっかり整っている故、人気です。</li>
 <li><b><u>コースがシンプル！</u></b><br />まぁこれも立地上しかたないでしょうがバリエーションは限定的ですね。ファミリー向けと言われる所以でもございます。<br /><br /><div style="text-align: center;">
-<a href="http://4.bp.blogspot.com/-NM9bh87Ftp8/WJ_Xr13r7fI/AAAAAAAAAzI/lfoKxF5akXsmCjTB-x9giVtjr95eNcTiQCK4B/s1600/map.jpg" imageanchor="1"><img onerror="this.style.display='none'" border="0" height="342" src="https://4.bp.blogspot.com/-NM9bh87Ftp8/WJ_Xr13r7fI/AAAAAAAAAzI/lfoKxF5akXsmCjTB-x9giVtjr95eNcTiQCK4B/s400/map.jpg" width="400" /></a></div>
+<a href="http://4.bp.blogspot.com/-NM9bh87Ftp8/WJ_Xr13r7fI/AAAAAAAAAzI/lfoKxF5akXsmCjTB-x9giVtjr95eNcTiQCK4B/s1600/map.jpg" imageanchor="1"><img border="0" height="342" src="https://4.bp.blogspot.com/-NM9bh87Ftp8/WJ_Xr13r7fI/AAAAAAAAAzI/lfoKxF5akXsmCjTB-x9giVtjr95eNcTiQCK4B/s400/map.jpg" width="400" /></a></div>
 </li>
 </ul>
 <br />
@@ -106,4 +106,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
