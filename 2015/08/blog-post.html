@@ -27,7 +27,7 @@
     </header>
     <div class="post-body">昨日は幕張ビーチ花火フェスタという幕張海浜公園付近で行われる花火大会に行ってまいりました。<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://2.bp.blogspot.com/-S6NOCbNr6m8/Vb1S3G697WI/AAAAAAAAAqI/ciUAcxnQQec/s1600/2015-08-02_073718.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="281" src="http://2.bp.blogspot.com/-S6NOCbNr6m8/Vb1S3G697WI/AAAAAAAAAqI/ciUAcxnQQec/s400/2015-08-02_073718.jpg" width="400" /></a></div>
+<a href="http://2.bp.blogspot.com/-S6NOCbNr6m8/Vb1S3G697WI/AAAAAAAAAqI/ciUAcxnQQec/s1600/2015-08-02_073718.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="281" src="http://2.bp.blogspot.com/-S6NOCbNr6m8/Vb1S3G697WI/AAAAAAAAAqI/ciUAcxnQQec/s400/2015-08-02_073718.jpg" width="400" /></a></div>
 <br />
 <br />
 海岸かつ有料席での観覧は初めてだったので色々と学ぶことが多く、また来年も行きたいということになったので備忘録的にポイントまとめです。<br />
@@ -92,4 +92,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
