@@ -38,7 +38,7 @@
 <div style="text-align: center;">
 <span style="color: red; font-size: large;"><b>「フルマラソンは、やらない」</b></span></div>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://2.bp.blogspot.com/-ymKjZ_OPDgM/VRdZOdMi_6I/AAAAAAAAAj0/4rBUAMWnv5I/s1600/81e7b83ea345e2e8e58173e7df85b615.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://2.bp.blogspot.com/-ymKjZ_OPDgM/VRdZOdMi_6I/AAAAAAAAAj0/4rBUAMWnv5I/s1600/81e7b83ea345e2e8e58173e7df85b615.jpg" /></a></div>
+<a href="http://2.bp.blogspot.com/-ymKjZ_OPDgM/VRdZOdMi_6I/AAAAAAAAAj0/4rBUAMWnv5I/s1600/81e7b83ea345e2e8e58173e7df85b615.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-ymKjZ_OPDgM/VRdZOdMi_6I/AAAAAAAAAj0/4rBUAMWnv5I/s1600/81e7b83ea345e2e8e58173e7df85b615.jpg" /></a></div>
 <br />
 <br />
 <br />
@@ -69,7 +69,7 @@
 <br />
 お後が宜しくないようで・・・<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-qUvuNtRODY8/VRdZOjd2WUI/AAAAAAAAAkA/qt8p7gmeWh4/s1600/f05a2873a462f4e9be2b65cf7eeec8d1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-qUvuNtRODY8/VRdZOjd2WUI/AAAAAAAAAkA/qt8p7gmeWh4/s1600/f05a2873a462f4e9be2b65cf7eeec8d1.jpg" height="148" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-qUvuNtRODY8/VRdZOjd2WUI/AAAAAAAAAkA/qt8p7gmeWh4/s1600/f05a2873a462f4e9be2b65cf7eeec8d1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-qUvuNtRODY8/VRdZOjd2WUI/AAAAAAAAAkA/qt8p7gmeWh4/s1600/f05a2873a462f4e9be2b65cf7eeec8d1.jpg" height="148" width="320" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <span style="font-size: xx-small;">ｱﾎﾟｰﾝ</span></div>
 <br />
@@ -93,4 +93,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
