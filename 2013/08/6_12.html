@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-08-11">2013-08-11</time>
       <h1 class="post-title">【着工6週目】窓サッシ・シロアリ薬剤</h1>
     </header>
-    <div class="post-body">やったそうです（汗）。<br /><br />諸事情で時差ボケ満載ヘロヘロですorz。今週は私自身が全く現場に行けなかったので妻から話を聞きましたです。<br /><br />なんと！窓がもう付いているではあ～りませんか。<br /><br /><div align="center"><a target="_blank" title="Untitled 3" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/b/e/be5192f2.png"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="Untitled 3" border="0" height="426" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/b/e/be5192f2-s.png"></a></div><br /><br />そしてシロアリ 施工済のサインもしっかりでておるではなかとですか・・・<br /><br /><div align="center"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="Untitled 1" border="0" height="621" width="464" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/1/d161e072.png"></div><br /><br />ちょっとお盆中に詳しく見てこようと思います・・・<br /><br /><br /> さぁ次の戸建てブログは<br /><br /><br/></div>
+    <div class="post-body">やったそうです（汗）。<br /><br />諸事情で時差ボケ満載ヘロヘロですorz。今週は私自身が全く現場に行けなかったので妻から話を聞きましたです。<br /><br />なんと！窓がもう付いているではあ～りませんか。<br /><br /><div align="center"><a target="_blank" title="Untitled 3" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/b/e/be5192f2.png"><img class="pict" hspace="5" alt="Untitled 3" border="0" height="426" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/b/e/be5192f2-s.png"></a></div><br /><br />そしてシロアリ 施工済のサインもしっかりでておるではなかとですか・・・<br /><br /><div align="center"><img class="pict" hspace="5" alt="Untitled 1" border="0" height="621" width="464" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/1/d161e072.png"></div><br /><br />ちょっとお盆中に詳しく見てこようと思います・・・<br /><br /><br /> さぁ次の戸建てブログは<br /><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/08/blog-post_860.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">テレビ周りの配線をすっきりさせる方法</span></a><a href="../../2013/08/blog-post_4608.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">木材利用ポイント看板キター</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
