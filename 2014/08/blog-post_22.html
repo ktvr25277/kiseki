@@ -27,7 +27,7 @@
     </header>
     <div class="post-body"><div>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://lh5.googleusercontent.com/-5ZeZMWsJKM0/U_aUE6lrLhI/AAAAAAAAAV0/iqynIPP7BNU/s640/blogger-image--2125380483.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="https://lh5.googleusercontent.com/-5ZeZMWsJKM0/U_aUE6lrLhI/AAAAAAAAAV0/iqynIPP7BNU/s640/blogger-image--2125380483.jpg" /></a></div>
+<a href="https://lh5.googleusercontent.com/-5ZeZMWsJKM0/U_aUE6lrLhI/AAAAAAAAAV0/iqynIPP7BNU/s640/blogger-image--2125380483.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://lh5.googleusercontent.com/-5ZeZMWsJKM0/U_aUE6lrLhI/AAAAAAAAAV0/iqynIPP7BNU/s640/blogger-image--2125380483.jpg" /></a></div>
 ※某駅からipadで投稿</div>
 <div>
 <br /></div>
@@ -112,4 +112,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
