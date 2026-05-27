@@ -36,7 +36,7 @@
 <br />
 そんな中で見つけたのはドコモのキッズケータイHW-01Gでございます。<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-HCEMYOy0PeE/VwoxM67iW_I/AAAAAAAAArA/VNJ9mg2Lrf8yDUQ3x8VL3oWRx4J2wRZQQ/s1600/mv_02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="294" src="https://4.bp.blogspot.com/-HCEMYOy0PeE/VwoxM67iW_I/AAAAAAAAArA/VNJ9mg2Lrf8yDUQ3x8VL3oWRx4J2wRZQQ/s320/mv_02.png" width="320" /></a></div>
+<a href="https://4.bp.blogspot.com/-HCEMYOy0PeE/VwoxM67iW_I/AAAAAAAAArA/VNJ9mg2Lrf8yDUQ3x8VL3oWRx4J2wRZQQ/s1600/mv_02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="294" src="https://4.bp.blogspot.com/-HCEMYOy0PeE/VwoxM67iW_I/AAAAAAAAArA/VNJ9mg2Lrf8yDUQ3x8VL3oWRx4J2wRZQQ/s320/mv_02.png" width="320" /></a></div>
 <br />
 こいつは一括0円で12か月は月額料金無料、二年目は月々800円くらいで運用できるようです。<br />
 ※契約事務手数料3240円はかかります。あとユニバーサル使用料で2円とか。<br />
@@ -46,7 +46,7 @@
 <br />
 イマドコサーチというのは探す側に月額200円の事前登録が必要なのですが、これが<span style="color: red; font-size: x-large;"><b>ドコモ回線契約者しか登録できない</b></span>という激鬼縛り。<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://2.bp.blogspot.com/-vPyNc2zp3Sg/Vwoy-jjYaMI/AAAAAAAAArM/QBW0OBhg9wwH9jMMfXBhgzilyP0ZcDutA/s1600/2016-04-10_200205.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="144" src="https://2.bp.blogspot.com/-vPyNc2zp3Sg/Vwoy-jjYaMI/AAAAAAAAArM/QBW0OBhg9wwH9jMMfXBhgzilyP0ZcDutA/s400/2016-04-10_200205.jpg" width="400" /></a></div>
+<a href="https://2.bp.blogspot.com/-vPyNc2zp3Sg/Vwoy-jjYaMI/AAAAAAAAArM/QBW0OBhg9wwH9jMMfXBhgzilyP0ZcDutA/s1600/2016-04-10_200205.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="144" src="https://2.bp.blogspot.com/-vPyNc2zp3Sg/Vwoy-jjYaMI/AAAAAAAAArM/QBW0OBhg9wwH9jMMfXBhgzilyP0ZcDutA/s400/2016-04-10_200205.jpg" width="400" /></a></div>
 <br />
 <br />
 <br />
@@ -78,4 +78,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
