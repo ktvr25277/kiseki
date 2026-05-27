@@ -2,7 +2,18 @@
 <html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>木材利用ポイントで交換できるジェフグルメカード対応店舗を地図上で探せるサイトを作ってみた | 一戸建てのキセキ</title>
 <link rel="canonical" href="https://kiseki.bloomsfun.com/2013/12/blog-post_6606.html">
-<link rel="stylesheet" href="../../assets/style.css"></head>
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+.post-nav{display:flex;justify-content:space-between;gap:16px;margin-top:40px;padding-top:24px;border-top:1px solid #d4c9b8;}
+.post-nav a{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:#1a1714;background:#fff;border:1px solid #d4c9b8;border-radius:6px;padding:12px 16px;max-width:48%;transition:box-shadow .15s;}
+.post-nav a:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);}
+.post-nav-prev{align-items:flex-start;}
+.post-nav-next{align-items:flex-end;margin-left:auto;}
+.nav-label{font-size:11px;color:#b5631e;letter-spacing:.1em;}
+.nav-title{font-size:13px;line-height:1.5;font-family:"Noto Serif JP",serif;}
+@media(max-width:600px){.post-nav{flex-direction:column;}.post-nav a{max-width:100%;}}
+</style>
+</head>
 <body>
 <header class="site-header">
   <a href="../../index.html" class="site-name">一戸建てのキセキ Life to Hack</a>
@@ -15,7 +26,13 @@
       <h1 class="post-title">木材利用ポイントで交換できるジェフグルメカード対応店舗を地図上で探せるサイトを作ってみた</h1>
     </header>
     <div class="post-body">長いタイトル失礼をばｗ。<br /><br /><br />連続して木材利用ポイントのお話です。<br />我が家はJCBギフトカードの交換上限が15万円なので残りをジェフグルメカード15万円にしたと書きましたがこのジェフグルメカードの対応店舗を探すのはちょっと手間です。特に出先なんかだと。あれ？スカイラーク系って対応してたよね？とかファストフードだとどこだっけ？とかなるわけです。<br /><br />んでもってジェフグルメカードホームページで対応店舗を検索できるのですがこれが地図表示じゃないので住所を見てもう～んどこのことだっけ～っとかなるわけです。特に土地勘の無い出先では不便です。<br /><br />そんなこんなでジェフグルメカードホームページで検索できる店舗を全てグーグルマップ上に表示しといたら便利やな～と思い立って昨夜にガガガーっと作ってしまいました！<br /><br /><br />こちらです↓<br /><table  style="border-collapse: collapse; border-spacing: 0px; width: 960px; vertical-align: bottom; color: rgb(85, 85, 85); font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 24px;"><tbody><tr  style="vertical-align: bottom;"><td  style="vertical-align: bottom;" id="logo"><span  style="display: inline-block; vertical-align: top;" class="wsite-logo"><a  style="text-decoration: none;" href="http://gourmetmap.bloomsfun.com/"><span  style="font-family: 'Open Sans', sans-serif; line-height: 38px; float: left; padding-left: 10px; vertical-align: top !important;" id="wsite-title"><b><span  style="font-size: large; color: rgb(0, 0, 204);">ジェフグルメ地図：ジェフグルメカード対応店舗を地図上で探そう！</span></b></span></a></span></td></tr></tbody></table>まんまのタイトルｗ<br /><br />GoogleMapのAPIをガリガリと書くのは面倒なので今回batchgeoというマークオンマップサービスを使いました。Webデザインは個人的に一番ラクに作れると思っているWeeblyを使いました。ドメインはGoogleApps経由で設定すれば楽チンです。Adsenseのアカウントは今回変更したためまだサイト上部がスカスカしたかんじですがご愛嬌です。<br /><br />しかし大きな問題が！<br /><br />どうやらジェフグルメカードホームページの店舗検索の結果はすべての店舗を網羅しているわけでは無さそう・・・ということ。うちの近くのCASAも出てこないし・・・。というわけでこの点はJFへ問い合わせをするにして、とりあえず参考程度には使えるかな～って感じになりました。<br /><br /><br />とりあえずエイヤで作ったので我が家の行動範囲である藤沢茅ヶ崎が中心になっておりｗ<br />リクエストが有れば他の都市も入れていこうかと思っております。<br /><br /><br />かなり番外編でした！　→　<br /><br /></div>
-    <footer class="post-footer"><a href="../../index.html">← トップへ戻る</a></footer>
+    <footer class="post-footer">
+      <nav class="post-nav">
+  <a href="../../2013/12/blog-post_7600.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">リビングの写真：家具有り</span></a>
+  <a href="../../2013/12/blog-post_7903.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">新居で導入したコーナーテレビボード</span></a>
+</nav>
+      <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
+    </footer>
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
