@@ -34,3 +34,17 @@ body { font-family: "Noto Sans JP", "Hiragino Sans", sans-serif; background: var
 .site-footer { background: var(--ink); color: rgba(255,255,255,.5); text-align: center; padding: 24px; font-size: 12px; margin-top: 40px; }
 
 @media (max-width: 600px) { .post-container { padding: 24px 16px 60px; } }
+
+/* 壊れた画像（読み込み失敗）を非表示 */
+.post-body img {
+  min-height: 20px;
+}
+.post-body img[src=""],
+.post-body img:not([src]) {
+  display: none;
+}
+
+/* onerrorで付与されたクラス */
+.post-body img.broken {
+  display: none !important;
+}
