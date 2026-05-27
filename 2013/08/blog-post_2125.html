@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-08-07">2013-08-07</time>
       <h1 class="post-title">アメリカのホテルのベッド上ライトとシャレオツ洗面鏡</h1>
     </header>
-    <div class="post-body">であります。<br /><br />あまり言うと周辺の方にバレてしまうのですが（汗）また少し遠出をしておりましてなかなか綺麗なホテルに泊まっておりますです。家を建てているとホテルの内装もまた違った目線で色々とみてしまうのですが、その中から二ポイントをご紹介致します。<br /><br />一つ目はベッド上の照明。<br /><div align="center"><a target="_blank" title="写真 1" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/5/1/51a4fa22.jpg"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="写真 1" border="0" height="359" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/5/1/51a4fa22-s.jpg"></a></div>※ 暗くてごめんなさい。そのわりに照明が白とびしててごめんなさい<br />※ベッド汚くてごめんなさい<br /><br />まぁ私が知らないだけかもしれませんがなんかカッチョいいなと少し思いました。<br /><br />二つ目は洗面所の鏡。<br /><div align="center"><a target="_blank" title="写真 2" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/6/2/6215a660.jpg"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="写真 2" border="0" height="643" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/6/2/6215a660-s.jpg"></a></div><br /><br />なんかたまにこういうの見かけるんですよね。カッコイイ、かつ少しだけ平面じゃなくほんの少しだけ曲面になっていて顔の詳細まで見やすいのであります。もしくは顔が大きくなった錯覚に陥りすこしテンションが下がるかもしれませんｗ。<br /><br />というわけで自分宅には反映されませんがちょっとシャレオツだなと思った話でした。<br /><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
+    <div class="post-body">であります。<br /><br />あまり言うと周辺の方にバレてしまうのですが（汗）また少し遠出をしておりましてなかなか綺麗なホテルに泊まっておりますです。家を建てているとホテルの内装もまた違った目線で色々とみてしまうのですが、その中から二ポイントをご紹介致します。<br /><br />一つ目はベッド上の照明。<br /><div align="center"><a target="_blank" title="写真 1" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/5/1/51a4fa22.jpg"><img class="pict" hspace="5" alt="写真 1" border="0" height="359" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/5/1/51a4fa22-s.jpg"></a></div>※ 暗くてごめんなさい。そのわりに照明が白とびしててごめんなさい<br />※ベッド汚くてごめんなさい<br /><br />まぁ私が知らないだけかもしれませんがなんかカッチョいいなと少し思いました。<br /><br />二つ目は洗面所の鏡。<br /><div align="center"><a target="_blank" title="写真 2" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/6/2/6215a660.jpg"><img class="pict" hspace="5" alt="写真 2" border="0" height="643" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/6/2/6215a660-s.jpg"></a></div><br /><br />なんかたまにこういうの見かけるんですよね。カッコイイ、かつ少しだけ平面じゃなくほんの少しだけ曲面になっていて顔の詳細まで見やすいのであります。もしくは顔が大きくなった錯覚に陥りすこしテンションが下がるかもしれませんｗ。<br /><br />というわけで自分宅には反映されませんがちょっとシャレオツだなと思った話でした。<br /><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/08/blog-post_716.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">キッチンの人大ワークトップはアクリル系がいいんじゃない</span></a><a href="../../2013/08/blog-post_986.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">施主支給用のガラスブロックって重いのね</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
