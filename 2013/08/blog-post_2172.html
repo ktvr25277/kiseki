@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-08-01">2013-08-01</time>
       <h1 class="post-title">寝室の頭の横にあるニッチ</h1>
     </header>
-    <div class="post-body">は何なんだっちゅう話ですよ。<br /><br />これ↓（ウウ・・局所的すぎて解らない・・・スミマセンm(_ _)m）<br /><div align="center"><img onerror="this.style.display='none'" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/3/4/349c703f.png" width="144" height="158" border="0" alt="2013-07-27_203433" hspace="5" class="pict"></div><br /><br />そうです、これは目覚ましか携帯かなんかそういうアラーム的なものを置く所でありまんす！使うかな～<br /><br />短い・・・短すぎる記事・・・でも以上です（（汗）<br /><br /><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
+    <div class="post-body">は何なんだっちゅう話ですよ。<br /><br />これ↓（ウウ・・局所的すぎて解らない・・・スミマセンm(_ _)m）<br /><div align="center"><img src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/3/4/349c703f.png" width="144" height="158" border="0" alt="2013-07-27_203433" hspace="5" class="pict"></div><br /><br />そうです、これは目覚ましか携帯かなんかそういうアラーム的なものを置く所でありまんす！使うかな～<br /><br />短い・・・短すぎる記事・・・でも以上です（（汗）<br /><br /><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/08/blog-post_1.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">室内物干し竿とエアコンの絶妙な位置関係</span></a><a href="../../2013/08/blog-post_7800.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">最終決定仕様を振り返る：フローリングと建具の色のバランス</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
