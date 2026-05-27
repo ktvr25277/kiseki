@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-08-02">2013-08-02</time>
       <h1 class="post-title">最終決定仕様を振り返る：フローリングと建具の色のバランス</h1>
     </header>
-    <div class="post-body">今更ですが。<br /><br />妻にフローリングの色の記録が見当たらないと突っ込まれまして・・・。最終的に決めたフローリング色と建具色はこちら↓<br /><div align="center"><a target="_blank" title="14" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/e/0/e001603d.jpg"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="14" border="0" height="359" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/e/0/e001603d-s.jpg"></a></div><br /><br />左下が１Fフローリング、左上が１F建具、右下が２Fフローリング、右上が２F建具でございます。中央は階段の踏み板色なんですがこの後変更しまして最終的にはパオローズというもっと濃い色にして１F建具に合わせることにしました。<br /><br />そうなんです、床がしろくて建具が黒い、パキッと系なのであります。そして2Fは豪快にほぼ反転させるというアグレッシブカラーアレンジメント。1Fと2Fがまるで別世界のように目に映るでしょう。<br /><br /><div align="center"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="1d783ed86e957eda49216c786b4d4468" border="0" height="171" width="233" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/9/6/96c134e1.jpg"><br /><span style="font-size: xx-small;">ｱﾗﾏ</span></div><br />以前の条件付きでは白の木目が標準仕様になかったのでアコルデで白木目が標準仕様にあった時は妻が喜んでいたのが思い出されます。<br /><br /><br />さぁ次の戸建てブログは<br /><br /></div>
+    <div class="post-body">今更ですが。<br /><br />妻にフローリングの色の記録が見当たらないと突っ込まれまして・・・。最終的に決めたフローリング色と建具色はこちら↓<br /><div align="center"><a target="_blank" title="14" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/e/0/e001603d.jpg"><img class="pict" hspace="5" alt="14" border="0" height="359" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/e/0/e001603d-s.jpg"></a></div><br /><br />左下が１Fフローリング、左上が１F建具、右下が２Fフローリング、右上が２F建具でございます。中央は階段の踏み板色なんですがこの後変更しまして最終的にはパオローズというもっと濃い色にして１F建具に合わせることにしました。<br /><br />そうなんです、床がしろくて建具が黒い、パキッと系なのであります。そして2Fは豪快にほぼ反転させるというアグレッシブカラーアレンジメント。1Fと2Fがまるで別世界のように目に映るでしょう。<br /><br /><div align="center"><img class="pict" hspace="5" alt="1d783ed86e957eda49216c786b4d4468" border="0" height="171" width="233" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/9/6/96c134e1.jpg"><br /><span style="font-size: xx-small;">ｱﾗﾏ</span></div><br />以前の条件付きでは白の木目が標準仕様になかったのでアコルデで白木目が標準仕様にあった時は妻が喜んでいたのが思い出されます。<br /><br /><br />さぁ次の戸建てブログは<br /><br /></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/08/blog-post_2172.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">寝室の頭の横にあるニッチ</span></a><a href="../../2013/08/blog-post_3707.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">工務店垂れ幕（？）ついたであるよ！</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
