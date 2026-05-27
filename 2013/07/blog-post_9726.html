@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-07-10">2013-07-10</time>
       <h1 class="post-title">バルコニーにタイル敷いたほうがイイデスカ</h1>
     </header>
-    <div class="post-body">で悩みます。<br /><br />我が家はバルコニーがちょっと広めにとってあります（２０㎡くらい？ちゃんと計算してないんですが（汗）。そして仕上げはFRP防水です。 さて、ネットで少し調べると、FRP防水の最大の欠点は「紫外線に弱いこと」と出てきます。<br /><a href="http://gob.ie-sumai.com/zai/frp.html">http://gob.ie-sumai.com/zai/frp.html<br /></a><br />そこで何か敷物しいたらええやんということを考えています。<br /><br />例えば積水ではこんなクレガーレとかいう敷物があります。<br /><div align="center"><a target="_blank" title="tb27_ma" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/a/1/a1f5468b.jpg"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="tb27_ma" border="0" height="269" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/a/1/a1f5468b-s.jpg"></a></div> <br /><br />これ、施工も簡単そうだし、見た目も良さそうだからイイね～と思うんですが、どうやらこのタイル下の汚れが気になるという意見が散見されます。<br /><a href="http://ameblo.jp/neko-haus/entry-11243980642.html">http://ameblo.jp/neko-haus/entry-11243980642.html</a><br /><br /> <br />う～ん下に汚れが溜まるのはやだな～。でもなんか敷物敷きたい気もするな～ってことで悩みます。掲示板でも賛否両論。<br /><a href="http://www.e-mansion.co.jp/bbs/thread/246678/">http://www.e-mansion.co.jp/bbs/thread/246678/<br /></a><br /><br />予算もないし、どうするか・・・<br /><br /></div>
+    <div class="post-body">で悩みます。<br /><br />我が家はバルコニーがちょっと広めにとってあります（２０㎡くらい？ちゃんと計算してないんですが（汗）。そして仕上げはFRP防水です。 さて、ネットで少し調べると、FRP防水の最大の欠点は「紫外線に弱いこと」と出てきます。<br /><a href="http://gob.ie-sumai.com/zai/frp.html">http://gob.ie-sumai.com/zai/frp.html<br /></a><br />そこで何か敷物しいたらええやんということを考えています。<br /><br />例えば積水ではこんなクレガーレとかいう敷物があります。<br /><div align="center"><a target="_blank" title="tb27_ma" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/a/1/a1f5468b.jpg"><img class="pict" hspace="5" alt="tb27_ma" border="0" height="269" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/a/1/a1f5468b-s.jpg"></a></div> <br /><br />これ、施工も簡単そうだし、見た目も良さそうだからイイね～と思うんですが、どうやらこのタイル下の汚れが気になるという意見が散見されます。<br /><a href="http://ameblo.jp/neko-haus/entry-11243980642.html">http://ameblo.jp/neko-haus/entry-11243980642.html</a><br /><br /> <br />う～ん下に汚れが溜まるのはやだな～。でもなんか敷物敷きたい気もするな～ってことで悩みます。掲示板でも賛否両論。<br /><a href="http://www.e-mansion.co.jp/bbs/thread/246678/">http://www.e-mansion.co.jp/bbs/thread/246678/<br /></a><br /><br />予算もないし、どうするか・・・<br /><br /></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/07/blog-post_4152.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">玄関ドアストッパー要るんちゃうん</span></a><a href="../../2013/07/blog-post_7706.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">梁が、ハリーが出よったで</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
