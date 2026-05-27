@@ -29,7 +29,7 @@
 <div>
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://3.bp.blogspot.com/-Sa4iM4bU9jM/WI0hOB4X6LI/AAAAAAAAAwc/7wSu-oupHPUZewzGn4IroAY7_i_X562kACK4B/s1600/0b165bb9b18ca9143edd1aaf95bf5be8_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="240" src="https://3.bp.blogspot.com/-Sa4iM4bU9jM/WI0hOB4X6LI/AAAAAAAAAwc/7wSu-oupHPUZewzGn4IroAY7_i_X562kACK4B/s320/0b165bb9b18ca9143edd1aaf95bf5be8_s.jpg" width="320" /></a></div>
+<a href="http://3.bp.blogspot.com/-Sa4iM4bU9jM/WI0hOB4X6LI/AAAAAAAAAwc/7wSu-oupHPUZewzGn4IroAY7_i_X562kACK4B/s1600/0b165bb9b18ca9143edd1aaf95bf5be8_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://3.bp.blogspot.com/-Sa4iM4bU9jM/WI0hOB4X6LI/AAAAAAAAAwc/7wSu-oupHPUZewzGn4IroAY7_i_X562kACK4B/s320/0b165bb9b18ca9143edd1aaf95bf5be8_s.jpg" width="320" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <span style="font-size: xx-small;">頑張ってる感じ</span></div>
 <div>
@@ -76,7 +76,7 @@
 <div>
 <br /></div>
 <div style="text-align: center;">
-<a href="http://3.bp.blogspot.com/-9vMv-xf2D-g/WI2boAZXlwI/AAAAAAAAAws/KF-RDEXY_-IupK9nM0BnxXfPWoi9Mg-3wCK4B/s1600/3ba47925432fb517bcf663c7cbc927a1.jpg" imageanchor="1"><img onerror="this.style.display='none'" border="0" height="320" src="https://3.bp.blogspot.com/-9vMv-xf2D-g/WI2boAZXlwI/AAAAAAAAAws/KF-RDEXY_-IupK9nM0BnxXfPWoi9Mg-3wCK4B/s320/3ba47925432fb517bcf663c7cbc927a1.jpg" width="205" /></a></div>
+<a href="http://3.bp.blogspot.com/-9vMv-xf2D-g/WI2boAZXlwI/AAAAAAAAAws/KF-RDEXY_-IupK9nM0BnxXfPWoi9Mg-3wCK4B/s1600/3ba47925432fb517bcf663c7cbc927a1.jpg" imageanchor="1"><img border="0" height="320" src="https://3.bp.blogspot.com/-9vMv-xf2D-g/WI2boAZXlwI/AAAAAAAAAws/KF-RDEXY_-IupK9nM0BnxXfPWoi9Mg-3wCK4B/s320/3ba47925432fb517bcf663c7cbc927a1.jpg" width="205" /></a></div>
 <div style="text-align: center;">
 <span style="font-size: xx-small;">これ男ちゃうか</span></div>
 <div>
@@ -90,7 +90,7 @@
 <div>
 と反応していたのはこちらのパナソニックの床材でした↓</div>
 <div style="text-align: center;">
-<a href="http://sumai.panasonic.jp/interior/veritis/lineup/floor/" target="_blank"><img onerror="this.style.display='none'" border="0" height="155" src="https://3.bp.blogspot.com/-tdM6G62zTGg/WI2b-IG7ghI/AAAAAAAAAw0/J7PNf63TvdIYPdMSkq_FzrDG26y13d1-gCK4B/s400/mainimg.jpg" width="400" /></a></div>
+<a href="http://sumai.panasonic.jp/interior/veritis/lineup/floor/" target="_blank"><img border="0" height="155" src="https://3.bp.blogspot.com/-tdM6G62zTGg/WI2b-IG7ghI/AAAAAAAAAw0/J7PNf63TvdIYPdMSkq_FzrDG26y13d1-gCK4B/s400/mainimg.jpg" width="400" /></a></div>
 <div style="text-align: center;">
 <br /></div>
 <div style="text-align: center;">
@@ -126,4 +126,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
