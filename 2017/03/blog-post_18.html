@@ -28,7 +28,7 @@
     <div class="post-body"><b>ニンテンドークラシックミニ</b>は2016年発売にも関わらず今だに入手困難な状況が続いているようです。<br />
 <br />
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01M1VMFUA/emccom-22/ref=nosim/" target="_blank"><img onerror="this.style.display='none'" alt="ニンテンドークラシックミニ ファミリーコンピュータ" height="400" src="https://images-fe.ssl-images-amazon.com/images/I/51N7wSIFZeL.jpg" width="400" /></a></div>
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01M1VMFUA/emccom-22/ref=nosim/" target="_blank"><img alt="ニンテンドークラシックミニ ファミリーコンピュータ" height="400" src="https://images-fe.ssl-images-amazon.com/images/I/51N7wSIFZeL.jpg" width="400" /></a></div>
 <div style="text-align: center;">
 <a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01M1VMFUA/emccom-22/ref=nosim/" target="_blank">ニンテンドークラシックミニ ファミリーコンピュータ</a>
 </div>
@@ -107,4 +107,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
