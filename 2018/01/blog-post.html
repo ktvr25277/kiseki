@@ -27,7 +27,7 @@
     </header>
     <div class="post-body"><div> </div>
 <div class="separator" style="clear: both; text-align: center;">
-<div class="separator" style="clear: both; text-align: center;"><a style="margin-bottom: 1em; margin-left: 1em;" href="https://lh3.googleusercontent.com/-xfxEAq9yL3k/WkoDNN5duyI/AAAAAAAABA4/JukQ1pBQSS4kF0-TArZw4L1lA3URFqAVgCHMYCw/%25E6%2596%25B0%25E5%25B9%25B4"><img onerror="this.style.display='none'" title="新年" src="https://lh3.googleusercontent.com/-xfxEAq9yL3k/WkoDNN5duyI/AAAAAAAABA4/JukQ1pBQSS4kF0-TArZw4L1lA3URFqAVgCHMYCw/%25E6%2596%25B0%25E5%25B9%25B4" alt="" width="500" height="333" data-json="" /></a></div>
+<div class="separator" style="clear: both; text-align: center;"><a style="margin-bottom: 1em; margin-left: 1em;" href="https://lh3.googleusercontent.com/-xfxEAq9yL3k/WkoDNN5duyI/AAAAAAAABA4/JukQ1pBQSS4kF0-TArZw4L1lA3URFqAVgCHMYCw/%25E6%2596%25B0%25E5%25B9%25B4"><img title="新年" src="https://lh3.googleusercontent.com/-xfxEAq9yL3k/WkoDNN5duyI/AAAAAAAABA4/JukQ1pBQSS4kF0-TArZw4L1lA3URFqAVgCHMYCw/%25E6%2596%25B0%25E5%25B9%25B4" alt="" width="500" height="333" data-json="" /></a></div>
 </div>
 <div style="text-align: center;"> </div>
 <div style="text-align: left;">あっという間に明けましておめでとうございます（汗）</div>
@@ -72,4 +72,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
