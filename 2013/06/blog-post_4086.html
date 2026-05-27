@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-06-22">2013-06-22</time>
       <h1 class="post-title">折れ戸で引き違うマルチなドアを採用</h1>
     </header>
-    <div class="post-body">する予定です。<br /><br />現在のアパートの収納は折れ戸が多いのですが 折れ戸はご存知の通り折りたたんだ戸によって発生するデッドスペースがデメリットの一つです。収納方法や収納するものによってはデメリットとならぬよう工夫もできると思いますし、そもそも収納が潤沢にあれば気にならないでしょうが、我が家はカツカツな収納スペース故、少しでもそういったデッドスペースをなくす必要があります。<br /><br /><br />そこで登場するのがこちら↓<br /><div align="center"><a target="_blank" title="画像1" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/2/4/24a66014.jpg"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="画像1" border="0" height="795" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/2/4/24a66014-s.jpg"></a></div><br /><br /><br />しかし実は我が家が採用するエイダイの折れ戸はこのようなハイパーな扉にしなくても少し力をいれてスライドさせると横に動くらしい(？)のですが↓<br /><div align="center"><a target="_blank" title="画像2" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/e/1e9536f4.jpg"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="画像2" border="0" height="219" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/e/1e9536f4-s.jpg"></a></div><br /><br /><br />しかし毎日のことだからというのと変更しても諭吉先生のお力を借りずに済むほどの費用なので引き違い折れ戸を採用することになりそうです。<br /><br /></div>
+    <div class="post-body">する予定です。<br /><br />現在のアパートの収納は折れ戸が多いのですが 折れ戸はご存知の通り折りたたんだ戸によって発生するデッドスペースがデメリットの一つです。収納方法や収納するものによってはデメリットとならぬよう工夫もできると思いますし、そもそも収納が潤沢にあれば気にならないでしょうが、我が家はカツカツな収納スペース故、少しでもそういったデッドスペースをなくす必要があります。<br /><br /><br />そこで登場するのがこちら↓<br /><div align="center"><a target="_blank" title="画像1" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/2/4/24a66014.jpg"><img class="pict" hspace="5" alt="画像1" border="0" height="795" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/2/4/24a66014-s.jpg"></a></div><br /><br /><br />しかし実は我が家が採用するエイダイの折れ戸はこのようなハイパーな扉にしなくても少し力をいれてスライドさせると横に動くらしい(？)のですが↓<br /><div align="center"><a target="_blank" title="画像2" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/e/1e9536f4.jpg"><img class="pict" hspace="5" alt="画像2" border="0" height="219" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/e/1e9536f4-s.jpg"></a></div><br /><br /><br />しかし毎日のことだからというのと変更しても諭吉先生のお力を借りずに済むほどの費用なので引き違い折れ戸を採用することになりそうです。<br /><br /></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/06/blog-post_6489.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">いでよハリー！&lt;--天井高さ</span></a><a href="../../2013/06/blog-post_2648.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">やっとキッチンが最終決定</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
