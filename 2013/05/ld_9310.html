@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-05-07">2013-05-07</time>
       <h1 class="post-title">LDに柱はイラン！</h1>
     </header>
-    <div class="post-body">妻が叫んでおります。<br /><br />LDKは現在約17畳あります（自分的には広すぎる）。<br />そのど真ん中付近に柱が要るかもしれないと建築士Yさん。<br /><br />間取りの公開は妻に禁じられているのでLDだけ<br /><img onerror="this.style.display='none'" align="left" class="pict" hspace="5" alt="2013-05-07_223130" border="0" height="339" width="305" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/7/d713e380.png"><br /><br />このどまんなかとは言わないけど中心付近に柱をたてた方が強くなると。しかし妻はどーしても柱はいやだと。<br /><br />梁をとばして強くするにも長さの限界があるらしく。そこで少し周囲の収納のサイズや壁間の距離（絵に説明がなくてスミマセン）を調整してこれでいけるかもしれないが構造計算をしてみないとはっきりとは判らないとのことです・・・<br /><br />妻は部屋の形を変えてでも柱はイランと・・・<br /><br />でもよく住宅雑誌を見てるとめちゃくちゃ広いリビングなのに柱がないのとか見かけますけど、あれってどうやってるんですかね？鉄骨なのかな？<br /><br />こういうのとか？<br /><a target="_blank" title="01_02_b" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/5/b/5b182910.jpg"><img onerror="this.style.display='none'" align="left" class="pict" hspace="5" alt="01_02_b" border="0" height="320" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/5/b/5b182910-s.jpg"></a><br /><br />※勝手に画像お借りしてます。問題あればご指摘ください<br /><br />さて柱は必要か？どうなるでしょう・・・<br /><br/></div>
+    <div class="post-body">妻が叫んでおります。<br /><br />LDKは現在約17畳あります（自分的には広すぎる）。<br />そのど真ん中付近に柱が要るかもしれないと建築士Yさん。<br /><br />間取りの公開は妻に禁じられているのでLDだけ<br /><img align="left" class="pict" hspace="5" alt="2013-05-07_223130" border="0" height="339" width="305" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/7/d713e380.png"><br /><br />このどまんなかとは言わないけど中心付近に柱をたてた方が強くなると。しかし妻はどーしても柱はいやだと。<br /><br />梁をとばして強くするにも長さの限界があるらしく。そこで少し周囲の収納のサイズや壁間の距離（絵に説明がなくてスミマセン）を調整してこれでいけるかもしれないが構造計算をしてみないとはっきりとは判らないとのことです・・・<br /><br />妻は部屋の形を変えてでも柱はイランと・・・<br /><br />でもよく住宅雑誌を見てるとめちゃくちゃ広いリビングなのに柱がないのとか見かけますけど、あれってどうやってるんですかね？鉄骨なのかな？<br /><br />こういうのとか？<br /><a target="_blank" title="01_02_b" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/5/b/5b182910.jpg"><img align="left" class="pict" hspace="5" alt="01_02_b" border="0" height="320" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/5/b/5b182910-s.jpg"></a><br /><br />※勝手に画像お借りしてます。問題あればご指摘ください<br /><br />さて柱は必要か？どうなるでしょう・・・<br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/05/blog-post_2654.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">玄関って高いのね・・・</span></a><a href="../../2013/05/blog-post_6982.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">衝撃（汗）建築条件付き工務店からの見積もり</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
