@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-08-22">2013-08-22</time>
       <h1 class="post-title">屋根にリッジウェイがのっていたのダ！</h1>
     </header>
-    <div class="post-body">という写真をまたしても妻がゲットしてきてくれました（う～自分で見たい・・・）<br /><br />大分前からリッジウェイくんがズーンと積んであったのでいつ貼るんだろ～と待ち焦がれていたものの一つです。<br /><br /><div align="center"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-08-21_220517" border="0" height="334" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/7/1/71649131-s.png"><br />ズーン</div><br /><br /> 屋根の形状がお見せできないので屋根材部分だけをカットしてみましたがなんとも見辛い画像に・・・orzスミマセン・・・<br />いやしかし黒いですね～アッチッチになりそうですね～（汗）<br /><div align="center"><div align="center"><div align="center"><a target="_blank" title="2013-08-22_220233" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/0/7/07a5a381.png"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-08-22_220233" border="0" height="159" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/0/7/07a5a381-s.png"></a></div></div><br /></div><br />さてリッジウェイは以下の様な特徴が示されていますがその実は如何に・・・？<br />※リフォーム用の紹介サイトからお借りしたのでリフォーム観点での説明になっておりますm(_ _)m<br /><div align="center"><a target="_blank" title="2013-08-22_220452" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/1/d144d650.png"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-08-22_220452" border="0" height="420" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/1/d144d650-s.png"><br /></a></div>聞いた話では最初のうちは表面の砂みたいなのがボロボロボロボロ落ちてくるらしいですｗ。30年かけてレポートしたいと思います（できるか？）ので宜しくお願い致します。<br /><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
+    <div class="post-body">という写真をまたしても妻がゲットしてきてくれました（う～自分で見たい・・・）<br /><br />大分前からリッジウェイくんがズーンと積んであったのでいつ貼るんだろ～と待ち焦がれていたものの一つです。<br /><br /><div align="center"><img class="pict" hspace="5" alt="2013-08-21_220517" border="0" height="334" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/7/1/71649131-s.png"><br />ズーン</div><br /><br /> 屋根の形状がお見せできないので屋根材部分だけをカットしてみましたがなんとも見辛い画像に・・・orzスミマセン・・・<br />いやしかし黒いですね～アッチッチになりそうですね～（汗）<br /><div align="center"><div align="center"><div align="center"><a target="_blank" title="2013-08-22_220233" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/0/7/07a5a381.png"><img class="pict" hspace="5" alt="2013-08-22_220233" border="0" height="159" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/0/7/07a5a381-s.png"></a></div></div><br /></div><br />さてリッジウェイは以下の様な特徴が示されていますがその実は如何に・・・？<br />※リフォーム用の紹介サイトからお借りしたのでリフォーム観点での説明になっておりますm(_ _)m<br /><div align="center"><a target="_blank" title="2013-08-22_220452" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/1/d144d650.png"><img class="pict" hspace="5" alt="2013-08-22_220452" border="0" height="420" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/1/d144d650-s.png"><br /></a></div>聞いた話では最初のうちは表面の砂みたいなのがボロボロボロボロ落ちてくるらしいですｗ。30年かけてレポートしたいと思います（できるか？）ので宜しくお願い致します。<br /><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/08/blog-post_8551.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">あれ～こんなんいつの間に貼ってありましたかいの</span></a><a href="../../2013/08/blog-post_4660.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">湘南モールにて太陽光パネルのセールスしていた</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
