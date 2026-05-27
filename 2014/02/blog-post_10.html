@@ -35,7 +35,7 @@
 余談ですがそれにしても本当に関東首都圏は雪に弱いですね。今回逃亡していた先↓では－20℃で大雪でしたが交通はバッチリでした。やはり環境整備の問題ですかね。<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://2.bp.blogspot.com/-8F16fitVLc0/UvjkH-ToR-I/AAAAAAAAAHY/1sJ6LkeUNWI/s1600/2014-02-10_233533.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://2.bp.blogspot.com/-8F16fitVLc0/UvjkH-ToR-I/AAAAAAAAAHY/1sJ6LkeUNWI/s1600/2014-02-10_233533.jpg" height="186" width="400" /></a></div>
+<a href="http://2.bp.blogspot.com/-8F16fitVLc0/UvjkH-ToR-I/AAAAAAAAAHY/1sJ6LkeUNWI/s1600/2014-02-10_233533.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-8F16fitVLc0/UvjkH-ToR-I/AAAAAAAAAHY/1sJ6LkeUNWI/s1600/2014-02-10_233533.jpg" height="186" width="400" /></a></div>
 <br />
 <br />
 <br />
@@ -55,4 +55,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
