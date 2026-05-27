@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-08-12">2013-08-12</time>
       <h1 class="post-title">木材利用ポイント看板キター</h1>
     </header>
-    <div class="post-body">です。<br /><br />先日窓がついた～的な写真を撮った時に一つ大事な写真がありました。それはこちら↓<br /><br /><div align="center"><a target="_blank" title="Untitled 2" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/b/5/b5f36964.png"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="Untitled 2" border="0" height="402" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/b/5/b5f36964-s.png"></a></div><br /><br />おぉ～木材利用ポイント申請できるんでっせサインですね！<br />ここに見えるロゴは合法木材推進マークというものらしいです。<br /><div align="center"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-08-11_073252" border="0" height="229" width="247" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/0/1/0138ea27.png"></div><br />抜粋すると、「<span style="font-family: 'MS PGothic'; line-height: 21px; text-indent: 14.399999618530273px;">違法伐採問題に対する取り組みと林野庁作成の「木材・木材製品の合法性、持続可能性の証明のためのガイドライン」（以下「ガイドライン」という。）に基づく合法性が証明された木材・木材製品（以下「合法木材」という。）の証明システム普及啓発のためのシンボル</span>」だそうですよ。<br /><br /><div align="center"><a target="_blank" title="2013-08-11_072638" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/e/7/e7e08e32.png"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-08-11_072638" border="0" height="230" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/e/7/e7e08e32-s.png"><br /><br /></a></div><br />いや～ウレスィです(・∀・)<br /><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
+    <div class="post-body">です。<br /><br />先日窓がついた～的な写真を撮った時に一つ大事な写真がありました。それはこちら↓<br /><br /><div align="center"><a target="_blank" title="Untitled 2" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/b/5/b5f36964.png"><img class="pict" hspace="5" alt="Untitled 2" border="0" height="402" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/b/5/b5f36964-s.png"></a></div><br /><br />おぉ～木材利用ポイント申請できるんでっせサインですね！<br />ここに見えるロゴは合法木材推進マークというものらしいです。<br /><div align="center"><img class="pict" hspace="5" alt="2013-08-11_073252" border="0" height="229" width="247" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/0/1/0138ea27.png"></div><br />抜粋すると、「<span style="font-family: 'MS PGothic'; line-height: 21px; text-indent: 14.399999618530273px;">違法伐採問題に対する取り組みと林野庁作成の「木材・木材製品の合法性、持続可能性の証明のためのガイドライン」（以下「ガイドライン」という。）に基づく合法性が証明された木材・木材製品（以下「合法木材」という。）の証明システム普及啓発のためのシンボル</span>」だそうですよ。<br /><br /><div align="center"><a target="_blank" title="2013-08-11_072638" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/e/7/e7e08e32.png"><img class="pict" hspace="5" alt="2013-08-11_072638" border="0" height="230" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/e/7/e7e08e32-s.png"><br /><br /></a></div><br />いや～ウレスィです(・∀・)<br /><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/08/6_12.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【着工6週目】窓サッシ・シロアリ薬剤</span></a><a href="../../2013/08/blog-post_3215.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">大工様への差し入れに悩む</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
