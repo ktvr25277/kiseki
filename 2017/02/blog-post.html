@@ -31,7 +31,7 @@
 <br />
 最近はこんなのを読みました↓<br />
 <br />
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4837983294/emccom-22/ref=nosim/" target="_blank"><img onerror="this.style.display='none'" alt="1分間「仕事術」: この1冊でムリ、ムダがなくなる (知的生きかた文庫)" src="https://images-fe.ssl-images-amazon.com/images/I/41X8VAn5%2BHL._SL160_.jpg" /></a><br />
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4837983294/emccom-22/ref=nosim/" target="_blank"><img alt="1分間「仕事術」: この1冊でムリ、ムダがなくなる (知的生きかた文庫)" src="https://images-fe.ssl-images-amazon.com/images/I/41X8VAn5%2BHL._SL160_.jpg" /></a><br />
 <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4837983294/emccom-22/ref=nosim/" target="_blank">1分間「仕事術」: この1冊でムリ、ムダがなくなる (知的生きかた文庫)</a>
 <br />
 <br />
@@ -65,4 +65,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
