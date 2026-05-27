@@ -26,7 +26,7 @@
       <h1 class="post-title">子供部屋の間仕切り壁設置をできるだけ安く実現したい我が家の見積もり騒動</h1>
     </header>
     <div class="post-body"><br />
-<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-MutUPqv6PAs/YLDXODL3Q3I/AAAAAAAABN8/kg25Giio5JAJ763EHlpkjYuoXVeV3k-NwCLcBGAsYHQ/s2048/pexels-igor-starkov-4046082.jpg" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" data-original-height="1365" data-original-width="2048" src="https://1.bp.blogspot.com/-MutUPqv6PAs/YLDXODL3Q3I/AAAAAAAABN8/kg25Giio5JAJ763EHlpkjYuoXVeV3k-NwCLcBGAsYHQ/s320/pexels-igor-starkov-4046082.jpg" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><br /></div>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-MutUPqv6PAs/YLDXODL3Q3I/AAAAAAAABN8/kg25Giio5JAJ763EHlpkjYuoXVeV3k-NwCLcBGAsYHQ/s2048/pexels-igor-starkov-4046082.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1365" data-original-width="2048" src="https://1.bp.blogspot.com/-MutUPqv6PAs/YLDXODL3Q3I/AAAAAAAABN8/kg25Giio5JAJ763EHlpkjYuoXVeV3k-NwCLcBGAsYHQ/s320/pexels-igor-starkov-4046082.jpg" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><br /></div>
 <br />
 <br />ついに間仕切り壁の話です汗<div>といっても先ずは見積もりの話ですが。<br />
 <br />
@@ -106,4 +106,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
