@@ -27,7 +27,7 @@
     </header>
     <div class="post-body">みなさんお勤めご苦労様です！<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-CjBn2dRdRpg/VHHSD8cgt9I/AAAAAAAAAaU/nbw5tlcufqI/s1600/e744069e0ca80513614bf806cb01a733_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-CjBn2dRdRpg/VHHSD8cgt9I/AAAAAAAAAaU/nbw5tlcufqI/s1600/e744069e0ca80513614bf806cb01a733_s.jpg" height="213" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-CjBn2dRdRpg/VHHSD8cgt9I/AAAAAAAAAaU/nbw5tlcufqI/s1600/e744069e0ca80513614bf806cb01a733_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-CjBn2dRdRpg/VHHSD8cgt9I/AAAAAAAAAaU/nbw5tlcufqI/s1600/e744069e0ca80513614bf806cb01a733_s.jpg" height="213" width="320" /></a></div>
 <br />
 <br />
 <br />
@@ -35,7 +35,7 @@
 <div class="azlink-box" style="margin-bottom: 0px;">
 <div class="azlink-image" style="float: center;">
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B003ERI9LS/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img onerror="this.style.display='none'" alt="カイザー(Kaiser) キックスケーター KW-451" src="http://ecx.images-amazon.com/images/I/31bIvl0kv2L.jpg" style="border: none;" /></a></div>
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B003ERI9LS/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img alt="カイザー(Kaiser) キックスケーター KW-451" src="http://ecx.images-amazon.com/images/I/31bIvl0kv2L.jpg" style="border: none;" /></a></div>
 </div>
 <div class="azlink-info" style="float: center; line-height: 120%; margin-left: 15px;">
 <div class="azlink-name" style="line-height: 120%; margin-bottom: 10px;">
@@ -70,7 +70,7 @@ posted with <a href="http://sakuratan.biz/azlink/dp/%E3%82%AB%E3%82%A4%E3%82%B6%
 <div class="azlink-box" style="margin-bottom: 0px;">
 <div class="azlink-image" style="float: center;">
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00OYJVWGY/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img onerror="this.style.display='none'" alt="My Pallas(マイパラス) GRAPHIS 折りたたみキックボード 205mmビッグホイール カラー/ブラック×オレンジ GR-K" src="http://ecx.images-amazon.com/images/I/4115Y-D-hqL.jpg" style="border: none;" /></a></div>
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00OYJVWGY/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img alt="My Pallas(マイパラス) GRAPHIS 折りたたみキックボード 205mmビッグホイール カラー/ブラック×オレンジ GR-K" src="http://ecx.images-amazon.com/images/I/4115Y-D-hqL.jpg" style="border: none;" /></a></div>
 </div>
 <div class="azlink-info" style="float: center; line-height: 120%; margin-left: 15px;">
 <div class="azlink-name" style="line-height: 120%; margin-bottom: 10px;">
@@ -114,4 +114,25 @@ My Pallas(マイパラス)</div>
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
