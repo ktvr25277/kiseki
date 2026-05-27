@@ -27,7 +27,7 @@
     </header>
     <div class="post-body"><br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://1.bp.blogspot.com/-FPgdlkgoyvk/XwrtalA_sQI/AAAAAAAABJg/QJp20lq7GYwU4B43x1vwzJy9nDw7QAzxQCLcBGAsYHQ/s1600/3355690_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"></a><a href="http://3.bp.blogspot.com/-iDszvdMJhkA/XxJQPhvAMbI/AAAAAAAABKE/2WeoqBCO4ow3hjXsoB-F9WcqlWHdzGdNwCK4BGAYYCw/s1600/3631689_s.jpg" imageanchor="1"><img onerror="this.style.display='none'" border="0" height="320" src="https://3.bp.blogspot.com/-iDszvdMJhkA/XxJQPhvAMbI/AAAAAAAABKE/2WeoqBCO4ow3hjXsoB-F9WcqlWHdzGdNwCK4BGAYYCw/s320/3631689_s.jpg" width="210" /></a></div>
+<a href="https://1.bp.blogspot.com/-FPgdlkgoyvk/XwrtalA_sQI/AAAAAAAABJg/QJp20lq7GYwU4B43x1vwzJy9nDw7QAzxQCLcBGAsYHQ/s1600/3355690_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"></a><a href="http://3.bp.blogspot.com/-iDszvdMJhkA/XxJQPhvAMbI/AAAAAAAABKE/2WeoqBCO4ow3hjXsoB-F9WcqlWHdzGdNwCK4BGAYYCw/s1600/3631689_s.jpg" imageanchor="1"><img border="0" height="320" src="https://3.bp.blogspot.com/-iDszvdMJhkA/XxJQPhvAMbI/AAAAAAAABKE/2WeoqBCO4ow3hjXsoB-F9WcqlWHdzGdNwCK4BGAYYCw/s320/3631689_s.jpg" width="210" /></a></div>
 <br />
 <br />
 張り切って連続記録です。<br />
@@ -72,11 +72,11 @@
 今後気が向いたら使用感もいれていきたいと思います。<br />
 <br />
 <hr />
-<a href="https://www.amazon.co.jp/dp/B07XQLS6YK/?tag=emccom-22" target="_blank"><img onerror="this.style.display='none'" align="left" alt="B07XQLS6YK" border="0" src="https://m.media-amazon.com/images/I/21RyKsTW7IL._SL200_.jpg" />
+<a href="https://www.amazon.co.jp/dp/B07XQLS6YK/?tag=emccom-22" target="_blank"><img align="left" alt="B07XQLS6YK" border="0" src="https://m.media-amazon.com/images/I/21RyKsTW7IL._SL200_.jpg" />
 パナソニック 冷蔵庫 6ドア 550L パーシャル搭載 アルベロホワイト NR-F555HPX-W<br />
 2020年07月18日10時25分現在の価格と評価<br />
 価格：￥408,580 新品 <br />
-評価：<img onerror="this.style.display='none'" alt="5つ星のうち5.0" border="0" height="12" src="https://images-fe.ssl-images-amazon.com/images/G/09/x-locale/common/customer-reviews/ratings/stars-5-0.gif" title="5つ星のうち5.0" width="55" /> 5.0点 1件<br />
+評価：<img alt="5つ星のうち5.0" border="0" height="12" src="https://images-fe.ssl-images-amazon.com/images/G/09/x-locale/common/customer-reviews/ratings/stars-5-0.gif" title="5つ星のうち5.0" width="55" /> 5.0点 1件<br />
 著者：パナソニック(Panasonic)<br />
 販売元：パナソニック(Panasonic)<br />
 発売日：2019-10-30T00:00:01Z</a><br />
@@ -109,4 +109,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
