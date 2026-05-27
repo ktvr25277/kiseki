@@ -27,7 +27,7 @@
     </header>
     <div class="post-body">なんでありましょう。<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://3.bp.blogspot.com/-PQxHaMv8wlE/Us1R6hkt5jI/AAAAAAAAAEI/XkwcDusaYs0/s1600/PhotoFunia-8897480.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://3.bp.blogspot.com/-PQxHaMv8wlE/Us1R6hkt5jI/AAAAAAAAAEI/XkwcDusaYs0/s1600/PhotoFunia-8897480.jpg" height="320" width="234" /></a></div>
+<a href="http://3.bp.blogspot.com/-PQxHaMv8wlE/Us1R6hkt5jI/AAAAAAAAAEI/XkwcDusaYs0/s1600/PhotoFunia-8897480.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-PQxHaMv8wlE/Us1R6hkt5jI/AAAAAAAAAEI/XkwcDusaYs0/s1600/PhotoFunia-8897480.jpg" height="320" width="234" /></a></div>
 <br />
 <h3 class="title" style="background-color: white; background-repeat: no-repeat no-repeat; border-color: rgb(188, 0, 0); border-style: none none solid solid; border-width: 0px 0px 1px 5px; color: #333333; font-family: 'ＭＳ Ｐゴシック', 'MS PGothic', Osaka, 'ヒラギノ角ゴ Pro W3'; font-size: 16px; line-height: 1.3; margin: 0px 0px 10px; padding: 5px 0px 5px 20px; position: relative;">
 その前に</h3>
@@ -61,7 +61,7 @@
 さて最後になりますが某大手のセキスイハイムさんからこんな感じなのかなという画像をお借りしますm(_ _)m延床に余裕のある方は是非御検討下さい。<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://4.bp.blogspot.com/-SVSRBaUxMVs/Us1SDYI7bVI/AAAAAAAAAEQ/FGP3QJkGAb4/s1600/2014-01-08_222439.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://4.bp.blogspot.com/-SVSRBaUxMVs/Us1SDYI7bVI/AAAAAAAAAEQ/FGP3QJkGAb4/s1600/2014-01-08_222439.png" height="211" width="320" /></a></div>
+<a href="http://4.bp.blogspot.com/-SVSRBaUxMVs/Us1SDYI7bVI/AAAAAAAAAEQ/FGP3QJkGAb4/s1600/2014-01-08_222439.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-SVSRBaUxMVs/Us1SDYI7bVI/AAAAAAAAAEQ/FGP3QJkGAb4/s1600/2014-01-08_222439.png" height="211" width="320" /></a></div>
 <br />
 <br />
 <span style="background-color: white; color: #333333; font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'ＭＳ Ｐゴシック', sans-serif; font-size: 14.399999618530273px; line-height: 19.200000762939453px;">あんまり楽しようとすると太るよ（汗）　→　</span></div>
@@ -72,4 +72,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
