@@ -28,7 +28,7 @@
     <div class="post-body">中身は書捨て日記かもしれませんが（汗）<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://3.bp.blogspot.com/-9jjgF7qrZMc/U2iEFheUTwI/AAAAAAAAAMk/jjmoTImsRBw/s1600/b09d1aadc5dfd69999ecc90e97e44ab1_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://3.bp.blogspot.com/-9jjgF7qrZMc/U2iEFheUTwI/AAAAAAAAAMk/jjmoTImsRBw/s1600/b09d1aadc5dfd69999ecc90e97e44ab1_s.jpg" height="213" width="320" /></a></div>
+<a href="http://3.bp.blogspot.com/-9jjgF7qrZMc/U2iEFheUTwI/AAAAAAAAAMk/jjmoTImsRBw/s1600/b09d1aadc5dfd69999ecc90e97e44ab1_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-9jjgF7qrZMc/U2iEFheUTwI/AAAAAAAAAMk/jjmoTImsRBw/s1600/b09d1aadc5dfd69999ecc90e97e44ab1_s.jpg" height="213" width="320" /></a></div>
 <br />
 <br />
 はじめはこんなに長い間書くとは思っていませんでした。でも色々と書き続けたからにはこれらの試行錯誤、紆余曲折が誰かのほんの少しでも参考になればと思い、過去記事も整理していきたいなと思っています。<br />
@@ -53,4 +53,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
