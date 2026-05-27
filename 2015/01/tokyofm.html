@@ -30,7 +30,7 @@
 <br />
 そのような状況の中、妻が風邪でダウン。<br />
 <div style="text-align: center;">
-<img onerror="this.style.display='none'" src="http://mangadget.net/img/comic_image/2270/abfb1a9b700200a71c37db149b06b71c.jpg" /></div>
+<img src="http://mangadget.net/img/comic_image/2270/abfb1a9b700200a71c37db149b06b71c.jpg" /></div>
 <div style="text-align: center;">
 <span style="font-size: x-small;">ﾅﾝｶﾁｶﾞｳ？</span></div>
 <br />
@@ -39,17 +39,17 @@
 <br />
 つるの剛士氏は藤沢のイベントに呼ばれまくっていて珍しくないらしい（妻談）。<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://3.bp.blogspot.com/-mMbHQFTiYn8/VMM0RbtJVdI/AAAAAAAAAc0/f48YLhEPuFE/s1600/2015-01-24_145632.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://3.bp.blogspot.com/-mMbHQFTiYn8/VMM0RbtJVdI/AAAAAAAAAc0/f48YLhEPuFE/s1600/2015-01-24_145632.jpg" height="312" width="320" /></a></div>
+<a href="http://3.bp.blogspot.com/-mMbHQFTiYn8/VMM0RbtJVdI/AAAAAAAAAc0/f48YLhEPuFE/s1600/2015-01-24_145632.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-mMbHQFTiYn8/VMM0RbtJVdI/AAAAAAAAAc0/f48YLhEPuFE/s1600/2015-01-24_145632.jpg" height="312" width="320" /></a></div>
 <br />
 <br />
 野球をあまり見ない私はこの人↓にあまり興奮はしない（失敬<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-6GbYSCiKF_4/VMM0RQXM0hI/AAAAAAAAAc4/-Hitdbb28sE/s1600/2015-01-24_145639.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-6GbYSCiKF_4/VMM0RQXM0hI/AAAAAAAAAc4/-Hitdbb28sE/s1600/2015-01-24_145639.jpg" height="320" width="315" /></a></div>
+<a href="http://1.bp.blogspot.com/-6GbYSCiKF_4/VMM0RQXM0hI/AAAAAAAAAc4/-Hitdbb28sE/s1600/2015-01-24_145639.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-6GbYSCiKF_4/VMM0RQXM0hI/AAAAAAAAAc4/-Hitdbb28sE/s1600/2015-01-24_145639.jpg" height="320" width="315" /></a></div>
 <br />
 <br />
 オッと思ったのはこの人↓<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-IaybZxvPjZ4/VMM0ilGgMxI/AAAAAAAAAdM/7OL7XtM7cWM/s1600/2015-01-24_145645.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-IaybZxvPjZ4/VMM0ilGgMxI/AAAAAAAAAdM/7OL7XtM7cWM/s1600/2015-01-24_145645.jpg" height="316" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-IaybZxvPjZ4/VMM0ilGgMxI/AAAAAAAAAdM/7OL7XtM7cWM/s1600/2015-01-24_145645.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-IaybZxvPjZ4/VMM0ilGgMxI/AAAAAAAAAdM/7OL7XtM7cWM/s1600/2015-01-24_145645.jpg" height="316" width="320" /></a></div>
 <br />
 <br />
 なんとホズミンです。<br />
@@ -61,7 +61,7 @@
 <br />
 さてとにかく明日は無事に完走できるのか？<br />
 <div style="text-align: center;">
-<img onerror="this.style.display='none'" height="316" src="http://mangadget.net/img/comic_image/1710/a350f35c03008278c12744c017912e75.jpg" width="320" /></div>
+<img height="316" src="http://mangadget.net/img/comic_image/1710/a350f35c03008278c12744c017912e75.jpg" width="320" /></div>
 <div style="text-align: center;">
 <span style="font-size: x-small;">サイヤ人的考え</span></div>
 <br />
@@ -76,4 +76,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
