@@ -47,14 +47,14 @@
 <br />
 マジックペッパー焼き直前の３人衆…<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://1.bp.blogspot.com/-VOksUkghBHQ/V9-pXPUX5gI/AAAAAAAAAvs/_40kyEyMCzcC3dvxs-6hRkPdcYo4oBKowCLcB/s1600/20160919_170513142.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="267" src="https://1.bp.blogspot.com/-VOksUkghBHQ/V9-pXPUX5gI/AAAAAAAAAvs/_40kyEyMCzcC3dvxs-6hRkPdcYo4oBKowCLcB/s320/20160919_170513142.jpg" width="320" /></a></div>
+<a href="https://1.bp.blogspot.com/-VOksUkghBHQ/V9-pXPUX5gI/AAAAAAAAAvs/_40kyEyMCzcC3dvxs-6hRkPdcYo4oBKowCLcB/s1600/20160919_170513142.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="267" src="https://1.bp.blogspot.com/-VOksUkghBHQ/V9-pXPUX5gI/AAAAAAAAAvs/_40kyEyMCzcC3dvxs-6hRkPdcYo4oBKowCLcB/s320/20160919_170513142.jpg" width="320" /></a></div>
 <br />
 <div style="text-align: center;">
 ↓</div>
 <div style="text-align: center;">
 <br /></div>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-AV02G6AFXyM/V9-pXBTDBjI/AAAAAAAAAvw/s9vsHQtQe7cMqVrQZASw6ttXPWLzeq6LQCEw/s1600/20160919_174800269.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="127" src="https://4.bp.blogspot.com/-AV02G6AFXyM/V9-pXBTDBjI/AAAAAAAAAvw/s9vsHQtQe7cMqVrQZASw6ttXPWLzeq6LQCEw/s320/20160919_174800269.jpg" width="320" /></a><br /><span style="font-size: xx-small;">ｺﾞﾁｿｳｻﾏ～</span></div>
+<a href="https://4.bp.blogspot.com/-AV02G6AFXyM/V9-pXBTDBjI/AAAAAAAAAvw/s9vsHQtQe7cMqVrQZASw6ttXPWLzeq6LQCEw/s1600/20160919_174800269.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="127" src="https://4.bp.blogspot.com/-AV02G6AFXyM/V9-pXBTDBjI/AAAAAAAAAvw/s9vsHQtQe7cMqVrQZASw6ttXPWLzeq6LQCEw/s320/20160919_174800269.jpg" width="320" /></a><br /><span style="font-size: xx-small;">ｺﾞﾁｿｳｻﾏ～</span></div>
 <br />
 <br />
 <br />
@@ -70,4 +70,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
