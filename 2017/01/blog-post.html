@@ -29,7 +29,7 @@
 <br />
 先日こんな本を読みました↓<br />
 <br />
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833422026/emccom-22/ref=nosim/" target="_blank"><img onerror="this.style.display='none'" alt="大前研一 日本の論点2017-18" src="https://images-fe.ssl-images-amazon.com/images/I/51XR2vPWYSL._SL160_.jpg" /></a><br />
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833422026/emccom-22/ref=nosim/" target="_blank"><img alt="大前研一 日本の論点2017-18" src="https://images-fe.ssl-images-amazon.com/images/I/51XR2vPWYSL._SL160_.jpg" /></a><br />
 <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4833422026/emccom-22/ref=nosim/" target="_blank">大前研一 日本の論点2017-18</a>
 <br />
 <br />
@@ -62,4 +62,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
