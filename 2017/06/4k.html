@@ -26,7 +26,7 @@
       <h1 class="post-title">4Kテレビの買い時って結局いつなのよ？なハナシ。</h1>
     </header>
     <div class="post-body"><div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-ZJnzsYVFYAY/WT0ezABvgqI/AAAAAAAAA8o/jmgiAoH_oyMTrxsI6wqafuVCM4HoGuScwCLcB/s1600/009e4a1ba434bd85e40569700c6e02ae_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" data-original-height="419" data-original-width="640" height="261" src="https://4.bp.blogspot.com/-ZJnzsYVFYAY/WT0ezABvgqI/AAAAAAAAA8o/jmgiAoH_oyMTrxsI6wqafuVCM4HoGuScwCLcB/s400/009e4a1ba434bd85e40569700c6e02ae_s.jpg" width="400" /></a></div>
+<a href="https://4.bp.blogspot.com/-ZJnzsYVFYAY/WT0ezABvgqI/AAAAAAAAA8o/jmgiAoH_oyMTrxsI6wqafuVCM4HoGuScwCLcB/s1600/009e4a1ba434bd85e40569700c6e02ae_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="419" data-original-width="640" height="261" src="https://4.bp.blogspot.com/-ZJnzsYVFYAY/WT0ezABvgqI/AAAAAAAAA8o/jmgiAoH_oyMTrxsI6wqafuVCM4HoGuScwCLcB/s400/009e4a1ba434bd85e40569700c6e02ae_s.jpg" width="400" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <span style="font-size: xx-small;">ﾘﾓｺﾝのﾊﾅｼじゃないよ</span></div>
 <br />
@@ -76,7 +76,7 @@
 一部の4Kテレビでは<b><span style="color: #990000;">「4Kチューナー内蔵」と表記があります</span></b>。<br />
 <br />
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0175P5SCW/emccom-22/ref=nosim/" target="_blank"><img onerror="this.style.display='none'" alt="東芝 50V型地上・BS・110度CSデジタル4K対応 LED液晶テレビ(別売USB HDD録画対応)REGZA 50Z20X" height="320" src="https://images-fe.ssl-images-amazon.com/images/I/31BIRYb%2BD%2BL._SL160_.jpg" width="320" /></a><br />
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0175P5SCW/emccom-22/ref=nosim/" target="_blank"><img alt="東芝 50V型地上・BS・110度CSデジタル4K対応 LED液晶テレビ(別売USB HDD録画対応)REGZA 50Z20X" height="320" src="https://images-fe.ssl-images-amazon.com/images/I/31BIRYb%2BD%2BL._SL160_.jpg" width="320" /></a><br />
 <a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0175P5SCW/emccom-22/ref=nosim/" target="_blank">東芝 50V型地上・BS・110度CSデジタル4K対応 LED液晶テレビ(別売USB HDD録画対応)REGZA 50Z20X</a></div>
 <br />
 <br />
@@ -122,4 +122,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
