@@ -26,7 +26,7 @@
       <h1 class="post-title">大雪→散々な一日</h1>
     </header>
     <div class="post-body"><div class="separator" style="clear: both; text-align: center;">
-<a href="http://2.bp.blogspot.com/-KQlNlrEB8Uw/Uv8aZjtuWfI/AAAAAAAAAHo/c0Z3__yGSMY/s1600/8232f5ac95d50de8523dc8ff70b1a733_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://2.bp.blogspot.com/-KQlNlrEB8Uw/Uv8aZjtuWfI/AAAAAAAAAHo/c0Z3__yGSMY/s1600/8232f5ac95d50de8523dc8ff70b1a733_s.jpg" height="207" width="320" /></a></div>
+<a href="http://2.bp.blogspot.com/-KQlNlrEB8Uw/Uv8aZjtuWfI/AAAAAAAAAHo/c0Z3__yGSMY/s1600/8232f5ac95d50de8523dc8ff70b1a733_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-KQlNlrEB8Uw/Uv8aZjtuWfI/AAAAAAAAAHo/c0Z3__yGSMY/s1600/8232f5ac95d50de8523dc8ff70b1a733_s.jpg" height="207" width="320" /></a></div>
 <br />
 さて我が家も同じく大雪で大変でした。玄関ドアが開かないほど雪が吹き込んでるし、なんせ我が家は隣はまだ基礎が終わっただけで建物がないし、向かいは建物が無い角地なので雪っさらし感が半端無かったです。<br />
 <br />
@@ -55,4 +55,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
