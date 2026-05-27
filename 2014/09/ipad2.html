@@ -63,7 +63,7 @@
 <br />
 そしたらばこんなところを見つけました。<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://smarket.geo-online.co.jp/" target="_blank"><img onerror="this.style.display='none'" border="0" src="http://2.bp.blogspot.com/-HhqCjHmkJAY/VBWCi4JN6eI/AAAAAAAAAXA/OjudDXVnfTI/s1600/2014-09-14_205632.jpg" height="214" width="320" /></a></div>
+<a href="http://smarket.geo-online.co.jp/" target="_blank"><img border="0" src="http://2.bp.blogspot.com/-HhqCjHmkJAY/VBWCi4JN6eI/AAAAAAAAAXA/OjudDXVnfTI/s1600/2014-09-14_205632.jpg" height="214" width="320" /></a></div>
 <br />
 <br />
 ここは査定のための送料は先方持ち、そして何と言っても最高買取価格が26000円！！！<br />
@@ -103,4 +103,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
