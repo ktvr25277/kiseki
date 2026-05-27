@@ -35,7 +35,7 @@
 <div class="azlink-box" style="margin-bottom: 0px;">
 <div class="azlink-image" style="float: center;">
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00G3O1PR4/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img onerror="this.style.display='none'" alt="アイリスオーヤマ タンク式高圧洗浄機 SBT-512" src="http://ecx.images-amazon.com/images/I/41upaNwsxTL.jpg" style="border: none;" /></a></div>
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00G3O1PR4/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img alt="アイリスオーヤマ タンク式高圧洗浄機 SBT-512" src="http://ecx.images-amazon.com/images/I/41upaNwsxTL.jpg" style="border: none;" /></a></div>
 </div>
 <div class="azlink-info" style="float: center; line-height: 120%; margin-left: 15px;">
 <div class="azlink-name" style="line-height: 120%; margin-bottom: 10px;">
@@ -74,7 +74,7 @@ Not Machine Specific</div>
 <div class="azlink-box" style="margin-bottom: 0px;">
 <div class="azlink-image" style="float: center;">
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00G3O1PR4/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img onerror="this.style.display='none'" alt="アイリスオーヤマ タンク式高圧洗浄機 SBT-512" src="http://ecx.images-amazon.com/images/I/61eIA-TQKTL.jpg" style="border: none;" /></a></div>
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00G3O1PR4/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img alt="アイリスオーヤマ タンク式高圧洗浄機 SBT-512" src="http://ecx.images-amazon.com/images/I/61eIA-TQKTL.jpg" style="border: none;" /></a></div>
 </div>
 <br />
 <br />
@@ -91,7 +91,7 @@ Not Machine Specific</div>
 <div class="azlink-box" style="margin-bottom: 0px;">
 <div class="azlink-image" style="float: center;">
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00G3O1PR4/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img onerror="this.style.display='none'" alt="アイリスオーヤマ タンク式高圧洗浄機 SBT-512" src="http://ecx.images-amazon.com/images/I/411w4EVwpOL.jpg" style="border: none;" /></a></div>
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00G3O1PR4/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img alt="アイリスオーヤマ タンク式高圧洗浄機 SBT-512" src="http://ecx.images-amazon.com/images/I/411w4EVwpOL.jpg" style="border: none;" /></a></div>
 </div>
 <div class="azlink-footer" style="clear: center;">
 </div>
@@ -115,4 +115,25 @@ Not Machine Specific</div>
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
