@@ -32,7 +32,7 @@
 そこで見つけたのがコレ↓<br />
 <br />
 <div style="text-align: center;">
-<a href="http://ip-phone-smart.jp/smart/smartalk/" target="_blank"><img onerror="this.style.display='none'" src="http://ip-phone-smart.jp/files/6214/0860/0167/smartalk_1.jpg" /></a></div>
+<a href="http://ip-phone-smart.jp/smart/smartalk/" target="_blank"><img src="http://ip-phone-smart.jp/files/6214/0860/0167/smartalk_1.jpg" /></a></div>
 <br />
 まぁよくあるIP電話アプリなのですが、こいつはクレジットカードを登録した瞬間に電話番号が付与されて月額の基本料は無料、使った分だけお金がかかるというニクいやつです。着信するだけならずっと無料で使えるのはうれしい。<br />
 <br />
@@ -47,7 +47,7 @@
 <br />
 そこでもう少し調べてみて見つけたのはこちらのブラステルというIP電話サービス↓<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://www.brastel.com/pages/jpn/home/" target="_blank"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-uYHUUD-el2k/VJTwvW8gdxI/AAAAAAAAAa0/saGEMmIn3G4/s1600/2014-12-20_124340.jpg" height="275" width="400" /></a></div>
+<a href="http://www.brastel.com/pages/jpn/home/" target="_blank"><img border="0" src="http://1.bp.blogspot.com/-uYHUUD-el2k/VJTwvW8gdxI/AAAAAAAAAa0/saGEMmIn3G4/s1600/2014-12-20_124340.jpg" height="275" width="400" /></a></div>
 <br />
 こちらも電話番号は無料で付与されるのですが、支払いはプリペイド方式です。残高が少なくなったら自動チャージする設定が可能なのであまりそこにデメリットは感じません。<br />
 <br />
@@ -61,7 +61,7 @@
 <div class="azlink-box" style="margin-bottom: 0px;">
 <div class="azlink-image" style="float: center;">
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B005CET3CA/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img onerror="this.style.display='none'" alt="ELECOM iPhone4/4S/3GS/3G 対応 スマートフォン用電話スタンド ホワイト MPA-PS001WH" src="http://ecx.images-amazon.com/images/I/41qalZ4ZIQL.jpg" height="400" style="border: none;" width="400" /></a></div>
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B005CET3CA/emccom-22/ref=nosim/" name="azlinklink" target="_blank"><img alt="ELECOM iPhone4/4S/3GS/3G 対応 スマートフォン用電話スタンド ホワイト MPA-PS001WH" src="http://ecx.images-amazon.com/images/I/41qalZ4ZIQL.jpg" height="400" style="border: none;" width="400" /></a></div>
 </div>
 <div class="azlink-info" style="float: left; line-height: 120%; margin-center: 15px;">
 <div class="azlink-name" style="line-height: 120%; margin-bottom: 10px;">
@@ -106,4 +106,25 @@ Not Machine Specific</div>
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
