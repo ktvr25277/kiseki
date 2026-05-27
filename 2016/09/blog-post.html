@@ -42,7 +42,7 @@
 小骨が多かったけどマジックペッパー焼きで美味しく頂きました。<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://1.bp.blogspot.com/-5U4Ee3TMU3A/V8wmqjhvumI/AAAAAAAAAu0/84YghOXfRaMZ7ewmkxCfCTBizaE1JggHACLcB/s1600/20160904_145942503.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="180" src="https://1.bp.blogspot.com/-5U4Ee3TMU3A/V8wmqjhvumI/AAAAAAAAAu0/84YghOXfRaMZ7ewmkxCfCTBizaE1JggHACLcB/s320/20160904_145942503.jpg" width="320" /></a></div>
+<a href="https://1.bp.blogspot.com/-5U4Ee3TMU3A/V8wmqjhvumI/AAAAAAAAAu0/84YghOXfRaMZ7ewmkxCfCTBizaE1JggHACLcB/s1600/20160904_145942503.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="180" src="https://1.bp.blogspot.com/-5U4Ee3TMU3A/V8wmqjhvumI/AAAAAAAAAu0/84YghOXfRaMZ7ewmkxCfCTBizaE1JggHACLcB/s320/20160904_145942503.jpg" width="320" /></a></div>
 <br />
 <br />
 <div style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 14.85px; line-height: 20.79px; text-align: center;">
@@ -57,4 +57,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
