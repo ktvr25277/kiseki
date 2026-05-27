@@ -27,7 +27,7 @@
     </header>
     <div class="post-body">新築と言ってももう<b><span style="color: #990000;">4年目</span></b>ですが（汗）<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-4WnpbUwJYos/WQXShWPUq2I/AAAAAAAAA5A/mq_0k2s0mf85ScEHPSsdAT-SbOEN6VABQCLcB/s1600/4dde01ad03ce8a529b6a29206e32454b_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="213" src="https://4.bp.blogspot.com/-4WnpbUwJYos/WQXShWPUq2I/AAAAAAAAA5A/mq_0k2s0mf85ScEHPSsdAT-SbOEN6VABQCLcB/s320/4dde01ad03ce8a529b6a29206e32454b_s.jpg" width="320" /></a></div>
+<a href="https://4.bp.blogspot.com/-4WnpbUwJYos/WQXShWPUq2I/AAAAAAAAA5A/mq_0k2s0mf85ScEHPSsdAT-SbOEN6VABQCLcB/s1600/4dde01ad03ce8a529b6a29206e32454b_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="213" src="https://4.bp.blogspot.com/-4WnpbUwJYos/WQXShWPUq2I/AAAAAAAAA5A/mq_0k2s0mf85ScEHPSsdAT-SbOEN6VABQCLcB/s320/4dde01ad03ce8a529b6a29206e32454b_s.jpg" width="320" /></a></div>
 <br />
 <h4 style="background: rgb(224, 241, 255); border-left: 9px solid rgb(0, 122, 183); clear: both; color: #444444; font-family: arial, halvetica, verdana, sans-serif; font-size: 12px; line-height: 1.1; margin: 1em 0px; padding: 10px;">
 <span style="font-size: medium;">ひび割れの原因</span></h4>
@@ -43,7 +43,7 @@
 基本的にはクロスずれが発生した場所を専用の修復材で埋めれば良さそうです。<br />
 例えばこんなのですかね。<br />
 <div style="text-align: center;">
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B004I4YX8Y/emccom-22/ref=nosim/" target="_blank"><img onerror="this.style.display='none'" alt="ハウスボックス 穴うめ職人 クロス用 3本セット 9g" height="320" src="https://images-fe.ssl-images-amazon.com/images/I/41RE13Wjt1L.jpg" width="160" /></a></div>
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B004I4YX8Y/emccom-22/ref=nosim/" target="_blank"><img alt="ハウスボックス 穴うめ職人 クロス用 3本セット 9g" height="320" src="https://images-fe.ssl-images-amazon.com/images/I/41RE13Wjt1L.jpg" width="160" /></a></div>
 <div style="text-align: center;">
 <a href="http://www.amazon.co.jp/exec/obidos/ASIN/B004I4YX8Y/emccom-22/ref=nosim/" target="_blank">ハウスボックス 穴うめ職人 クロス用 3本セット 9g</a>
 </div>
@@ -60,7 +60,7 @@
 <br />
 そして妻が惜しげもなくあそことあそことあそこと…と次から次へとクロスずれ修復希望箇所を告げるのに対し<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://2.bp.blogspot.com/-1eQQW9yuh-4/WQXQPtzNm5I/AAAAAAAAA40/1JCwu6IB3uwi1VBHUpdB6G-2ZamTFFy0QCLcB/s1600/5feda0cc8c848d3e5d7462f4f339f759.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="https://2.bp.blogspot.com/-1eQQW9yuh-4/WQXQPtzNm5I/AAAAAAAAA40/1JCwu6IB3uwi1VBHUpdB6G-2ZamTFFy0QCLcB/s1600/5feda0cc8c848d3e5d7462f4f339f759.jpg" /></a></div>
+<a href="https://2.bp.blogspot.com/-1eQQW9yuh-4/WQXQPtzNm5I/AAAAAAAAA40/1JCwu6IB3uwi1VBHUpdB6G-2ZamTFFy0QCLcB/s1600/5feda0cc8c848d3e5d7462f4f339f759.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://2.bp.blogspot.com/-1eQQW9yuh-4/WQXQPtzNm5I/AAAAAAAAA40/1JCwu6IB3uwi1VBHUpdB6G-2ZamTFFy0QCLcB/s1600/5feda0cc8c848d3e5d7462f4f339f759.jpg" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <span style="font-size: xx-small;">ｱﾜﾜ</span></div>
 <br />
@@ -82,4 +82,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
