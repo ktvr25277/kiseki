@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-07-07">2013-07-07</time>
       <h1 class="post-title">ポーチタイルをサクッと決めたって</h1>
     </header>
-    <div class="post-body">話しなんですけど。<br /><br />アコルデ標準のポーチタイルはINAX（LIXIL）のグレイスランドとかいうやつらしいですよ。サイズは300mm角でして、色を選びましょうという話になりました。<br /><br /><div align="center"><a target="_blank" title="2013-07-04_231019" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/2/7/2794f040.png"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-07-04_231019" border="0" height="231" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/2/7/2794f040-s.png"></a></div><br />我が家は建具が濃い色、床は白系というパキっとした配色になっており、妻は一応ナチュラルモダンというコンセプトを貫こうとしているようであります。そこで清水畑さんのアドバイスも頂きながら、我が家が選んだポーチタイルはGRL-12というこちらのような色でございます。<br /><br /><div align="center"><a target="_blank" title="2013-07-04_230956" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/7/0/70757e9c.png"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-07-04_230956" border="0" height="324" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/7/0/70757e9c-s.png"></a></div><br /> 薄い色だと掃除が大変ということもあり、このような色になりましてございます。なかなかシャレオツな感じになりそうでヨシヨシ。<br /><br /><div align="center"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="940b5e3261c2e92a862a8a40edf6b443" border="0" height="326" width="246" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/a/8/a8cd6f4b.jpg"><br /><br /></div><br /><br/></div>
+    <div class="post-body">話しなんですけど。<br /><br />アコルデ標準のポーチタイルはINAX（LIXIL）のグレイスランドとかいうやつらしいですよ。サイズは300mm角でして、色を選びましょうという話になりました。<br /><br /><div align="center"><a target="_blank" title="2013-07-04_231019" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/2/7/2794f040.png"><img class="pict" hspace="5" alt="2013-07-04_231019" border="0" height="231" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/2/7/2794f040-s.png"></a></div><br />我が家は建具が濃い色、床は白系というパキっとした配色になっており、妻は一応ナチュラルモダンというコンセプトを貫こうとしているようであります。そこで清水畑さんのアドバイスも頂きながら、我が家が選んだポーチタイルはGRL-12というこちらのような色でございます。<br /><br /><div align="center"><a target="_blank" title="2013-07-04_230956" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/7/0/70757e9c.png"><img class="pict" hspace="5" alt="2013-07-04_230956" border="0" height="324" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/7/0/70757e9c-s.png"></a></div><br /> 薄い色だと掃除が大変ということもあり、このような色になりましてございます。なかなかシャレオツな感じになりそうでヨシヨシ。<br /><br /><div align="center"><img class="pict" hspace="5" alt="940b5e3261c2e92a862a8a40edf6b443" border="0" height="326" width="246" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/a/8/a8cd6f4b.jpg"><br /><br /></div><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/07/blog-post_8919.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">出ますた！工程表</span></a><a href="../../2013/07/blog-post_1325.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">狭小書斎のクロスは自分で決めなさいよ</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
