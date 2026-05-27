@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-06-16">2013-06-16</time>
       <h1 class="post-title">トイレ階段下に収納をもっと</h1>
     </header>
-    <div class="post-body">欲しいそうです。収納を。<br /><br />妻はネットからこんな写真をお借りしてイメージを伝えていました。<br /><br /><br />（この画像で言うタンク奥、壁際にも収納をつけてもらってるのですが、もっと欲しいそうです。）<br /><div align="center"><img onerror="this.style.display='none'" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/e/1e371520.jpg" width="332" height="500" border="0" alt="photo12" hspace="5" class="pict"></div><br />このような階段下収納　IN　トイレが欲しいそうです。<br />一体何を入れるのか？と聞いたら<br />トイレットペーパーだそうです。<br /><br />買い置きをしたい。トイレに置きたい。場所が欲しい。<br />というロジックのようです。<br /><br />こういう風にすればいいのではないか、<br />と思うかもしれません。<br /><div align="center"><img onerror="this.style.display='none'" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/f/0/f0c8f4bb.jpg" width="400" height="300" border="0" alt="toiletpaper" hspace="5" class="pict"></div><br /><br />しかし妻は嫌だというのです。当たり前？<br /><br />なのでアコルデに相談したところ、造作を快諾してくれました。<br /><br />妻が喜ぶのを見るにつけ、アコルデ様さまだと感じます。<br /><br /></div>
+    <div class="post-body">欲しいそうです。収納を。<br /><br />妻はネットからこんな写真をお借りしてイメージを伝えていました。<br /><br /><br />（この画像で言うタンク奥、壁際にも収納をつけてもらってるのですが、もっと欲しいそうです。）<br /><div align="center"><img src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/e/1e371520.jpg" width="332" height="500" border="0" alt="photo12" hspace="5" class="pict"></div><br />このような階段下収納　IN　トイレが欲しいそうです。<br />一体何を入れるのか？と聞いたら<br />トイレットペーパーだそうです。<br /><br />買い置きをしたい。トイレに置きたい。場所が欲しい。<br />というロジックのようです。<br /><br />こういう風にすればいいのではないか、<br />と思うかもしれません。<br /><div align="center"><img src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/f/0/f0c8f4bb.jpg" width="400" height="300" border="0" alt="toiletpaper" hspace="5" class="pict"></div><br /><br />しかし妻は嫌だというのです。当たり前？<br /><br />なのでアコルデに相談したところ、造作を快諾してくれました。<br /><br />妻が喜ぶのを見るにつけ、アコルデ様さまだと感じます。<br /><br /></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/06/blog-post_4958.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">フローリングの木目の方向</span></a><a href="../../2013/06/blog-post_8387.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">四方巻きか三方巻きか零方巻きか恵方巻きか</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
