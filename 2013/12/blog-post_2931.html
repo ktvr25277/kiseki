@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-12-05">2013-12-05</time>
       <h1 class="post-title">掲載して頂きました：広島住宅総合館</h1>
     </header>
-    <div class="post-body">あら恥ずかしいｗ。<br /><br />先日の1F階段から2Fホールの写真という記事をかの有名な広島住宅総合館さんの住まいブログコーナーに掲載して頂けました！<br /><br /><br /><br/><a  href="http://www.hiroshima-house.com/" target="_blank"><br /><img onerror="this.style.display='none'"  src="http://www.hiroshima-house.com/img/banner/120x60.gif" width="240" height="120" border="0" alt="広島住宅総合館"><br /></a><br /><br/><br /><br />いや～<a  target="_blank" href="http://kisekinomyhome.blog.fc2.com/blog-entry-243.html">まっしん師匠のところで拝見していました</a>ので存じ上げておりましたがまさか拙ブログを載せて頂けるなんてこれ幸いでございますm(_ _)m。載せて頂けるんだったらオーマイダベンポートとか言うんじゃなかったｗ。<br /><br />しかし住宅総合館ネットワークって全国なんですね、失礼ながら知りませんでした。広島住宅総合館さんがこのようなブログをつなぐ取り組みをされているようですが色んな事例を見るのはブログが一番ですからナイスプロジェクトだと感心させられます。<br /><br /><br />というわけでちょっと番外編的に記録まで。<br /><br /><br />週末にでも建築編終了予定でございます。<br /><br /><br />GOGOOGO！　→　<br /><br /></div>
+    <div class="post-body">あら恥ずかしいｗ。<br /><br />先日の1F階段から2Fホールの写真という記事をかの有名な広島住宅総合館さんの住まいブログコーナーに掲載して頂けました！<br /><br /><br /><br/><a  href="http://www.hiroshima-house.com/" target="_blank"><br /><img  src="http://www.hiroshima-house.com/img/banner/120x60.gif" width="240" height="120" border="0" alt="広島住宅総合館"><br /></a><br /><br/><br /><br />いや～<a  target="_blank" href="http://kisekinomyhome.blog.fc2.com/blog-entry-243.html">まっしん師匠のところで拝見していました</a>ので存じ上げておりましたがまさか拙ブログを載せて頂けるなんてこれ幸いでございますm(_ _)m。載せて頂けるんだったらオーマイダベンポートとか言うんじゃなかったｗ。<br /><br />しかし住宅総合館ネットワークって全国なんですね、失礼ながら知りませんでした。広島住宅総合館さんがこのようなブログをつなぐ取り組みをされているようですが色んな事例を見るのはブログが一番ですからナイスプロジェクトだと感心させられます。<br /><br /><br />というわけでちょっと番外編的に記録まで。<br /><br /><br />週末にでも建築編終了予定でございます。<br /><br /><br />GOGOOGO！　→　<br /><br /></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/12/2_5.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">2畳の書斎</span></a><a href="../../2013/12/blog-post_8737.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">【建築編終了】→【居住編の始まり】</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
