@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-06-13">2013-06-13</time>
       <h1 class="post-title">立水栓は贅沢なのか</h1>
     </header>
-    <div class="post-body">立水栓。<br /><br />もともと存在するだけで有り難かった。<br /><br />しかし今は蛇口が2個着いてると便利かな～なんて<br /><br />贅沢なのでしょうか・・・<br /><br /><br />ネットで見るとDIY出来るような話が多いけど、<br />水回りだし、プロにやってもらったほうが安心かな～とか・・・<br /><br /><br />楽天で見てみると、<br />こんな感じ↓のが安い方らしい・・・（29300円）<br /><div align="center"><div align="center"><a href="http://item.rakuten.co.jp/ex-gstyle/un10sa-00052/" target="_blank" title="supure05"><img onerror="this.style.display='none'" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/3/d3aea37b-s.jpg" width="480" height="480" border="0" alt="supure05" hspace="5" class="pict"></a></div><br /></div><br /><br /><br /><span style="font-size: x-large; ">欲しい！<br /><br /><br />だが！</span><br /><br /><br /><div align="center"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2012091614021210f" border="0" height="207" width="243" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/c/e/ceefe23a.jpg"></div><span style="font-size: xx-small; "> ※二重拝借？ゴメンナサイ<br /><br /><br /><br /> </span><br /><br/></div>
+    <div class="post-body">立水栓。<br /><br />もともと存在するだけで有り難かった。<br /><br />しかし今は蛇口が2個着いてると便利かな～なんて<br /><br />贅沢なのでしょうか・・・<br /><br /><br />ネットで見るとDIY出来るような話が多いけど、<br />水回りだし、プロにやってもらったほうが安心かな～とか・・・<br /><br /><br />楽天で見てみると、<br />こんな感じ↓のが安い方らしい・・・（29300円）<br /><div align="center"><div align="center"><a href="http://item.rakuten.co.jp/ex-gstyle/un10sa-00052/" target="_blank" title="supure05"><img src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/3/d3aea37b-s.jpg" width="480" height="480" border="0" alt="supure05" hspace="5" class="pict"></a></div><br /></div><br /><br /><br /><span style="font-size: x-large; ">欲しい！<br /><br /><br />だが！</span><br /><br /><br /><div align="center"><img class="pict" hspace="5" alt="2012091614021210f" border="0" height="207" width="243" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/c/e/ceefe23a.jpg"></div><span style="font-size: xx-small; "> ※二重拝借？ゴメンナサイ<br /><br /><br /><br /> </span><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/06/blog-post_8328.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">洗濯パンって今時置かないの？</span></a><a href="../../2013/06/blog-post_2564.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">磁石ドアストッパーはうれしいです</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
