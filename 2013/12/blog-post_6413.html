@@ -47,7 +47,7 @@
 最初に浴室の天井裏見たらなんか垂直？水平？微妙な角度だったので自分で調べてみました表がこちら↓<br />
 かの有名な<a href="http://www.maspro.co.jp/digi_broad/channel.html" target="_blank">マスプロ電工さんのページ</a>からです。<br />
 <div align="center">
-<a href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/8/9/89637085.png" target="_blank" title="2013-12-22_205548"><img onerror="this.style.display='none'" alt="2013-12-22_205548" border="0" class="pict" height="409" hspace="5" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/8/9/89637085-s.png" width="480" /></a></div>
+<a href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/8/9/89637085.png" target="_blank" title="2013-12-22_205548"><img alt="2013-12-22_205548" border="0" class="pict" height="409" hspace="5" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/8/9/89637085-s.png" width="480" /></a></div>
 <br />
 <br />
 <br />
@@ -65,4 +65,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
