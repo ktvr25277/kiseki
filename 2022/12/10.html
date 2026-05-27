@@ -26,7 +26,7 @@
       <h1 class="post-title">10年目に突入した我が家の注文住宅事情</h1>
     </header>
     <div class="post-body"><br />
-<div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5NOeUSsbU4a87ZcQuN4kO0Hc9nYKz3O8hvAB0w4wKkiTNxu9Fa4Tyj8DCVb2OBNtAtcoTnJ0cdSurnineU8MpFs8jxRlVBeaJgymdoskQgj22z-X2fxQIf__YJlDvPXUECa3qUngHPqvbrvrOJ6t4ZVg0rclsQmde6_fspDYDpHXiBuG2Tcd06ZvQ/s640/25423295_s.jpg" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" data-original-height="478" data-original-width="640" height="239" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5NOeUSsbU4a87ZcQuN4kO0Hc9nYKz3O8hvAB0w4wKkiTNxu9Fa4Tyj8DCVb2OBNtAtcoTnJ0cdSurnineU8MpFs8jxRlVBeaJgymdoskQgj22z-X2fxQIf__YJlDvPXUECa3qUngHPqvbrvrOJ6t4ZVg0rclsQmde6_fspDYDpHXiBuG2Tcd06ZvQ/s320/25423295_s.jpg" width="320" /></a></div><br /></div>
+<div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5NOeUSsbU4a87ZcQuN4kO0Hc9nYKz3O8hvAB0w4wKkiTNxu9Fa4Tyj8DCVb2OBNtAtcoTnJ0cdSurnineU8MpFs8jxRlVBeaJgymdoskQgj22z-X2fxQIf__YJlDvPXUECa3qUngHPqvbrvrOJ6t4ZVg0rclsQmde6_fspDYDpHXiBuG2Tcd06ZvQ/s640/25423295_s.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="478" data-original-width="640" height="239" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5NOeUSsbU4a87ZcQuN4kO0Hc9nYKz3O8hvAB0w4wKkiTNxu9Fa4Tyj8DCVb2OBNtAtcoTnJ0cdSurnineU8MpFs8jxRlVBeaJgymdoskQgj22z-X2fxQIf__YJlDvPXUECa3qUngHPqvbrvrOJ6t4ZVg0rclsQmde6_fspDYDpHXiBuG2Tcd06ZvQ/s320/25423295_s.jpg" width="320" /></a></div><br /></div>
 <br /><br /><div>年齢を重ねてきて色々と時間の足りなさを実感しております。<div>
 <br />
 <h4 style="background-color: #e0f1ff; border-left-color: rgb(0, 122, 183); border-left-style: solid; border-left-width: 9px; border-left: 9px solid rgb(0, 122, 183); clear: both; font-family: meiryo; line-height: 1.1; margin: 1em 0px; padding: 10px;"><span style="color: #444444; font-size: medium;">家には何の問題もなく10年目に突入</span></h4>
@@ -61,4 +61,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
