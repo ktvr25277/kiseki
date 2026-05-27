@@ -33,7 +33,7 @@
 <br />
 １０～１２時開催のところ１１時半頃に行ったのですが・・・<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://4.bp.blogspot.com/-oZXAoksSswM/U28VFas7b-I/AAAAAAAAAPE/EcjOqM5x5gY/s1600/2014-05-11+11.34.24.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://4.bp.blogspot.com/-oZXAoksSswM/U28VFas7b-I/AAAAAAAAAPE/EcjOqM5x5gY/s1600/2014-05-11+11.34.24.jpg" height="239" width="320" /></a></div>
+<a href="http://4.bp.blogspot.com/-oZXAoksSswM/U28VFas7b-I/AAAAAAAAAPE/EcjOqM5x5gY/s1600/2014-05-11+11.34.24.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-oZXAoksSswM/U28VFas7b-I/AAAAAAAAAPE/EcjOqM5x5gY/s1600/2014-05-11+11.34.24.jpg" height="239" width="320" /></a></div>
 <br />
 <br />
 ものすごい行列！<br />
@@ -54,7 +54,7 @@
 なってないんです。数万円ほど微妙に違うのです。<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-yyi0wr4JjT8/U28iybUKc0I/AAAAAAAAAPU/LRkr74vIdPg/s1600/2014-05-11_161154.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://1.bp.blogspot.com/-yyi0wr4JjT8/U28iybUKc0I/AAAAAAAAAPU/LRkr74vIdPg/s1600/2014-05-11_161154.jpg" height="146" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-yyi0wr4JjT8/U28iybUKc0I/AAAAAAAAAPU/LRkr74vIdPg/s1600/2014-05-11_161154.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-yyi0wr4JjT8/U28iybUKc0I/AAAAAAAAAPU/LRkr74vIdPg/s1600/2014-05-11_161154.jpg" height="146" width="320" /></a></div>
 <br />
 市役所に聞いてみようかな。<br />
 <br />
@@ -73,4 +73,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
