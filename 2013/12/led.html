@@ -38,7 +38,7 @@
 </div>
 <table border="0" cellpadding="0" cellspacing="0"><tbody>
 <tr><td valign="top"><div style="border: 1px none; float: left; margin: 0px; padding: 6px 0px; text-align: center; width: 420px;">
-<a href="http://hb.afl.rakuten.co.jp/hgc/12291d50.8fb52540.12291d51.0acd3427/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fjism%2f4901087186419-21-5016-n%2f%3fscid%3daf_link_tbl&m=http%3a%2f%2fm.rakuten.co.jp%2fjism%2fi%2f10610875%2f" target="_blank"><img onerror="this.style.display='none'" alt="【12/24am9:59迄ポイント3倍】【Joshinはネット通販部門1位(アフターサービスランキング)日経ビ..." border="0" src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fjism%2fcabinet%2f0199%2f4901087186419.jpg%3f_ex%3d400x400&m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fjism%2fcabinet%2f0199%2f4901087186419.jpg%3f_ex%3d80x80" style="margin: 0px; padding: 0px;" /></a><br />
+<a href="http://hb.afl.rakuten.co.jp/hgc/12291d50.8fb52540.12291d51.0acd3427/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fjism%2f4901087186419-21-5016-n%2f%3fscid%3daf_link_tbl&m=http%3a%2f%2fm.rakuten.co.jp%2fjism%2fi%2f10610875%2f" target="_blank"><img alt="【12/24am9:59迄ポイント3倍】【Joshinはネット通販部門1位(アフターサービスランキング)日経ビ..." border="0" src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fjism%2fcabinet%2f0199%2f4901087186419.jpg%3f_ex%3d400x400&m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fjism%2fcabinet%2f0199%2f4901087186419.jpg%3f_ex%3d80x80" style="margin: 0px; padding: 0px;" /></a><br />
 <div style="font-size: 12px; line-height: 1.4em; margin: 0px; padding: 2px 6px; text-align: left;">
 <a href="http://hb.afl.rakuten.co.jp/hgc/12291d50.8fb52540.12291d51.0acd3427/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fjism%2f4901087186419-21-5016-n%2f%3fscid%3daf_link_tbl&m=http%3a%2f%2fm.rakuten.co.jp%2fjism%2fi%2f10610875%2f" target="_blank">【12/24am9:59迄ポイント3倍】【Joshinはネット通販部門1位(アフターサービスランキング)日経ビ...</a><br />
 価格：890円（税込、送料別）</div>
@@ -63,4 +63,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
