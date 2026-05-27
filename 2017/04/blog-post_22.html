@@ -36,7 +36,7 @@
 <span style="font-size: medium;">どんな見た目かっつーと</span></h4>
 こんな感じのようです↓<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-MUD6hrM5BvU/WPrMy1S8XII/AAAAAAAAA3g/Eh2EUsbroTwL1te5L7zrg9MKSO3CXJaVgCLcB/s1600/2.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="345" src="https://4.bp.blogspot.com/-MUD6hrM5BvU/WPrMy1S8XII/AAAAAAAAA3g/Eh2EUsbroTwL1te5L7zrg9MKSO3CXJaVgCLcB/s640/2.jpg" width="640" /></a></div>
+<a href="https://4.bp.blogspot.com/-MUD6hrM5BvU/WPrMy1S8XII/AAAAAAAAA3g/Eh2EUsbroTwL1te5L7zrg9MKSO3CXJaVgCLcB/s1600/2.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="345" src="https://4.bp.blogspot.com/-MUD6hrM5BvU/WPrMy1S8XII/AAAAAAAAA3g/Eh2EUsbroTwL1te5L7zrg9MKSO3CXJaVgCLcB/s640/2.jpg" width="640" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <span style="font-size: xx-small;">出典：国土交通省</span></div>
 <br />
@@ -83,4 +83,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
