@@ -52,7 +52,7 @@
 <br />
 結果は・・・・<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-68d4GitEIPo/Urq8xBUVkbI/AAAAAAAAACg/T41zfb3_gI4/s1600/2013-12-25_195849.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="178" src="http://1.bp.blogspot.com/-68d4GitEIPo/Urq8xBUVkbI/AAAAAAAAACg/T41zfb3_gI4/s320/2013-12-25_195849.png" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-68d4GitEIPo/Urq8xBUVkbI/AAAAAAAAACg/T41zfb3_gI4/s1600/2013-12-25_195849.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="178" src="http://1.bp.blogspot.com/-68d4GitEIPo/Urq8xBUVkbI/AAAAAAAAACg/T41zfb3_gI4/s320/2013-12-25_195849.png" width="320" /></a></div>
 <br />
 <span style="font-size: x-large;">15133円！</span>（＜アパート時代とニアリーイコールOR若干安い位）<br />
 <br />
@@ -79,4 +79,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
