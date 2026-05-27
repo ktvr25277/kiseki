@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-06-14">2013-06-14</time>
       <h1 class="post-title">磁石ドアストッパーはうれしいです</h1>
     </header>
-    <div class="post-body">ドアを開け放しておきたいときに使うあれです。<br /><br />アコルデの室内開き戸は埋め込み型のこんな"感じのもの"が付いてるようです↓<br />※参考画像なので実際のものとは違います。<span style="font-size: x-small;">画像勝手に借りてｺﾞﾒﾝﾅｻｲ</span><br /><div align="center"><a target="_blank" title="DSC01056" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/3/6/36a892bd.jpg"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="DSC01056" border="0" height="360" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/3/6/36a892bd-s.jpg"></a></div><br />足が出るタイプを実家で使ってるのですが、あれだと足を下ろすためにワンアクション追加で必要になるのでこりゃ便利だな～って思ってました＠アコルデのショールーム。<br /><br />というわけでひっそりこっそりささやかなうれしいな、でした（最近じゃ当たり前？なのかな）<br /><br /></div>
+    <div class="post-body">ドアを開け放しておきたいときに使うあれです。<br /><br />アコルデの室内開き戸は埋め込み型のこんな"感じのもの"が付いてるようです↓<br />※参考画像なので実際のものとは違います。<span style="font-size: x-small;">画像勝手に借りてｺﾞﾒﾝﾅｻｲ</span><br /><div align="center"><a target="_blank" title="DSC01056" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/3/6/36a892bd.jpg"><img class="pict" hspace="5" alt="DSC01056" border="0" height="360" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/3/6/36a892bd-s.jpg"></a></div><br />足が出るタイプを実家で使ってるのですが、あれだと足を下ろすためにワンアクション追加で必要になるのでこりゃ便利だな～って思ってました＠アコルデのショールーム。<br /><br />というわけでひっそりこっそりささやかなうれしいな、でした（最近じゃ当たり前？なのかな）<br /><br /></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/06/blog-post_7327.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">立水栓は贅沢なのか</span></a><a href="../../2013/06/blog-post_4958.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">フローリングの木目の方向</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
