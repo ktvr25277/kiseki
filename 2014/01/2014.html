@@ -39,7 +39,7 @@
 今年も本ブログを宜しくお願いしますm(__)m<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://1.bp.blogspot.com/-yMqUiObHYvc/UsNRZmf3OAI/AAAAAAAAADo/Yb7s7mB1lSQ/s1600/2014-01-01_081219.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="211" src="http://1.bp.blogspot.com/-yMqUiObHYvc/UsNRZmf3OAI/AAAAAAAAADo/Yb7s7mB1lSQ/s320/2014-01-01_081219.png" width="320" /></a></div>
+<a href="http://1.bp.blogspot.com/-yMqUiObHYvc/UsNRZmf3OAI/AAAAAAAAADo/Yb7s7mB1lSQ/s1600/2014-01-01_081219.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="211" src="http://1.bp.blogspot.com/-yMqUiObHYvc/UsNRZmf3OAI/AAAAAAAAADo/Yb7s7mB1lSQ/s320/2014-01-01_081219.png" width="320" /></a></div>
 <br />
 <br />
 <span style="background-color: white; color: #333333; font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'ＭＳ Ｐゴシック', sans-serif; font-size: 14.399999618530273px; line-height: 19.200000762939453px;">みんな明けましておめでとうって言ってるネ！　→　</span><br />
@@ -51,4 +51,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
