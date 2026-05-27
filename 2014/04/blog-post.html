@@ -26,7 +26,7 @@
       <h1 class="post-title">暗黒の１ヶ月</h1>
     </header>
     <div class="post-body"><div class="separator" style="clear: both; text-align: center;">
-<a href="http://2.bp.blogspot.com/-1E4tWx5v1G4/U2CNsO646wI/AAAAAAAAAJ0/Eg28DwDKxWw/s1600/016519332314c07d7da4d53bcb22c9ef_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://2.bp.blogspot.com/-1E4tWx5v1G4/U2CNsO646wI/AAAAAAAAAJ0/Eg28DwDKxWw/s1600/016519332314c07d7da4d53bcb22c9ef_s.jpg" height="320" width="213" /></a></div>
+<a href="http://2.bp.blogspot.com/-1E4tWx5v1G4/U2CNsO646wI/AAAAAAAAAJ0/Eg28DwDKxWw/s1600/016519332314c07d7da4d53bcb22c9ef_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-1E4tWx5v1G4/U2CNsO646wI/AAAAAAAAAJ0/Eg28DwDKxWw/s1600/016519332314c07d7da4d53bcb22c9ef_s.jpg" height="320" width="213" /></a></div>
 <br />
 <br />
 <span style="color: red;">長い長～～い間</span>、といっても約１ヶ月ですが、ブログに全く出現しませんでした、お久しぶりでございますm(_ _)m。<br />
@@ -63,4 +63,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
