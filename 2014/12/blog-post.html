@@ -28,7 +28,7 @@
     <div class="post-body">すっかり更新が滞ってしまい・・・（汗<br />
 しかしそれなりの理由がありましてそれはまた後日・・・<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://4.bp.blogspot.com/-5Vp-AlS0DCM/VIzOT1HvUnI/AAAAAAAAAak/fgzst4vb4dk/s1600/2660ba7931febdf3189f20ff89cd579f_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://4.bp.blogspot.com/-5Vp-AlS0DCM/VIzOT1HvUnI/AAAAAAAAAak/fgzst4vb4dk/s1600/2660ba7931febdf3189f20ff89cd579f_s.jpg" height="320" width="213" /></a></div>
+<a href="http://4.bp.blogspot.com/-5Vp-AlS0DCM/VIzOT1HvUnI/AAAAAAAAAak/fgzst4vb4dk/s1600/2660ba7931febdf3189f20ff89cd579f_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-5Vp-AlS0DCM/VIzOT1HvUnI/AAAAAAAAAak/fgzst4vb4dk/s1600/2660ba7931febdf3189f20ff89cd579f_s.jpg" height="320" width="213" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <span style="font-size: xx-small;">ﾄﾎﾞﾄﾎﾞ</span></div>
 <br />
@@ -56,15 +56,15 @@
 我が家はAUひかりなのでAUのおうち電話なるサービスが候補となるわけです。現在のネット料金に500円／月加えるだけで（きっと）高品質で安定した電話が設置できるのでしょう。<br />
 <br />
 <div style="text-align: center;">
-<img onerror="this.style.display='none'" alt="高品質でおトクな料金 auひかり電話サービス 基本料は、ネットサービス月額利用料にプラス525円のみ。通話料も全国一律だから断然おトク!" src="http://media3.kddi.com/extlib/phone/au-hikariphone/index/ttl_01.gif" height="126" width="400" /></div>
+<img alt="高品質でおトクな料金 auひかり電話サービス 基本料は、ネットサービス月額利用料にプラス525円のみ。通話料も全国一律だから断然おトク!" src="http://media3.kddi.com/extlib/phone/au-hikariphone/index/ttl_01.gif" height="126" width="400" /></div>
 <br />
 ちなみに現時点の料金は一般加入向けが8円／3分とIP電話ならではの安さです。<br />
 <div style="text-align: center;">
-<img onerror="this.style.display='none'" alt="ひかり電話通話料" src="http://media3.kddi.com/extlib/phone/au-hikariphone/index/img_03.gif" height="222" width="400" /></div>
+<img alt="ひかり電話通話料" src="http://media3.kddi.com/extlib/phone/au-hikariphone/index/img_03.gif" height="222" width="400" /></div>
 <br />
 しかしながら発信者番号通知がなんと400円／月のオプションとなります・・・<br />
 <div style="text-align: center;">
-<img onerror="this.style.display='none'" alt="電話オプションパック 最大1,000円/月おトク！！" src="http://media.kddi.com/extlib/images/internet/service/ftth/auhikari/service/phone/option/bnr_optionpack_price.gif" /></div>
+<img alt="電話オプションパック 最大1,000円/月おトク！！" src="http://media.kddi.com/extlib/images/internet/service/ftth/auhikari/service/phone/option/bnr_optionpack_price.gif" /></div>
 <br />
 キャンペーン的なのを探ればもっと安い運用をできるのかもしれませんが（あったら知りたい・・・）それでも基本は900円／月というのは我が家程度のニーズに対しては尻込みです（汗<br />
 <br />
@@ -108,4 +108,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
