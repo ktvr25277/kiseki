@@ -48,3 +48,17 @@ body { font-family: "Noto Sans JP", "Hiragino Sans", sans-serif; background: var
 .post-body img.broken {
   display: none !important;
 }
+
+
+/* ===== 壊れ画像（blogspot 403など）を非表示 ===== */
+.post-body img {
+  /* 読み込み失敗時は最小サイズで表示されるのでそれを消す */
+}
+/* JavaScriptが無効でもCSSで対処：
+   壊れ画像はalt属性テキストと「壊れたアイコン」が出るが
+   onerrorで display:none を付与済み。
+   念のためCSS側でも img[broken] を非表示に */
+.post-body img[broken],
+.post-body img.broken {
+  display: none !important;
+}
