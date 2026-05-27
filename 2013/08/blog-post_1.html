@@ -25,7 +25,7 @@
       <time class="post-date" datetime="2013-07-31">2013-07-31</time>
       <h1 class="post-title">室内物干し竿とエアコンの絶妙な位置関係</h1>
     </header>
-    <div class="post-body">ってもんがあるのかいよって話です。<br /><br />我が家の住宅設備モリモリ追加しちゃったぜ記録シリーズもまもなく終了でございます。そしたらちょっと更新が途切れ途切れになると思いますが何卒ご了承下さい。<br /><br />そこで追加項目シートを眺めていると室内物干し竿ってのが入っていました。そういえばあれもなんか途中で増やしたなぁと思い起こされます。ホスクリーンのことです↓<br /><div align="center"><a target="_blank" title="2013-07-31_234657" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/5/1558e214.png"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-07-31_234657" border="0" height="415" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/5/1558e214-s.png"></a></div><br /><br />確か妻はエアコンの風が当たる所に室内干しをもってくれば冬でも乾きが早く、あの生乾きの雑菌のカホリを劇的に抑えられるのだと言っていた気がします。<br /><br />こんな感じです↓※左の壁にエアコンが付きます<br /><div align="center"><img onerror="this.style.display='none'" class="pict" hspace="5" alt="2013-07-27_195244" border="0" height="215" width="353" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/1/d1946361.png"></div><br /><br /><br />ホンマに色々考えてんねんな～ってなもんで感心したような気がしなくもないです。<br /><br /><div align="center"><img onerror="this.style.display='none'" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/c/9/c9888d30.jpg" width="300" height="267" border="0" alt="c7c2db4590fec7eb196bce1b27a24a23" hspace="5" class="pict"><br /><span style="font-size: xx-small;">急ﾀﾞﾈ</span></div><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
+    <div class="post-body">ってもんがあるのかいよって話です。<br /><br />我が家の住宅設備モリモリ追加しちゃったぜ記録シリーズもまもなく終了でございます。そしたらちょっと更新が途切れ途切れになると思いますが何卒ご了承下さい。<br /><br />そこで追加項目シートを眺めていると室内物干し竿ってのが入っていました。そういえばあれもなんか途中で増やしたなぁと思い起こされます。ホスクリーンのことです↓<br /><div align="center"><a target="_blank" title="2013-07-31_234657" href="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/5/1558e214.png"><img class="pict" hspace="5" alt="2013-07-31_234657" border="0" height="415" width="480" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/1/5/1558e214-s.png"></a></div><br /><br />確か妻はエアコンの風が当たる所に室内干しをもってくれば冬でも乾きが早く、あの生乾きの雑菌のカホリを劇的に抑えられるのだと言っていた気がします。<br /><br />こんな感じです↓※左の壁にエアコンが付きます<br /><div align="center"><img class="pict" hspace="5" alt="2013-07-27_195244" border="0" height="215" width="353" src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/d/1/d1946361.png"></div><br /><br /><br />ホンマに色々考えてんねんな～ってなもんで感心したような気がしなくもないです。<br /><br /><div align="center"><img src="http://livedoor.blogimg.jp/kodatenokiseki/imgs/c/9/c9888d30.jpg" width="300" height="267" border="0" alt="c7c2db4590fec7eb196bce1b27a24a23" hspace="5" class="pict"><br /><span style="font-size: xx-small;">急ﾀﾞﾈ</span></div><br /><br />さぁ次の戸建てブログは<br /><br /><br /><br/></div>
     <footer class="post-footer">
       <nav class="post-nav"><a href="../../2013/07/blog-post_5920.html" class="post-nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">間違いじゃないのと言われる狭小書斎の壁</span></a><a href="../../2013/08/blog-post_2172.html" class="post-nav-next"><span class="nav-label">次の記事 →</span><span class="nav-title">寝室の頭の横にあるニッチ</span></a></nav>
       <div style="margin-top:16px;"><a href="../../index.html">← トップへ戻る</a></div>
@@ -33,4 +33,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
