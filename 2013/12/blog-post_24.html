@@ -48,7 +48,7 @@
 <br />
 そんでもって国内で付けるとこれまた高いこういうサイドレール（断熱レール？）↓ですがこいつはこの店でも$78するようで（シェード自体より高い・・・）、サイドレールって要らないのかな？なんて考えたり・・・<br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="http://2.bp.blogspot.com/-dndJI_seSoE/UrmNOn3vWpI/AAAAAAAAACI/_vnzrrCpQCo/s1600/2013-12-24_222118.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" src="http://2.bp.blogspot.com/-dndJI_seSoE/UrmNOn3vWpI/AAAAAAAAACI/_vnzrrCpQCo/s1600/2013-12-24_222118.png" /></a></div>
+<a href="http://2.bp.blogspot.com/-dndJI_seSoE/UrmNOn3vWpI/AAAAAAAAACI/_vnzrrCpQCo/s1600/2013-12-24_222118.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-dndJI_seSoE/UrmNOn3vWpI/AAAAAAAAACI/_vnzrrCpQCo/s1600/2013-12-24_222118.png" /></a></div>
 <br />
 <br />
 う～んやっぱりちょっと贅沢品かな～<br />
@@ -65,4 +65,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
