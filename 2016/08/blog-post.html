@@ -26,7 +26,7 @@
       <h1 class="post-title">模様替えのジレンマ</h1>
     </header>
     <div class="post-body"><div class="separator" style="clear: both; text-align: center;">
-<a href="https://2.bp.blogspot.com/-swPBaqLgQc4/V72YCP607jI/AAAAAAAAAts/dqmU_twMtY88F1Gik0lvtHuIsenPEz5DgCEw/s1600/428a602c0c8f496d6368e3f00e979591_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="240" src="https://2.bp.blogspot.com/-swPBaqLgQc4/V72YCP607jI/AAAAAAAAAts/dqmU_twMtY88F1Gik0lvtHuIsenPEz5DgCEw/s320/428a602c0c8f496d6368e3f00e979591_s.jpg" width="320" /></a></div>
+<a href="https://2.bp.blogspot.com/-swPBaqLgQc4/V72YCP607jI/AAAAAAAAAts/dqmU_twMtY88F1Gik0lvtHuIsenPEz5DgCEw/s1600/428a602c0c8f496d6368e3f00e979591_s.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="https://2.bp.blogspot.com/-swPBaqLgQc4/V72YCP607jI/AAAAAAAAAts/dqmU_twMtY88F1Gik0lvtHuIsenPEz5DgCEw/s320/428a602c0c8f496d6368e3f00e979591_s.jpg" width="320" /></a></div>
 <br />
 <br />
 超久しぶりに家の話です（汗<br />
@@ -81,4 +81,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
