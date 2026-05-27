@@ -41,7 +41,7 @@
 それでもめげずに頑張り、以下の手のひらサイズをなんとかキープしたのであります。<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://2.bp.blogspot.com/-t1V1np6_zE8/Vy3h92LkIHI/AAAAAAAAAsM/vyF5P6ZzN1IQP3HeofXwovenZ1Mz-QmcgCLcB/s1600/20160507_161649167%2B%25281%2529.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" height="225" src="https://2.bp.blogspot.com/-t1V1np6_zE8/Vy3h92LkIHI/AAAAAAAAAsM/vyF5P6ZzN1IQP3HeofXwovenZ1Mz-QmcgCLcB/s400/20160507_161649167%2B%25281%2529.jpg" width="400" /></a></div>
+<a href="https://2.bp.blogspot.com/-t1V1np6_zE8/Vy3h92LkIHI/AAAAAAAAAsM/vyF5P6ZzN1IQP3HeofXwovenZ1Mz-QmcgCLcB/s1600/20160507_161649167%2B%25281%2529.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="225" src="https://2.bp.blogspot.com/-t1V1np6_zE8/Vy3h92LkIHI/AAAAAAAAAsM/vyF5P6ZzN1IQP3HeofXwovenZ1Mz-QmcgCLcB/s400/20160507_161649167%2B%25281%2529.jpg" width="400" /></a></div>
 <div style="text-align: center;">
 <span style="font-size: xx-small;">ウミタナゴとベラですよね？</span></div>
 <br />
@@ -70,4 +70,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
