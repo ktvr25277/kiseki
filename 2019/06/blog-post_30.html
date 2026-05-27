@@ -26,7 +26,7 @@
       <h1 class="post-title">ニンテンドースイッチ２台で同じソフトを同時に遊べる件</h1>
     </header>
     <div class="post-body"><div class="separator" style="clear: both; text-align: center;">
-<a href="https://1.bp.blogspot.com/-Tj0KKbEEmSc/XRiFGNbWM5I/AAAAAAAABHI/9yJceF9Qm7QBqog9OzqLhjUwBFCuQ2HjACLcBGAs/s1600/598355.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img onerror="this.style.display='none'" border="0" data-original-height="1096" data-original-width="1548" height="226" src="https://1.bp.blogspot.com/-Tj0KKbEEmSc/XRiFGNbWM5I/AAAAAAAABHI/9yJceF9Qm7QBqog9OzqLhjUwBFCuQ2HjACLcBGAs/s320/598355.png" width="320" /></a></div>
+<a href="https://1.bp.blogspot.com/-Tj0KKbEEmSc/XRiFGNbWM5I/AAAAAAAABHI/9yJceF9Qm7QBqog9OzqLhjUwBFCuQ2HjACLcBGAs/s1600/598355.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1096" data-original-width="1548" height="226" src="https://1.bp.blogspot.com/-Tj0KKbEEmSc/XRiFGNbWM5I/AAAAAAAABHI/9yJceF9Qm7QBqog9OzqLhjUwBFCuQ2HjACLcBGAs/s320/598355.png" width="320" /></a></div>
 <div class="separator" style="clear: both; text-align: center;">
 <br /></div>
 <div class="separator" style="clear: both; text-align: center;">
@@ -95,4 +95,25 @@
   </article>
 </main>
 <footer class="site-footer"><p>© 2013–2026 一戸建てのキセキ</p></footer>
+
+<script>
+(function(){
+  function hideBroken(){
+    document.querySelectorAll('.post-body img').forEach(function(img){
+      if(!img.complete || img.naturalWidth === 0){
+        img.style.display = 'none';
+      }
+      img.addEventListener('error', function(){ this.style.display = 'none'; });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', hideBroken);
+  } else {
+    hideBroken();
+  }
+  // 念のため遅延実行も
+  setTimeout(hideBroken, 1500);
+})();
+</script>
+
 </body></html>
