@@ -62,3 +62,20 @@ body { font-family: "Noto Sans JP", "Hiragino Sans", sans-serif; background: var
 .post-body img.broken {
   display: none !important;
 }
+
+
+/* ===== 記事内画像のレイアウト修正 ===== */
+.post-body img {
+  display: block;        /* インライン→ブロックにしてテキスト回り込みを解除 */
+  max-width: 100%;       /* はみ出し防止 */
+  height: auto;
+  margin: 16px auto;     /* 上下余白・中央揃え */
+  float: none !important; /* Bloggerのfloat指定を無効化 */
+}
+/* float解除後のclearfix */
+.post-body p::after,
+.post-body div::after {
+  content: '';
+  display: table;
+  clear: both;
+}
