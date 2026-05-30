@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湘南エリア 地価公示マップ | 一戸建てのキセキ</title>
+<meta name="description" content="国土交通省地価公示データ（2022〜2026年）をもとにした湘南エリアの地価ヒートマップ。鎌倉・藤沢・茅ヶ崎・平塚・逗子・葉山の地価推移を可視化。">
+<link rel="canonical" href="https://kiseki.bloomsfun.com/chika-map.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Hiragino Sans','Noto Sans JP',sans-serif;background:#0f1117;color:#e8e4dc;}
+#app{display:flex;flex-direction:column;height:100vh;}
+.top-nav{background:#0f1117;border-bottom:1px solid #1e2030;padding:10px 20px;display:flex;align-items:center;gap:16px;}
+.top-nav a{color:#c8b89a;text-decoration:none;font-size:12px;letter-spacing:.05em;}
+.top-nav a:first-child{font-weight:700;font-size:13px;}
+.top-nav .sep{color:#2a2d3e;}
+.header{padding:14px 20px 10px;background:#0f1117;border-bottom:1px solid #1e2030;}
+.header h1{font-size:15px;font-weight:700;letter-spacing:.12em;color:#c8b89a;margin-bottom:2px;}
+.header p{font-size:11px;color:#5a5d70;letter-spacing:.04em;}
+.controls{display:flex;align-items:center;gap:12px;padding:10px 20px;background:#13151f;border-bottom:1px solid #1e2030;flex-wrap:wrap;}
+.mode-toggle{display:flex;background:#1e2030;border-radius:6px;overflow:hidden;}
+.mode-btn{padding:5px 12px;font-size:11px;cursor:pointer;border:none;background:transparent;color:#5a5d70;letter-spacing:.05em;transition:all .2s;}
+.mode-btn.active{background:#c8b89a;color:#0f1117;font-weight:700;}
+.year-slider{display:flex;align-items:center;gap:8px;flex:1;}
+.year-slider label{font-size:11px;color:#5a5d70;white-space:nowrap;}
+input[type=range]{flex:1;max-width:200px;accent-color:#c8b89a;}
+#year-display{font-size:13px;font-weight:700;color:#c8b89a;min-width:36px;}
+.legend{display:flex;align-items:center;gap:6px;margin-left:auto;}
+.legend-label{font-size:10px;color:#5a5d70;}
+.legend-bar{width:80px;height:8px;border-radius:4px;background:linear-gradient(to right,#2563eb,#16a34a,#eab308,#ef4444);}
+#map{flex:1;}
+.info-panel{position:absolute;bottom:60px;right:10px;z-index:1000;background:#13151f;border:1px solid #1e2030;border-radius:10px;padding:14px 16px;min-width:200px;max-width:240px;}
+.info-panel h3{font-size:13px;font-weight:700;color:#c8b89a;margin-bottom:8px;}
+.info-row{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;}
+.info-row .label{color:#5a5d70;}
+.info-row .val{color:#e8e4dc;font-weight:500;}
+.info-row .val.up{color:#ef4444;}
+.source{position:absolute;bottom:8px;left:10px;z-index:1000;font-size:10px;color:#2a2d3e;}
+.leaflet-tooltip.city-tooltip{background:#0f1117!important;border:1px solid #c8b89a!important;border-radius:8px!important;padding:10px 14px!important;box-shadow:0 4px 20px rgba(0,0,0,.5)!important;color:#e8e4dc!important;}
+.city-tooltip .name{font-size:13px;font-weight:700;color:#c8b89a;margin-bottom:6px;}
+.city-tooltip .price{font-size:18px;font-weight:700;color:#e8e4dc;}
+.city-tooltip .change{font-size:12px;margin-top:4px;color:#ef4444;}
+.home-marker-label{background:#0f1117!important;border:1px solid #c8b89a!important;border-radius:6px!important;padding:4px 8px!important;font-size:11px!important;color:#c8b89a!important;white-space:nowrap;}
+@media(max-width:600px){
+  .info-panel{left:10px;right:10px;bottom:50px;max-width:none;}
+  .legend{display:none;}
+  .year-slider{max-width:180px;}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="top-nav">
+    <a href="index.html">一戸建てのキセキ Life to Hack</a>
+    <span class="sep">|</span>
+    <a href="construction.html">建築記録</a>
+    <a href="archive.html">全記事</a>
+  </div>
+  <div class="header">
+    <h1>湘南エリア 地価公示マップ</h1>
+    <p>国土交通省 地価公示データ（2022〜2026年）/ 住宅地・商業地 / 実測データを可視化</p>
+  </div>
+  <div class="controls">
+    <div class="mode-toggle">
+      <button class="mode-btn active" id="btn-price" onclick="setMode('price',this)">価格</button>
+      <button class="mode-btn" id="btn-change" onclick="setMode('change',this)">上昇率</button>
+    </div>
+    <div class="year-slider">
+      <label>年：</label>
+      <input type="range" id="year-range" min="0" max="4" value="4" oninput="updateYear(this.value)">
+      <span id="year-display">2026</span>
+    </div>
+    <div class="legend">
+      <span class="legend-label">低</span>
+      <div class="legend-bar"></div>
+      <span class="legend-label">高</span>
+    </div>
+  </div>
+  <div style="position:relative;flex:1;min-height:0;">
+    <div id="map" style="width:100%;height:100%;"></div>
+    <div class="info-panel" id="info-panel">
+      <h3>エリアをクリック</h3>
+      <p style="font-size:11px;color:#5a5d70;line-height:1.6;">地図上の円をクリックすると<br>年別の地価詳細が表示されます</p>
+    </div>
+    <div class="source">出典：国土交通省 地価公示（鑑定評価書情報）2022〜2026年 神奈川県</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const DATA = {
+  "14203":{"name":"平塚市","lat":35.3278,"lng":139.3525,"prices":{"2022":155442,"2023":158260,"2024":163919,"2025":170120,"2026":176472},"change_rate":13.5,"points":110},
+  "14204":{"name":"鎌倉市","lat":35.3195,"lng":139.5467,"prices":{"2022":243612,"2023":253655,"2024":264812,"2025":284327,"2026":313547},"change_rate":28.7,"points":100},
+  "14205":{"name":"藤沢市","lat":35.3383,"lng":139.4896,"prices":{"2022":230827,"2023":238776,"2024":249986,"2025":268968,"2026":286581},"change_rate":24.2,"points":162},
+  "14207":{"name":"茅ヶ崎市","lat":35.3318,"lng":139.4036,"prices":{"2022":207365,"2023":217385,"2024":232038,"2025":249257,"2026":262818},"change_rate":26.7,"points":78},
+  "14210":{"name":"逗子市","lat":35.2942,"lng":139.5795,"prices":{"2022":62141,"2023":61962,"2024":62366,"2025":63144,"2026":65547},"change_rate":5.5,"points":32},
+  "14341":{"name":"葉山町","lat":35.2722,"lng":139.5758,"prices":{"2022":119804,"2023":121858,"2024":122692,"2025":124538,"2026":127104},"change_rate":6.1,"points":24}
+};
+const YEARS=[2022,2023,2024,2025,2026];
+let currentYear=2026,currentMode='price';
+
+const map=L.map('map',{center:[35.32,139.48],zoom:11,zoomControl:true});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+  attribution:'&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> &copy; <a href="https://carto.com">CARTO</a>',
+  subdomains:'abcd',maxZoom:19
+}).addTo(map);
+
+// 我が家マーカー
+L.circleMarker([35.3318,139.4036],{radius:5,color:'#c8b89a',fillColor:'#c8b89a',fillOpacity:1,weight:0})
+  .addTo(map)
+  .bindTooltip('← 船戸家 (2013年購入)',{permanent:true,direction:'right',className:'home-marker-label',offset:[8,0]});
+
+function getColor(t){
+  if(t<0.33){const s=t/0.33;return`rgb(${Math.round(37+s*(22-37))},${Math.round(99+s*(163-99))},${Math.round(235+s*(74-235))})`;}
+  else if(t<0.66){const s=(t-0.33)/0.33;return`rgb(${Math.round(22+s*(234-22))},${Math.round(163+s*(179-163))},${Math.round(74+s*(8-74))})`;}
+  else{const s=(t-0.66)/0.34;return`rgb(${Math.round(234+s*(239-234))},${Math.round(179+s*(68-179))},${Math.round(8+s*(68-8))})`;}
+}
+function fmt(n){return n.toLocaleString('ja-JP');}
+
+const markers={};
+function updateMarkers(){
+  const vals=Object.values(DATA).map(d=>currentMode==='price'?d.prices[currentYear]:d.change_rate);
+  const min=Math.min(...vals),max=Math.max(...vals);
+  Object.entries(DATA).forEach(([code,d])=>{
+    const val=currentMode==='price'?d.prices[currentYear]:d.change_rate;
+    const t=(val-min)/(max-min);
+    const color=getColor(t);
+    const radius=22+t*28;
+    if(markers[code]){
+      markers[code].setStyle({color,fillColor:color});
+      markers[code].setRadius(radius);
+    }else{
+      const m=L.circleMarker([d.lat,d.lng],{radius,color,fillColor:color,fillOpacity:0.72,weight:2,opacity:0.9}).addTo(map);
+      m.on('click',()=>showInfo(code,d));
+      m.on('mouseover',function(){
+        const priceStr=currentMode==='price'?`${fmt(d.prices[currentYear])} 円/㎡`:`+${d.change_rate}%（2022→2026）`;
+        const prevYear=YEARS[YEARS.indexOf(currentYear)-1];
+        const changeStr=prevYear?`前年比 ${(((d.prices[currentYear]-d.prices[prevYear])/d.prices[prevYear])*100).toFixed(1)}%増`:'';
+        this.bindTooltip(`<div class="name">${d.name}</div><div class="price">${priceStr}</div><div class="change">${changeStr}</div>`,
+          {sticky:true,className:'city-tooltip'}).openTooltip();
+      });
+      markers[code]=m;
+    }
+  });
+}
+
+function showInfo(code,d){
+  const panel=document.getElementById('info-panel');
+  const rows=YEARS.map(y=>`<div class="info-row"><span class="label">${y}年</span><span class="val${y===currentYear?' up':''}">${fmt(d.prices[y])}円/㎡</span></div>`).join('');
+  panel.innerHTML=`<h3>${d.name}</h3>${rows}
+    <div style="border-top:1px solid #1e2030;margin-top:8px;padding-top:8px;">
+      <div class="info-row"><span class="label">2022→2026上昇率</span><span class="val up">+${d.change_rate}%</span></div>
+      <div class="info-row"><span class="label">地価公示地点数</span><span class="val">${d.points}地点/年</span></div>
+    </div>`;
+}
+
+function updateYear(idx){
+  currentYear=YEARS[parseInt(idx)];
+  document.getElementById('year-display').textContent=currentYear;
+  updateMarkers();
+}
+function setMode(mode,btn){
+  currentMode=mode;
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  updateMarkers();
+}
+updateMarkers();
+</script>
+</body>
+</html>
