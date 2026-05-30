@@ -106,10 +106,6 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
   subdomains:'abcd',maxZoom:19
 }).addTo(map);
 
-// 我が家マーカー
-L.circleMarker([35.3318,139.4036],{radius:5,color:'#c8b89a',fillColor:'#c8b89a',fillOpacity:1,weight:0})
-  .addTo(map)
-  .bindTooltip('← 船戸家 (2013年購入)',{permanent:true,direction:'right',className:'home-marker-label',offset:[8,0]});
 
 function getColor(t){
   if(t<0.33){const s=t/0.33;return`rgb(${Math.round(37+s*(22-37))},${Math.round(99+s*(163-99))},${Math.round(235+s*(74-235))})`;}
