@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kiseki.bloomsfun.com/sitemap.xml
