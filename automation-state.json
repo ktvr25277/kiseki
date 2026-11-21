@@ -1,1 +1,72 @@
-{"metrics_history":[{"date":"2026-10-17","kiseki_clicks":1,"kiseki_impressions":53,"hojo_clicks":0,"hojo_impressions":0,"avg_position":22.5,"revenue_jpy":1,"note":"GSC 28days to 10/14; AdSense kiseki 30days"},{"date":"2026-10-24","kiseki_clicks":1,"kiseki_impressions":67,"hojo_clicks":0,"hojo_impressions":0,"avg_position":14,"revenue_jpy":1,"note":"GSC 28days to 10/22; AdSense kiseki 30days"},{"date":"2026-11-07","kiseki_clicks":1,"kiseki_impressions":130,"hojo_clicks":0,"hojo_impressions":18,"avg_position":8.6,"revenue_jpy":1,"note":"GSC 28days to 11/05; AdSense kiseki 30days"},{"date":"2026-11-14","kiseki_clicks":1,"kiseki_impressions":149,"hojo_clicks":0,"hojo_impressions":18,"avg_position":9.5,"revenue_jpy":1,"note":"GSC 28days to 11/11; AdSense kiseki 30days PV86"}],"index_status":{"date":"2026-11-14","not_indexed":607,"indexed":58,"discovered_not_indexed":281,"crawled_not_indexed":134,"duplicate":2,"not_found_404":136,"alt_canonical":49,"redirect":5},"mirai_eco":{"date":"2026-11-14","gx_pct":76,"choki_zeh_pct":48,"reform_pct":15}}
+{
+  "metrics_history": [
+    {
+      "date": "2026-10-17",
+      "kiseki_clicks": 1,
+      "kiseki_impressions": 53,
+      "hojo_clicks": 0,
+      "hojo_impressions": 0,
+      "avg_position": 22.5,
+      "revenue_jpy": 1,
+      "note": "GSC 28days to 10/14; AdSense kiseki 30days"
+    },
+    {
+      "date": "2026-10-24",
+      "kiseki_clicks": 1,
+      "kiseki_impressions": 67,
+      "hojo_clicks": 0,
+      "hojo_impressions": 0,
+      "avg_position": 14,
+      "revenue_jpy": 1,
+      "note": "GSC 28days to 10/22; AdSense kiseki 30days"
+    },
+    {
+      "date": "2026-11-07",
+      "kiseki_clicks": 1,
+      "kiseki_impressions": 130,
+      "hojo_clicks": 0,
+      "hojo_impressions": 18,
+      "avg_position": 8.6,
+      "revenue_jpy": 1,
+      "note": "GSC 28days to 11/05; AdSense kiseki 30days"
+    },
+    {
+      "date": "2026-11-14",
+      "kiseki_clicks": 1,
+      "kiseki_impressions": 149,
+      "hojo_clicks": 0,
+      "hojo_impressions": 18,
+      "avg_position": 9.5,
+      "revenue_jpy": 1,
+      "note": "GSC 28days to 11/11; AdSense kiseki 30days PV86"
+    },
+    {
+      "date": "2026-11-22",
+      "kiseki_clicks": 6,
+      "kiseki_impressions": 175,
+      "hojo_clicks": 0,
+      "hojo_impressions": 18,
+      "avg_position": 12,
+      "revenue_jpy": 1,
+      "note": "GSC 28days to 11/19; AdSense kiseki 30days PV95"
+    }
+  ],
+  "index_status": {
+    "date": "2026-11-22",
+    "not_indexed": 603,
+    "indexed": 72,
+    "discovered_not_indexed": 282,
+    "crawled_not_indexed": 129,
+    "duplicate": 1,
+    "not_found_404": 138,
+    "alt_canonical": 48,
+    "redirect": 5
+  },
+  "mirai_eco": {
+    "date": "2026-11-22",
+    "gx_pct": 78,
+    "choki_zeh_pct": 51,
+    "reform_pct": 16,
+    "note": "yoyaku ended 2026-11-17; as of 11-21 0:00"
+  }
+}
